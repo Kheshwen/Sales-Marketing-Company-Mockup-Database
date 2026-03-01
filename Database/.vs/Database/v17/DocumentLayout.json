@@ -1,0 +1,68 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\khesh\\OneDrive\\Documents\\Github\\Unity\\Sales-Marketing-Company-Mockup-Database\\Database\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{387449FB-3068-40DA-8B4E-EB64FA0D5571}|Database.sqlproj|C:\\Users\\khesh\\OneDrive\\Documents\\Github\\Unity\\Sales-Marketing-Company-Mockup-Database\\Populate_Data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{387449FB-3068-40DA-8B4E-EB64FA0D5571}|Database.sqlproj|C:\\Users\\khesh\\OneDrive\\Documents\\Github\\Unity\\Sales-Marketing-Company-Mockup-Database\\InitialSchema.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{387449FB-3068-40DA-8B4E-EB64FA0D5571}|Database.sqlproj|C:\\Users\\khesh\\OneDrive\\Documents\\Github\\Unity\\Sales-Marketing-Company-Mockup-Database\\DropSchema.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{387449FB-3068-40DA-8B4E-EB64FA0D5571}|Database.sqlproj|C:\\Users\\khesh\\OneDrive\\Documents\\Github\\Unity\\Sales-Marketing-Company-Mockup-Database\\Populate_Data.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Populate_Data.sql ",
+              "DocumentMoniker": "C:\\Users\\khesh\\OneDrive\\Documents\\Github\\Unity\\Sales-Marketing-Company-Mockup-Database\\Populate_Data.sql",
+              "RelativeDocumentMoniker": "..\\Populate_Data.sql",
+              "ToolTip": "C:\\Users\\khesh\\OneDrive\\Documents\\Github\\Unity\\Sales-Marketing-Company-Mockup-Database\\Populate_Data.sql",
+              "RelativeToolTip": "..\\Populate_Data.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-03-01T19:05:41.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InitialSchema.sql",
+              "DocumentMoniker": "C:\\Users\\khesh\\OneDrive\\Documents\\Github\\Unity\\Sales-Marketing-Company-Mockup-Database\\InitialSchema.sql",
+              "RelativeDocumentMoniker": "..\\InitialSchema.sql",
+              "ToolTip": "C:\\Users\\khesh\\OneDrive\\Documents\\Github\\Unity\\Sales-Marketing-Company-Mockup-Database\\InitialSchema.sql",
+              "RelativeToolTip": "..\\InitialSchema.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-03-01T18:24:44.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DropSchema.sql",
+              "DocumentMoniker": "C:\\Users\\khesh\\OneDrive\\Documents\\Github\\Unity\\Sales-Marketing-Company-Mockup-Database\\DropSchema.sql",
+              "RelativeDocumentMoniker": "..\\DropSchema.sql",
+              "ToolTip": "C:\\Users\\khesh\\OneDrive\\Documents\\Github\\Unity\\Sales-Marketing-Company-Mockup-Database\\DropSchema.sql",
+              "RelativeToolTip": "..\\DropSchema.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-03-01T18:24:43.279Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

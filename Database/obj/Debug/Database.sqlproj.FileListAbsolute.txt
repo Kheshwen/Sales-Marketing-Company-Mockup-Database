@@ -15,7 +15,3 @@ C:\Users\khesh\OneDrive\Documents\Github\Unity\Sales-Marketing-Company-Mockup-Da
 C:\Users\khesh\OneDrive\Documents\Github\Unity\Sales-Marketing-Company-Mockup-Database\Database\bin\Debug\Database.dll
 C:\Users\khesh\OneDrive\Documents\Github\Unity\Sales-Marketing-Company-Mockup-Database\Database\bin\Debug\Database.pdb
 C:\Users\khesh\OneDrive\Documents\Github\Unity\Sales-Marketing-Company-Mockup-Database\Database\bin\Debug\Populate_Data.sql
-C:\Users\khesh\OneDrive\Documents\Github\Unity\Sales-Marketing-Company-Mockup-Database\Database\obj\Debug\Model.xml
-C:\Users\khesh\OneDrive\Documents\Github\Unity\Sales-Marketing-Company-Mockup-Database\Database\obj\Debug\refactor.xml
-C:\Users\khesh\OneDrive\Documents\Github\Unity\Sales-Marketing-Company-Mockup-Database\Database\obj\Debug\postdeploy.sql
-C:\Users\khesh\OneDrive\Documents\Github\Unity\Sales-Marketing-Company-Mockup-Database\Database\obj\Debug\predeploy.sql

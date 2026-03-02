@@ -1,38 +1,41 @@
 ﻿-- Drop the many-to-many "Mapping" tables first
-DROP TABLE KZFF_EmployeeWorkstation;
-DROP TABLE KZFF_EmployeePerson;
-DROP TABLE KZFF_PostCampaignRevenue;
-DROP TABLE KZFF_EmployeeCertification;
-DROP TABLE KZFF_MeetingAttendance;
-DROP TABLE KZFF_EmployeeAssignment;
+DROP TABLE EmployeeWorkstation;
+DROP TABLE EmployeePerson;
+DROP TABLE PostCampaignRevenue;
+DROP TABLE EmployeeCertification;
+DROP TABLE MeetingAttendance;
+DROP TABLE EmployeeAssignment;
 
 -- Drop the tables with the most dependencies next
-DROP TABLE KZFF_Expenditure;
-DROP TABLE KZFF_Revenue;
-DROP TABLE KZFF_FinanceRecord;
-DROP TABLE KZFF_Campaignideas;
-DROP TABLE KZFF_PostCampaignReport;
-DROP TABLE KZFF_CampaignStatus;
-DROP TABLE KZFF_CampaignExecution;
-DROP TABLE KZFF_Meeting;
-DROP TABLE KZFF_WorkOrder;
-DROP TABLE KZFF_Proposal;
-DROP TABLE KZFF_PhysicalCampaign;
-DROP TABLE KZFF_SocialMediaCampaign;
-DROP TABLE KZFF_DigitalCampaign;
-DROP TABLE KZFF_Campaign;
-DROP TABLE KZFF_Certification;
-DROP TABLE KZFF_SalesMarketing;
-DROP TABLE KZFF_Finance;
-DROP TABLE KZFF_Tech;
-DROP TABLE KZFF_Management;
-DROP TABLE KZFF_Client;
-DROP TABLE KZFF_Employee;
-DROP TABLE KZFF_Address;
-DROP TABLE KZFF_WorkLocation;
-DROP TABLE KZFF_Contact;
-DROP TABLE KZFF_Person;
+DROP TABLE Expenditure;
+DROP TABLE Revenue;
+DROP TABLE FinanceRecord;
+DROP TABLE Campaignideas;
+DROP TABLE PostCampaignReport;
+DROP TABLE CampaignStatus;
+DROP TABLE CampaignExecution;
+DROP TABLE Meeting;
+DROP TABLE WorkOrder;
+DROP TABLE Proposal;
+DROP TABLE PhysicalCampaign;
+DROP TABLE SocialMediaCampaign;
+DROP TABLE DigitalCampaign;
+DROP TABLE Campaign;
+DROP TABLE Certification;
+DROP TABLE SalesMarketing;
+DROP TABLE Finance;
+DROP TABLE Tech;
+DROP TABLE Management;
+DROP TABLE Client;
+DROP TABLE Employee;
+DROP TABLE Address;
+DROP TABLE WorkLocation;
+DROP TABLE Contact;
+DROP TABLE Person;
+
 
 COMMIT;
 
--- PURGE RECYCLEBIN; -- Clears the recycle bin so your database stays clean
+PURGE RECYCLEBIN; -- PURGE RECYCLEBIN; -- Clears the recycle bin so your database stays clean
+
+CLEAR SCREEN;

@@ -51,117 +51,120 @@ COMMIT;
 -- CONTACT TABLE
 -- Mapping: Stripped '+' and used numeric IDs
 -- Contact data (C0001–C0050)
-INSERT INTO Contact VALUES ('C0001','CT001','+60123456789','ali@gmail.com','ali@technova.com','+60129876543','linkedin.com/in/ali','Email','English','CEO');
-INSERT INTO Contact VALUES ('C0002','CT002','+60129876543','siti@gmail.com','siti@greenenergy.co','+60123456789','linkedin.com/in/siti','Phone','Malay','Manager');
-INSERT INTO Contact VALUES ('C0003','CT003','+60121234567','daniel@gmail.com','daniel@fastlogistics.com','+60127654321','linkedin.com/in/daniel','Email','English','Director');
-INSERT INTO Contact VALUES ('C0004','CT004','+60122334455','aisyah@gmail.com','aisyah@healthplus.com','+60128765432','linkedin.com/in/aisyah','Email','Malay','HR Lead');
-INSERT INTO Contact VALUES ('C0005','CT005','+60123455678','arjun@gmail.com','arjun@buildit.com','+60126543210','linkedin.com/in/arjun','Phone','English','Project Manager');
-INSERT INTO Contact VALUES ('C0006','CT006','+60126789012','hannah@gmail.com','hannah@marketmakers.com','+60127890123','linkedin.com/in/hannah','Email','English','Marketing Lead');
+-- Rows 1-10
+INSERT INTO Contact VALUES ('C0001','CT001','+60123456789','ali@gmail.com','ali@technova.com','+60129876543','https://linkedin.com/in/ali','Email','English','CEO');
+INSERT INTO Contact VALUES ('C0002','CT002','+60129876543','siti@gmail.com','siti@greenenergy.co','+60123456789','https://linkedin.com/in/siti','Phone','Malay','Manager');
+INSERT INTO Contact VALUES ('C0003','CT003','+60121234567','daniel@gmail.com','daniel@fastlogistics.com','+60127654321','https://linkedin.com/in/daniel','Email','English','Director');
+INSERT INTO Contact VALUES ('C0004','CT004','+60122334455','aisyah@gmail.com','aisyah@healthplus.com','+60128765432','https://linkedin.com/in/aisyah','Email','Malay','HR Lead');
+INSERT INTO Contact VALUES ('C0005','CT005','+60123455678','arjun@gmail.com','arjun@buildit.com','+60126543210','https://linkedin.com/in/arjun','Phone','English','Project Manager');
+INSERT INTO Contact VALUES ('C0006','CT006','+60126789012','hannah@gmail.com','hannah@marketmakers.com','+60127890123','https://linkedin.com/in/hannah','Email','English','Marketing Lead');
+INSERT INTO Contact VALUES ('C0007','CT007','+60123456701','john@gmail.com','john@fintech.com','+60127654321','https://linkedin.com/in/john','Phone','English','CFO');
+INSERT INTO Contact VALUES ('C0008','CT008','+60127890145','sarah@gmail.com','sarah@consultant.com','+60123456789','https://linkedin.com/in/sarah','Email','English','Coordinator');
+INSERT INTO Contact VALUES ('C0009','CT009','+60123456790','adam@gmail.com','adam@agrofile.com','+60127654321','https://linkedin.com/in/adam','Phone','Malay','Operations Manager');
+INSERT INTO Contact VALUES ('C0010','CT010','+60125678901','nurul@gmail.com','nurul@creativeminds.com','+60128765432','https://linkedin.com/in/nurul','Email','Malay','Designer');
 
-INSERT INTO Contact VALUES ('C0007','CT007','+60123456701','john@gmail.com','john@fintech.com','+60127654321','linkedin.com/in/john','Phone','English','CFO');
-INSERT INTO Contact VALUES ('C0008','CT008','+60127890145','sarah@gmail.com','sarah@consultant.com','+60123456789','linkedin.com/in/sarah','Email','English','Coordinator');
-INSERT INTO Contact VALUES ('C0009','CT009','+60123456790','adam@gmail.com','adam@agrofile.com','+60127654321','linkedin.com/in/adam','Phone','Malay','Operations Manager');
-INSERT INTO Contact VALUES ('C0010','CT010','+60125678901','nurul@gmail.com','nurul@creativeminds.com','+60128765432','linkedin.com/in/nurul','Email','Malay','Designer');
-INSERT INTO Contact VALUES ('C0011','CT001','+60139105213','rye@gmail.com','hannah@marketmakers.com','+60129876543','linkedin.com/in/rye','Email','English','CEO');
-INSERT INTO Contact VALUES ('C0012','CT002','+60146738729','adam@gmail.com','adam@ziesic.com','+60123656789','linkedin.com/in/adamz','Phone','Malay','Manager');
+-- Rows 11-20
+INSERT INTO Contact VALUES ('C0011','CT011','+60139105213','rye@gmail.com','hannah@marketmakers.com','+60129876543','https://linkedin.com/in/rye','Email','English','CEO');
+INSERT INTO Contact VALUES ('C0012','CT012','+60146738729','adam@gmail.com','adam@ziesic.com','+60123656789','https://linkedin.com/in/adamz','Phone','Malay','Manager');
+INSERT INTO Contact VALUES ('C0013','CT013','+60123901234','mike@gmail.com','mike@getlike.com','+60127754321','https://linkedin.com/in/mike','Email','English','Director');
+INSERT INTO Contact VALUES ('C0014','CT014','+60125678901','lia@gmail.com','lia@propergreen.com','+60128365432','https://linkedin.com/in/lia','Email','Malay','HR Lead');
+INSERT INTO Contact VALUES ('C0015','CT015','+60123567891','sim@gmail.com','sim@techmail.com','+6012643210','https://linkedin.com/in/sim','Phone','English','Project Manager');
+INSERT INTO Contact VALUES ('C0016','CT016','+60123456746','hannahw@gmail.com','hannah@market.com','+60127690123','https://linkedin.com/in/hannahw','Email','English','Marketing Lead');
+INSERT INTO Contact VALUES ('C0017','CT017','+60123456701','mini@gmail.com','mini@greenbeer.com','+60127754321','https://linkedin.com/in/mini','Phone','English','CFO');
+INSERT INTO Contact VALUES ('C0018','CT018','+60123456789','marcis@gmail.com','marcis@business.com','+60123956789','https://linkedin.com/in/marcis','Email','English','Coordinator');
+INSERT INTO Contact VALUES ('C0019','CT019','+60129876543','khai@gmail.com','khai@prosperex.com','+60127434521','https://linkedin.com/in/khai','Phone','Malay','Operations Manager');
+INSERT INTO Contact VALUES ('C0020','CT020','+60122334567','syla@gmail.com','syla@greenbar.com','+60128365432','https://linkedin.com/in/syla','Email','Malay','Designer');
 
-INSERT INTO Contact VALUES ('C0013','CT003','+60123901234','mike@gmail.com','mike@getlike.com','+60127754321','linkedin.com/in/mike','Email','English','Director');
-INSERT INTO Contact VALUES ('C0014','CT004','+60125678901','lia@gmail.com','lia@propergreen.com','+60128365432','linkedin.com/in/lia','Email','Malay','HR Lead');
-INSERT INTO Contact VALUES ('C0015','CT005','+60123567891','sim@gmail.com','sim@techmail.com','+6012643210','linkedin.com/in/sim','Phone','English','Project Manager');
-INSERT INTO Contact VALUES ('C0016','CT006','+60123456746','hannahw@gmail.com','hannah@market.com','+60127690123','linkedin.com/in/hannahw','Email','English','Marketing Lead');
-INSERT INTO Contact VALUES ('C0017','CT007','+60123456701','mini@gmail.com','mini@greenbeer.com','+60127754321','linkedin.com/in/mini','Phone','English','CFO');
-INSERT INTO Contact VALUES ('C0018','CT008','+60123456789','marcis@gmail.com','marcis@business.com','+60123956789','linkedin.com/in/marcis','Email','English','Coordinator');
+-- Rows 21-30
+INSERT INTO Contact VALUES ('C0021','CT021','+60123434545','chai@gmail.com','chai@rya.com','+60129876543','https://linkedin.com/in/chai','Email','English','CEO');
+INSERT INTO Contact VALUES ('C0022','CT022','+60123435678','lara@gmail.com','lara@techiee.com','+60123335679','https://linkedin.com/in/lara','Phone','Malay','Manager');
+INSERT INTO Contact VALUES ('C0023','CT023','+60126789012','lee@gmail.com','lee@finance.com','+60127754321','https://linkedin.com/in/lee','Email','English','Director');
+INSERT INTO Contact VALUES ('C0024','CT024','+60123456701','mimi@gmail.com','mimi@businessclub.com','+60127654342','https://linkedin.com/in/mimi','Email','Malay','HR Lead');
+INSERT INTO Contact VALUES ('C0025','CT025','+60127890145','kyla@gmail.com','kya@techhub.com','+60166634210','https://linkedin.com/in/kyla','Phone','English','Project Manager');
+INSERT INTO Contact VALUES ('C0026','CT026','+60123456798','jamie@gmail.com','jamie@growthleaders.com','+60127089123','https://linkedin.com/in/jamie','Email','English','Marketing Lead');
+INSERT INTO Contact VALUES ('C0027','CT027','+60125789001','tina@gmail.com','tina@zories.com','+60127754321','https://linkedin.com/in/tina','Phone','English','CFO');
+INSERT INTO Contact VALUES ('C0028','CT028','+60139105213','siti2@gmail.com','siti@getlike.com','+60123467890','https://linkedin.com/in/siti2','Email','English','Coordinator');
+INSERT INTO Contact VALUES ('C0029','CT029','+60146798329','leo@gmail.com','leo@operverse.com','+60127654321','https://linkedin.com/in/leo','Phone','Malay','Operations Manager');
+INSERT INTO Contact VALUES ('C0030','CT030','+60123898490','lei@gmail.com','lei@techmail.com','+60128765432','https://linkedin.com/in/lei','Email','Malay','Designer');
 
-INSERT INTO Contact VALUES ('C0019','CT009','+60129876543','khai@gmail.com','khai@prosperex.com','+60127434521','linkedin.com/in/khai','Phone','Malay','Operations Manager');
-INSERT INTO Contact VALUES ('C0020','CT010','+60122334567','syla@gmail.com','syla@greenbar.com','+60128365432','linkedin.com/in/syla','Email','Malay','Designer');
-INSERT INTO Contact VALUES ('C0021','CT001','+60123434545','chai@gmail.com','chai@rya.com','+60129876543','linkedin.com/in/chai','Email','English','CEO');
-INSERT INTO Contact VALUES ('C0022','CT002','+60123435678','lara@gmail.com','lara@techiee.com','+60123335679','linkedin.com/in/lara','Phone','Malay','Manager');
-INSERT INTO Contact VALUES ('C0023','CT003','+60126789012','lee@gmail.com','lee@finance.com','+60127754321','linkedin.com/in/lee','Email','English','Director');
-INSERT INTO Contact VALUES ('C0024','CT004','+60123456701','mimi@gmail.com','mimi@businessclub.com','+60127654342','linkedin.com/in/mimi','Email','Malay','HR Lead');
-INSERT INTO Contact VALUES ('C0025','CT005','+60127890145','kyla@gmail.com','kya@techhub.com','+60166634210','linkedin.com/in/kyla','Phone','English','Project Manager');
-INSERT INTO Contact VALUES ('C0026','CT006','+60123456798','jamie@gmail.com','jamie@growthleaders.com','+60127089123','linkedin.com/in/jamie','Email','English','Marketing Lead');
-INSERT INTO Contact VALUES ('C0027','CT007','+60125789001','tina@gmail.com','tina@zories.com','+60127754321','linkedin.com/in/tina','Phone','English','CFO');
-INSERT INTO Contact VALUES ('C0028','CT008','+60139105213','siti2@gmail.com','siti@getlike.com','+60123467890','linkedin.com/in/siti2','Email','English','Coordinator');
-INSERT INTO Contact VALUES ('C0029','CT009','+60146798329','leo@gmail.com','leo@operverse.com','+60127654321','linkedin.com/in/leo','Phone','Malay','Operations Manager');
-INSERT INTO Contact VALUES ('C0030','CT010','+60123898490','lei@gmail.com','lei@techmail.com','+60128765432','linkedin.com/in/lei','Email','Malay','Designer');
+-- Rows 31-40
+INSERT INTO Contact VALUES ('C0031','CT031','+60125789001','kev@gmail.com','kev@market.com','+60129876543','https://linkedin.com/in/kev','Email','English','CEO');
+INSERT INTO Contact VALUES ('C0032','CT032','+60125789001','cinta@gmail.com','cinta@gpro.com','+60129876543','https://linkedin.com/in/cinta','Phone','Malay','Manager');
+INSERT INTO Contact VALUES ('C0033','CT033','+60123456701','shala@gmail.com','shala@business.com','+60127654321','https://linkedin.com/in/shala','Email','English','Director');
+INSERT INTO Contact VALUES ('C0034','CT034','+60123456701','komie@gmail.com','komie@prospereme.com','+60128765432','https://linkedin.com/in/komie','Email','Malay','HR Lead');
+INSERT INTO Contact VALUES ('C0035','CT035','+60123456789','vid@gmail.com','vid@greenbeer.com','+60126543210','https://linkedin.com/in/vid','Phone','English','Project Manager');
+INSERT INTO Contact VALUES ('C0036','CT036','+60129876543','haba@gmail.com','haba@lya.com','+60127890123','https://linkedin.com/in/haba','Email','English','Marketing Lead');
+INSERT INTO Contact VALUES ('C0037','CT037','+60122334567','liava@gmail.com','liava@techiee.com','+60127754321','https://linkedin.com/in/liava','Phone','English','CFO');
+INSERT INTO Contact VALUES ('C0038','CT038','+60123234455','lrvvee@gmail.com','lee@finance.com','+60128365432','https://linkedin.com/in/lrvee','Email','English','Coordinator');
+INSERT INTO Contact VALUES ('C0039','CT039','+60123435678','mimi02@gmail.com','mimi@businessclub.com','+60127654321','https://linkedin.com/in/mimi02','Phone','Malay','Operations Manager');
+INSERT INTO Contact VALUES ('C0040','CT040','+60126789012','kyz@gmail.com','kyz@techhub.com','+60127654342','https://linkedin.com/in/kyz','Email','English','Designer');
 
-INSERT INTO Contact VALUES ('C0031','CT001','+60125789001','kev@gmail.com','kev@market.com','+60129876543','linkedin.com/in/kev','Email','English','CEO');
-INSERT INTO Contact VALUES ('C0032','CT002','+60125789001','cinta@gmail.com','cinta@gpro.com','+60129876543','linkedin.com/in/cinta','Phone','Malay','Manager');
-INSERT INTO Contact VALUES ('C0033','CT003','+60123456701','shala@gmail.com','shala@business.com','+60127654321','linkedin.com/in/shala','Email','English','Director');
-INSERT INTO Contact VALUES ('C0034','CT004','+60123456701','komie@gmail.com','komie@prospereme.com','+60128765432','linkedin.com/in/komie','Email','Malay','HR Lead');
-INSERT INTO Contact VALUES ('C0035','CT005','+60123456789','vid@gmail.com','vid@greenbeer.com','+60126543210','linkedin.com/in/vid','Phone','English','Project Manager');
-INSERT INTO Contact VALUES ('C0036','CT006','+60129876543','haba@gmail.com','haba@lya.com','+60127890123','linkedin.com/in/haba','Email','English','Marketing Lead');
-INSERT INTO Contact VALUES ('C0037','CT007','+60122334567','liava@gmail.com','liava@techiee.com','+60127754321','linkedin.com/in/liava','Phone','English','CFO');
-INSERT INTO Contact VALUES ('C0038','CT008','+60123234455','lrvvee@gmail.com','lee@finance.com','+60128365432','linkedin.com/in/lrvee','Email','English','Coordinator');
-INSERT INTO Contact VALUES ('C0039','CT009','+60123435678','mimi02@gmail.com','mimi@businessclub.com','+60127654321','linkedin.com/in/mimi02','Phone','Malay','Operations Manager');
-INSERT INTO Contact VALUES ('C0040','CT010','+60126789012','kyz@gmail.com','kyz@techhub.com','+60127654342','linkedin.com/in/kyz','Email','English','Designer');
-INSERT INTO Contact VALUES ('C0041','CT001','+60123456701','mikey@gmail.com','mikey@market.com','+60129876543','linkedin.com/in/mikey','Email','English','CEO');
-INSERT INTO Contact VALUES ('C0042','CT002','+60127890145','loha@gmail.com','loha@gpro.com','+60123456789','linkedin.com/in/loha','Phone','Malay','Manager');
+-- Rows 41-50
+INSERT INTO Contact VALUES ('C0041','CT041','+60123456701','mikey@gmail.com','mikey@market.com','+60129876543','https://linkedin.com/in/mikey','Email','English','CEO');
+INSERT INTO Contact VALUES ('C0042','CT042','+60127890145','loha@gmail.com','loha@gpro.com','+60123456789','https://linkedin.com/in/loha','Phone','Malay','Manager');
+INSERT INTO Contact VALUES ('C0043','CT043','+60124567890','kiter@gmail.com','kiter@business.com','+60127684321','https://linkedin.com/in/kiter','Email','English','Director');
+INSERT INTO Contact VALUES ('C0044','CT044','+60125678901','lamie@gmail.com','lamie@prospergreen.com','+60128765432','https://linkedin.com/in/lamie','Email','Malay','HR Lead');
+INSERT INTO Contact VALUES ('C0045','CT045','+60139105213','aisyya@gmail.com','aisyya@greenbeer.com','+60126543210','https://linkedin.com/in/aisyya','Phone','English','Project Manager');
+INSERT INTO Contact VALUES ('C0046','CT046','+60146578329','sese@gmail.com','sese@lya.com','+60127890123','https://linkedin.com/in/sese','Email','English','Marketing Lead');
+INSERT INTO Contact VALUES ('C0047','CT047','+60123849900','husna@gmail.com','husna@techie.com','+60127654321','https://linkedin.com/in/husna','Phone','English','CFO');
+INSERT INTO Contact VALUES ('C0048','CT048','+60125678901','iyai@gmail.com','iyai@finance.com','+60123456789','https://linkedin.com/in/iyai','Email','English','Coordinator');
+INSERT INTO Contact VALUES ('C0049','CT049','+60125678901','hers@gmail.com','hers@businessloh.com','+60127654321','https://linkedin.com/in/hers','Phone','Malay','Operations Manager');
+INSERT INTO Contact VALUES ('C0050','CT050','+60123456701','damie@gmail.com','damie@techhhh.com','+60128765432','https://linkedin.com/in/damie','Email','Malay','Designer');
 
-INSERT INTO Contact VALUES ('C0043','CT003','+60124567890','kiter@gmail.com','kiter@business.com','+60127684321','linkedin.com/in/kiter','Email','English','Director');
-INSERT INTO Contact VALUES ('C0044','CT004','+60125678901','lamie@gmail.com','lamie@prospergreen.com','+60128765432','linkedin.com/in/lamie','Email','Malay','HR Lead');
-INSERT INTO Contact VALUES ('C0045','CT005','+60139105213','aisyya@gmail.com','aisyya@greenbeer.com','+60126543210','linkedin.com/in/aisyya','Phone','English','Project Manager');
-INSERT INTO Contact VALUES ('C0046','CT006','+60146578329','sese@gmail.com','sese@lya.com','+60127890123','linkedin.com/in/sese','Email','English','Marketing Lead');
-INSERT INTO Contact VALUES ('C0047','CT007','+60123849900','husna@gmail.com','husna@techie.com','+60127654321','linkedin.com/in/husna','Phone','English','CFO');
-INSERT INTO Contact VALUES ('C0048','CT008','+60125678901','iyai@gmail.com','iyai@finance.com','+60123456789','linkedin.com/in/iyai','Email','English','Coordinator');
-INSERT INTO Contact VALUES ('C0049','CT009','+60125678901','hers@gmail.com','hers@businessloh.com','+60127654321','linkedin.com/in/hers','Phone','Malay','Operations Manager');
-INSERT INTO Contact VALUES ('C0050','CT010','+60123456701','damie@gmail.com','damie@techhhh.com','+60128765432','linkedin.com/in/damie','Email','Malay','Designer');
+COMMIT;
 
-
-
-INSERT INTO Worklocation VALUES ('L001','BLK-A','HQ Office 1','Office',50,'High','Tier 1','Operational',TO_DATE('2026-02-01 08:00','YYYY-MM-DD HH24:MI'),'Near Stairwell');
-INSERT INTO Worklocation VALUES ('L002','BLK-A','HQ Office 2','Office',40,'Medium','Tier 2','Operational',TO_DATE('2026-02-01 09:00','YYYY-MM-DD HH24:MI'),'Near Elevator');
-INSERT INTO Worklocation VALUES ('L003','BLK-B','Server Room','Data Center',10,'Very High','Tier 1','Operational',TO_DATE('2026-01-30 18:00','YYYY-MM-DD HH24:MI'),'Emergency Exit Rear');
-INSERT INTO Worklocation VALUES ('L004','BLK-B','Conference Hall','Meeting Room',100,'Medium','Tier 2','Operational',TO_DATE('2026-01-31 10:00','YYYY-MM-DD HH24:MI'),'Front Exit');
-INSERT INTO Worklocation VALUES ('L005','BLK-C','Cafeteria','Dining',150,'Low','Tier 3','Operational',TO_DATE('2026-02-01 07:30','YYYY-MM-DD HH24:MI'),'Side Exit');
-INSERT INTO Worklocation VALUES ('L006','BLK-C','Gym','Recreation',50,'Low','Tier 3','Operational',TO_DATE('2026-01-31 08:00','YYYY-MM-DD HH24:MI'),'Near Stairwell');
-INSERT INTO Worklocation VALUES ('L007','BLK-D','IT Lab','Lab',30,'High','Tier 1','Operational',TO_DATE('2026-02-01 07:00','YYYY-MM-DD HH24:MI'),'Rear Exit');
-INSERT INTO Worklocation VALUES ('L008','BLK-D','HR Office','Office',20,'Medium','Tier 2','Operational',TO_DATE('2026-01-31 09:30','YYYY-MM-DD HH24:MI'),'Front Exit');
-INSERT INTO Worklocation VALUES ('L009','BLK-E','Finance Office','Office',25,'Medium','Tier 1','Operational',TO_DATE('2026-01-30 16:00','YYYY-MM-DD HH24:MI'),'Side Exit');
-INSERT INTO Worklocation VALUES ('L010','BLK-E','Marketing Office','Office',30,'Medium','Tier 2','Operational',TO_DATE('2026-01-30 15:50','YYYY-MM-DD HH24:MI'),'Front Exit');
-
+INSERT INTO Worklocation VALUES ('L001','BLK-A1','HQ Office 1','Office',50,'High','Tier 1','Operational',TO_DATE('2026-02-01 08:00','YYYY-MM-DD HH24:MI'),'Near Stairwell');
+INSERT INTO Worklocation VALUES ('L002','BLK-A2','HQ Office 2','Office',40,'Medium','Tier 2','Operational',TO_DATE('2026-02-01 09:00','YYYY-MM-DD HH24:MI'),'Near Elevator');
+INSERT INTO Worklocation VALUES ('L003','BLK-B1','Server Room','Data Center',10,'Very High','Tier 1','Operational',TO_DATE('2026-01-30 18:00','YYYY-MM-DD HH24:MI'),'Emergency Exit Rear');
+INSERT INTO Worklocation VALUES ('L004','BLK-B2','Conference Hall','Meeting Room',100,'Medium','Tier 2','Operational',TO_DATE('2026-01-31 10:00','YYYY-MM-DD HH24:MI'),'Front Exit');
+INSERT INTO Worklocation VALUES ('L005','BLK-C1','Cafeteria','Dining',150,'Low','Tier 3','Operational',TO_DATE('2026-02-01 07:30','YYYY-MM-DD HH24:MI'),'Side Exit');
+INSERT INTO Worklocation VALUES ('L006','BLK-C2','Gym','Recreation',50,'Low','Tier 3','Operational',TO_DATE('2026-01-31 08:00','YYYY-MM-DD HH24:MI'),'Near Stairwell');
+INSERT INTO Worklocation VALUES ('L007','BLK-D1','IT Lab','Lab',30,'High','Tier 1','Operational',TO_DATE('2026-02-01 07:00','YYYY-MM-DD HH24:MI'),'Rear Exit');
+INSERT INTO Worklocation VALUES ('L008','BLK-D2','HR Office','Office',20,'Medium','Tier 2','Operational',TO_DATE('2026-01-31 09:30','YYYY-MM-DD HH24:MI'),'Front Exit');
+INSERT INTO Worklocation VALUES ('L009','BLK-E1','Finance Office','Office',25,'Medium','Tier 1','Operational',TO_DATE('2026-01-30 16:00','YYYY-MM-DD HH24:MI'),'Side Exit');
+INSERT INTO Worklocation VALUES ('L010','BLK-E2','Marketing Office','Office',30,'Medium','Tier 2','Operational',TO_DATE('2026-01-30 15:50','YYYY-MM-DD HH24:MI'),'Front Exit');
 
 
-INSERT INTO Employee VALUES ('E001',1,TO_DATE('2022-01-10','YYYY-MM-DD'),4500.00,8.5,2,'Management','Active','Available','C0001');
-INSERT INTO Employee VALUES ('E002',1,TO_DATE('2021-03-15','YYYY-MM-DD'),5200.00,5.0,4,'Management','Active','On Leave','C0002');
-INSERT INTO Employee VALUES ('E003',1,TO_DATE('2020-06-20','YYYY-MM-DD'),6000.00,7.5,6,'Management','Active','Available','C0003');
-INSERT INTO Employee VALUES ('E004',1,TO_DATE('2023-02-01','YYYY-MM-DD'),4200.00,6.0,1,'Management','Active','Available','C0004');
-INSERT INTO Employee VALUES ('E005',1,TO_DATE('2019-09-10','YYYY-MM-DD'),7000.00,8.5,8,'Management','Active','Available','C0005');
-INSERT INTO Employee VALUES ('E006',1,TO_DATE('2022-11-05','YYYY-MM-DD'),4800.00,9.0,3,'Management','Active','On Leave','C0006');
-INSERT INTO Employee VALUES ('E007',1,TO_DATE('2021-07-19','YYYY-MM-DD'),4600.00,4.5,4,'Management','Resigned','N/A','C0007');
-INSERT INTO Employee VALUES ('E008',1,TO_DATE('2018-04-12','YYYY-MM-DD'),8000.00,5.5,10,'Management','Active','Available','C0008');
-INSERT INTO Employee VALUES ('E009',1,TO_DATE('2020-10-30','YYYY-MM-DD'),6500.00,7.5,6,'Management','Active','Available','C0009');
-INSERT INTO Employee VALUES ('E010',1,TO_DATE('2023-01-08','YYYY-MM-DD'),5000.00,9.5,2,'Management','Active','Available','C0010');
-INSERT INTO Employee VALUES ('E011',2,TO_DATE('2018-01-25','YYYY-MM-DD'),4500.00,5.5,2,'Tech','Active','Available','C0011');
-INSERT INTO Employee VALUES ('E012',2,TO_DATE('2018-06-18','YYYY-MM-DD'),5200.00,9.5,4,'Tech','Active','On Leave','C0012');
-INSERT INTO Employee VALUES ('E013',2,TO_DATE('2019-02-14','YYYY-MM-DD'),6000.00,7.5,6,'Tech','Active','Available','C0013');
-INSERT INTO Employee VALUES ('E014',2,TO_DATE('2021-01-04','YYYY-MM-DD'),4200.00,8.5,1,'Tech','Active','Available','C0014');
-INSERT INTO Employee VALUES ('E015',2,TO_DATE('2022-04-09','YYYY-MM-DD'),7000.00,7.0,8,'Tech','Active','Available','C0015');
-INSERT INTO Employee VALUES ('E016',2,TO_DATE('2022-07-21','YYYY-MM-DD'),4800.00,8.0,3,'Tech','Active','Available','C0016');
-INSERT INTO Employee VALUES ('E017',2,TO_DATE('2019-02-14','YYYY-MM-DD'),4600.00,9.5,4,'Tech','Resigned','Available','C0017');
-INSERT INTO Employee VALUES ('E018',2,TO_DATE('2024-01-15','YYYY-MM-DD'),8000.00,5.5,10,'Tech','Active','Available','C0018');
-INSERT INTO Employee VALUES ('E019',2,TO_DATE('2024-11-30','YYYY-MM-DD'),4500.00,7.5,2,'Tech','Active','On Leave','C0019');
-INSERT INTO Employee VALUES ('E020',2,TO_DATE('2021-09-13','YYYY-MM-DD'),5200.00,9.0,4,'Tech','Active','Available','C0020');
-INSERT INTO Employee VALUES ('E021',3,TO_DATE('2025-12-12','YYYY-MM-DD'),6000.00,9.5,6,'Finance','Active','Available','C0021');
-INSERT INTO Employee VALUES ('E022',3,TO_DATE('2024-11-30','YYYY-MM-DD'),4200.00,5.5,1,'Finance','Active','Available','C0022');
-INSERT INTO Employee VALUES ('E023',3,TO_DATE('2023-10-02','YYYY-MM-DD'),7000.00,6.5,8,'Finance','Active','Available','C0023');
-INSERT INTO Employee VALUES ('E024',3,TO_DATE('2025-07-09','YYYY-MM-DD'),4800.00,6.0,3,'Finance','Active','Available','C0024');
-INSERT INTO Employee VALUES ('E025',3,TO_DATE('2019-02-14','YYYY-MM-DD'),4600.00,7.5,4,'Finance','Resigned','Available','C0025');
-INSERT INTO Employee VALUES ('E026',3,TO_DATE('2023-03-10','YYYY-MM-DD'),8000.00,7.0,10,'Finance','Active','Available','C0026');
-INSERT INTO Employee VALUES ('E027',3,TO_DATE('2024-09-23','YYYY-MM-DD'),4500.00,7.0,2,'Finance','Active','Available','C0027');
-INSERT INTO Employee VALUES ('E028',3,TO_DATE('2025-09-26','YYYY-MM-DD'),5200.00,8.5,4,'Finance','Active','Available','C0028');
-INSERT INTO Employee VALUES ('E029',3,TO_DATE('2022-02-18','YYYY-MM-DD'),6000.00,9.5,6,'Finance','Active','Available','C0029');
-INSERT INTO Employee VALUES ('E030',3,TO_DATE('2024-01-15','YYYY-MM-DD'),4200.00,9.0,1,'Finance','Active','Available','C0030');
-INSERT INTO Employee VALUES ('E031',4,TO_DATE('2025-02-07','YYYY-MM-DD'),7000.00,7.0,8,'SalesMarketing','Active','Available','C0031');
-INSERT INTO Employee VALUES ('E032',4,TO_DATE('2022-04-09','YYYY-MM-DD'),4800.00,8.5,3,'SalesMarketing','Active','Available','C0032');
-INSERT INTO Employee VALUES ('E033',4,TO_DATE('2024-06-11','YYYY-MM-DD'),4600.00,9.0,4,'SalesMarketing','Resigned','Available','C0033');
-INSERT INTO Employee VALUES ('E034',4,TO_DATE('2025-09-26','YYYY-MM-DD'),8000.00,8.5,10,'SalesMarketing','Active','Available','C0034');
-INSERT INTO Employee VALUES ('E035',4,TO_DATE('2022-02-18','YYYY-MM-DD'),4500.00,9.0,2,'SalesMarketing','Active','Available','C0035');
-INSERT INTO Employee VALUES ('E036',4,TO_DATE('2023-03-10','YYYY-MM-DD'),5200.00,5.5,4,'SalesMarketing','Active','Available','C0036');
-INSERT INTO Employee VALUES ('E037',4,TO_DATE('2024-11-30','YYYY-MM-DD'),6000.00,7.5,6,'SalesMarketing','Active','Available','C0037');
-INSERT INTO Employee VALUES ('E038',4,TO_DATE('2021-09-13','YYYY-MM-DD'),4200.00,9.0,1,'SalesMarketing','Active','Available','C0038');
-INSERT INTO Employee VALUES ('E039',4,TO_DATE('2025-09-26','YYYY-MM-DD'),7000.00,8.5,8,'SalesMarketing','Active','Available','C0039');
-INSERT INTO Employee VALUES ('E040',4,TO_DATE('2024-06-11','YYYY-MM-DD'),4800.00,9.0,3,'SalesMarketing','Active','N/A','C0040');
+INSERT INTO Employee VALUES ('E001',1001,TO_DATE('2022-01-10','YYYY-MM-DD'),4500.00,8.5,2,'Management','Active','Available','C0001');
+INSERT INTO Employee VALUES ('E002',1002,TO_DATE('2021-03-15','YYYY-MM-DD'),5200.00,5.0,4,'Management','Active','On Leave','C0002');
+INSERT INTO Employee VALUES ('E003',1003,TO_DATE('2020-06-20','YYYY-MM-DD'),6000.00,7.5,6,'Management','Active','Available','C0003');
+INSERT INTO Employee VALUES ('E004',1004,TO_DATE('2023-02-01','YYYY-MM-DD'),4200.00,6.0,1,'Management','Active','Available','C0004');
+INSERT INTO Employee VALUES ('E005',1005,TO_DATE('2019-09-10','YYYY-MM-DD'),7000.00,8.5,8,'Management','Active','Available','C0005');
+INSERT INTO Employee VALUES ('E006',1006,TO_DATE('2022-11-05','YYYY-MM-DD'),4800.00,9.0,3,'Management','Active','On Leave','C0006');
+INSERT INTO Employee VALUES ('E007',1007,TO_DATE('2021-07-19','YYYY-MM-DD'),4600.00,4.5,4,'Management','Resigned','N/A','C0007');
+INSERT INTO Employee VALUES ('E008',1008,TO_DATE('2018-04-12','YYYY-MM-DD'),8000.00,5.5,10,'Management','Active','Available','C0008');
+INSERT INTO Employee VALUES ('E009',1009,TO_DATE('2020-10-30','YYYY-MM-DD'),6500.00,7.5,6,'Management','Active','Available','C0009');
+INSERT INTO Employee VALUES ('E010',1010,TO_DATE('2023-01-08','YYYY-MM-DD'),5000.00,9.5,2,'Management','Active','Available','C0010');
+INSERT INTO Employee VALUES ('E011',2001,TO_DATE('2018-01-25','YYYY-MM-DD'),4500.00,5.5,2,'Tech','Active','Available','C0011');
+INSERT INTO Employee VALUES ('E012',2002,TO_DATE('2018-06-18','YYYY-MM-DD'),5200.00,9.5,4,'Tech','Active','On Leave','C0012');
+INSERT INTO Employee VALUES ('E013',2003,TO_DATE('2019-02-14','YYYY-MM-DD'),6000.00,7.5,6,'Tech','Active','Available','C0013');
+INSERT INTO Employee VALUES ('E014',2004,TO_DATE('2021-01-04','YYYY-MM-DD'),4200.00,8.5,1,'Tech','Active','Available','C0014');
+INSERT INTO Employee VALUES ('E015',2005,TO_DATE('2022-04-09','YYYY-MM-DD'),7000.00,7.0,8,'Tech','Active','Available','C0015');
+INSERT INTO Employee VALUES ('E016',2006,TO_DATE('2022-07-21','YYYY-MM-DD'),4800.00,8.0,3,'Tech','Active','Available','C0016');
+INSERT INTO Employee VALUES ('E017',2007,TO_DATE('2019-02-14','YYYY-MM-DD'),4600.00,9.5,4,'Tech','Resigned','Available','C0017');
+INSERT INTO Employee VALUES ('E018',2008,TO_DATE('2024-01-15','YYYY-MM-DD'),8000.00,5.5,10,'Tech','Active','Available','C0018');
+INSERT INTO Employee VALUES ('E019',2009,TO_DATE('2024-11-30','YYYY-MM-DD'),4500.00,7.5,2,'Tech','Active','On Leave','C0019');
+INSERT INTO Employee VALUES ('E020',2010,TO_DATE('2021-09-13','YYYY-MM-DD'),5200.00,9.0,4,'Tech','Active','Available','C0020');
+INSERT INTO Employee VALUES ('E021',3001,TO_DATE('2025-12-12','YYYY-MM-DD'),6000.00,9.5,6,'Finance','Active','Available','C0021');
+INSERT INTO Employee VALUES ('E022',3002,TO_DATE('2024-11-30','YYYY-MM-DD'),4200.00,5.5,1,'Finance','Active','Available','C0022');
+INSERT INTO Employee VALUES ('E023',3003,TO_DATE('2023-10-02','YYYY-MM-DD'),7000.00,6.5,8,'Finance','Active','Available','C0023');
+INSERT INTO Employee VALUES ('E024',3004,TO_DATE('2025-07-09','YYYY-MM-DD'),4800.00,6.0,3,'Finance','Active','Available','C0024');
+INSERT INTO Employee VALUES ('E025',3005,TO_DATE('2019-02-14','YYYY-MM-DD'),4600.00,7.5,4,'Finance','Resigned','Available','C0025');
+INSERT INTO Employee VALUES ('E026',3006,TO_DATE('2023-03-10','YYYY-MM-DD'),8000.00,7.0,10,'Finance','Active','Available','C0026');
+INSERT INTO Employee VALUES ('E027',3007,TO_DATE('2024-09-23','YYYY-MM-DD'),4500.00,7.0,2,'Finance','Active','Available','C0027');
+INSERT INTO Employee VALUES ('E028',3008,TO_DATE('2025-09-26','YYYY-MM-DD'),5200.00,8.5,4,'Finance','Active','Available','C0028');
+INSERT INTO Employee VALUES ('E029',3009,TO_DATE('2022-02-18','YYYY-MM-DD'),6000.00,9.5,6,'Finance','Active','Available','C0029');
+INSERT INTO Employee VALUES ('E030',3010,TO_DATE('2024-01-15','YYYY-MM-DD'),4200.00,9.0,1,'Finance','Active','Available','C0030');
+INSERT INTO Employee VALUES ('E031',4001,TO_DATE('2025-02-07','YYYY-MM-DD'),7000.00,7.0,8,'SalesMarketing','Active','Available','C0031');
+INSERT INTO Employee VALUES ('E032',4002,TO_DATE('2022-04-09','YYYY-MM-DD'),4800.00,8.5,3,'SalesMarketing','Active','Available','C0032');
+INSERT INTO Employee VALUES ('E033',4003,TO_DATE('2024-06-11','YYYY-MM-DD'),4600.00,9.0,4,'SalesMarketing','Resigned','Available','C0033');
+INSERT INTO Employee VALUES ('E034',4004,TO_DATE('2025-09-26','YYYY-MM-DD'),8000.00,8.5,10,'SalesMarketing','Active','Available','C0034');
+INSERT INTO Employee VALUES ('E035',4005,TO_DATE('2022-02-18','YYYY-MM-DD'),4500.00,9.0,2,'SalesMarketing','Active','Available','C0035');
+INSERT INTO Employee VALUES ('E036',4006,TO_DATE('2023-03-10','YYYY-MM-DD'),5200.00,5.5,4,'SalesMarketing','Active','Available','C0036');
+INSERT INTO Employee VALUES ('E037',4007,TO_DATE('2024-11-30','YYYY-MM-DD'),6000.00,7.5,6,'SalesMarketing','Active','Available','C0037');
+INSERT INTO Employee VALUES ('E038',4008,TO_DATE('2021-09-13','YYYY-MM-DD'),4200.00,9.0,1,'SalesMarketing','Active','Available','C0038');
+INSERT INTO Employee VALUES ('E039',4009,TO_DATE('2025-09-26','YYYY-MM-DD'),7000.00,8.5,8,'SalesMarketing','Active','Available','C0039');
+INSERT INTO Employee VALUES ('E040',4010,TO_DATE('2024-06-11','YYYY-MM-DD'),4800.00,9.0,3,'SalesMarketing','Active','N/A','C0040');
 
 
 
@@ -174,7 +177,7 @@ INSERT INTO Management VALUES ('M005',1005,'Junior',200000.00,'Sales Manager','A
 INSERT INTO Management VALUES ('M006',1006,'Senior',450000.00,'COO','Active','Process Efficiency 20%','Full','Operational Overhaul','Eligible','E006');
 INSERT INTO Management VALUES ('M007',1007,'Middle',320000.00,'Marketing Director','Active','Brand Awareness 25%','Limited','Social Media Expansion','Eligible','E007');
 INSERT INTO Management VALUES ('M008',1008,'Junior',180000.00,'Project Manager','Active','On-time Delivery 90%','Limited','Project Planning','Eligible','E008');
-INSERT INTO Management VALUES ('M009',1009,'Senior',550000.00,'CTO','Active','Tech Innovation Index','Full','R&D Strategy','Eligible','E009');
+INSERT INTO Management VALUES ('M009',1009,'Senior',550000.00,'CTO','Active','Tech Innovation Index','Full','RnD Strategy','Eligible','E009');
 INSERT INTO Management VALUES ('M010',1010,'Middle',270000.00,'Finance Manager','Active','Budget Accuracy 98%','Limited','Audit Improvements','Eligible','E010');
 
 
@@ -186,7 +189,7 @@ INSERT INTO Tech VALUES ('T301','TS001','Software Engineer',0,'github.com/ali','
 INSERT INTO Tech VALUES ('T302','TS002','Software Engineer',1,'github.com/siti','JavaScript','Q15','HW002','Medium','Limited','Developer',TO_DATE('2024-03-10','YYYY-MM-DD'),'E012');
 INSERT INTO Tech VALUES ('T303','TS003','DevOps Engineer',0,'github.com/john','Python','Q20','HW003','High','Full','Admin',TO_DATE('2024-07-05','YYYY-MM-DD'),'E013');
 INSERT INTO Tech VALUES ('T304','TS004','QA Engineer',0,'github.com/aisyah','Java','Q25','HW004','Medium','Limited','Tester',TO_DATE('2024-05-22','YYYY-MM-DD'),'E014');
-INSERT INTO Tech VALUES ('T305','TS005','Security Engineer',1,'github.com/daniel','Python','Q30','HW005','Very High','Full','Admin',TO_DATE('2024-09-18','YYYY-MM-DD'),'E015');
+INSERT INTO Tech VALUES ('T305','TS005','Security Engineer',1,'github.com/daniel','Python','Q30','HW005','High','Full','Admin',TO_DATE('2024-09-18','YYYY-MM-DD'),'E015');
 INSERT INTO Tech VALUES ('T306','TS006','Full Stack Developer',0,'github.com/murman','Python/JS','Q35','HW006','High','Full','Admin',TO_DATE('2024-11-30','YYYY-MM-DD'),'E016');
 INSERT INTO Tech VALUES ('T307','TS007','Backend Developer',1,'github.com/arjun','SQL','Q40','HW007','Medium','Limited','Developer',TO_DATE('2025-01-12','YYYY-MM-DD'),'E017');
 INSERT INTO Tech VALUES ('T308','TS008','Frontend Developer',0,'github.com/sarah','JavaScript','Q45','HW008','Low','Limited','Developer',TO_DATE('2025-02-25','YYYY-MM-DD'),'E018');
@@ -204,7 +207,7 @@ INSERT INTO Finance VALUES ('F405','FRC005','Payroll Officer',30000.00,80000.00,
 INSERT INTO Finance VALUES ('F406','FRC006','Assistant Accountant',20000.00,50000.00,'Level 1','Dept Budget','GST','Expense Accuracy 95%','Full',TO_DATE('2026-04-30','YYYY-MM-DD'),'E026');
 INSERT INTO Finance VALUES ('F407','FRC007','Finance Analyst',70000.00,120000.00,'Level 2','Division Budget','Corporate Tax','ROI 15%','Full',TO_DATE('2026-09-30','YYYY-MM-DD'),'E027');
 INSERT INTO Finance VALUES ('F408','FRC008','Treasury Officer',80000.00,150000.00,'Level 2','Company Budget','Income Tax','Cashflow Accuracy 99%','Full',TO_DATE('2026-11-30','YYYY-MM-DD'),'E028');
-INSERT INTO Finance VALUES ('F409','FRC009','Senior Auditor',150000.00,300000.00,'Level 3','Company Budget','GST & Corporate Tax','Compliance 100%','Full',TO_DATE('2026-12-31','YYYY-MM-DD'),'E029');
+INSERT INTO Finance VALUES ('F409','FRC009','Senior Auditor',150000.00,300000.00,'Level 3','Company Budget','GST and Corporate Tax','Compliance 100%','Full',TO_DATE('2026-12-31','YYYY-MM-DD'),'E029');
 INSERT INTO Finance VALUES ('F410','FRC010','Chief Accountant',300000.00,600000.00,'Level 3','Entire Company','Corporate Tax','Financial Accuracy 100%','Full',TO_DATE('2026-12-31','YYYY-MM-DD'),'E030');
 
 COMMIT;

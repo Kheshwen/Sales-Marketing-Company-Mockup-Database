@@ -1,32 +1,32 @@
 -- 1. Independent Tables (No Foreign Keys)
-CREATE TABLE KZFF_Person (
+CREATE TABLE Person (
     person_id VARCHAR2(10) PRIMARY KEY,
     ic_number VARCHAR2(20) UNIQUE NOT NULL,
     full_name VARCHAR2(100) NOT NULL CHECK (LENGTH(full_name) > 0),
     first_name VARCHAR2(50) NOT NULL CHECK (LENGTH(first_name) > 0),
     surname_name VARCHAR2(50) NOT NULL CHECK (LENGTH(surname_name) > 0),
-    gender VARCHAR2(10) CHECK (gender IN ('Male', 'Female')),
-    date_of_birth DATE NOT NULL CHECK (date_of_birth <= SYSDATE),
+    gender VARCHAR2(10) CHECK (gender IN ('M', 'F')),
+    date_of_birth DATE NOT NULL,
     nationality VARCHAR2(50) NOT NULL CHECK (LENGTH(nationality) > 0),
     religion VARCHAR2(50) NOT NULL CHECK (LENGTH(religion) > 0),
     race VARCHAR2(50) NOT NULL CHECK (LENGTH(race) > 0),
     marital_status VARCHAR2(20) CHECK (marital_status IN ('Single', 'Married', 'Divorced', 'Widowed'))
 );
 
-CREATE TABLE KZFF_Contact (
+CREATE TABLE Contact (
     contact_id VARCHAR2(10) PRIMARY KEY,
     contact_type_code VARCHAR2(10) UNIQUE NOT NULL,
-    phone_number VARCHAR2(10) NOT NULL CHECK (TO_NUMBER(phone_number) > 0),
+    phone_number VARCHAR2(15) NOT NULL,
     email_address VARCHAR2(50) NOT NULL CHECK (email_address LIKE '%@%.%'),
     professional_email VARCHAR2(50) NOT NULL CHECK (professional_email LIKE '%@%.%'),
-    emergency_contact NUMBER NOT NULL CHECK (emergency_contact > 0),
-    linkedin_profile_url VARCHAR2(50) NOT NULL CHECK (linkedin_profile_url LIKE 'https://%'),
+    emergency_contact VARCHAR(15) NOT NULL,
+    linkedin_profile_url VARCHAR2(100) NOT NULL CHECK (linkedin_profile_url LIKE 'https://%'),
     preferred_comm_channel VARCHAR2(20) NOT NULL CHECK (preferred_comm_channel IN ('Email', 'Phone')),
     language_preference VARCHAR2(20) NOT NULL CHECK (language_preference IN ('English', 'Malay', 'Chinese', 'Other')),
-    job_title VARCHAR2(20) NOT NULL CHECK (LENGTH(job_title) > 0)
+    job_title VARCHAR2(50) NOT NULL CHECK (LENGTH(job_title) > 0)
 );
 
-CREATE TABLE KZFF_WorkLocation (
+CREATE TABLE WorkLocation (
     location_id VARCHAR2(10) PRIMARY KEY,
     building_section_code VARCHAR2(10) UNIQUE NOT NULL,
     location_name VARCHAR2(50) NOT NULL,
@@ -35,11 +35,11 @@ CREATE TABLE KZFF_WorkLocation (
     it_infrastructure_level VARCHAR2(20) NOT NULL CHECK (it_infrastructure_level IN ('Very High','High','Medium','Low')),
     access_security_tier VARCHAR2(10) NOT NULL CHECK (access_security_tier IN ('Tier 1','Tier 2','Tier 3')),
     current_operational_status VARCHAR2(50) NOT NULL CHECK (current_operational_status IN ('Operational', 'Active', 'Maintenance', 'Closed')),
-    last_sanitization_timestamp DATE NOT NULL CHECK (last_sanitization_timestamp <= SYSDATE),
+    last_sanitization_timestamp DATE NOT NULL,
     emergency_exit_proximity VARCHAR2(30) NOT NULL
 );
 
-CREATE TABLE KZFF_Certification (
+CREATE TABLE Certification (
     certification_id VARCHAR2(10) PRIMARY KEY,
     certification_name VARCHAR2(100) NOT NULL CHECK (LENGTH(certification_name) > 0),
     issuing_organization VARCHAR2(100) NOT NULL,
@@ -49,31 +49,31 @@ CREATE TABLE KZFF_Certification (
     official_verification_url VARCHAR2(100) NOT NULL CHECK (official_verification_url LIKE 'http%'),
     difficulty_level VARCHAR2(10) NOT NULL CHECK (difficulty_level IN ('Hard','Medium','Easy')),
     global_skill_category VARCHAR2(50) NOT NULL,
-    certificate_ref_number VARCHAR2(10) NOT NULL
+    certificate_ref_number VARCHAR2(20) NOT NULL
 );
 
 -- 2. First-Level Dependencies
-CREATE TABLE KZFF_Address (
+CREATE TABLE Address (
     address_id VARCHAR2(10) PRIMARY KEY,
-    address_type VARCHAR2(50) UNIQUE NOT NULL,
-    unit_no NUMBER CHECK (unit_no > 0),
+    address_type VARCHAR2(50) NOT NULL,
+    unit_no VARCHAR2(20) NOT NULL,
     address_line1 VARCHAR2(100) NOT NULL,
     address_line2 VARCHAR2(100) NOT NULL,
     city VARCHAR2(20) NOT NULL CHECK (LENGTH(city) > 1),
     state VARCHAR2(20) NOT NULL CHECK (LENGTH(state) > 1),
-    postcode NUMBER NOT NULL CHECK (postcode >= 4),
+    postcode VARCHAR2(10) NOT NULL,
     country VARCHAR2(10) NOT NULL CHECK (LENGTH(country) > 1),
     district VARCHAR2(10) NOT NULL,
     contact_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (contact_id) REFERENCES Contact(contact_id)
 );
 
-CREATE TABLE KZFF_Employee (
+CREATE TABLE Employee (
     employee_id VARCHAR2(10) PRIMARY KEY,
-    role_id VARCHAR(1) UNIQUE NOT NULL CHECK (LENGTH(role_id) IN ('1','2','3','4')),
+    role_id VARCHAR2(10) UNIQUE NOT NULL,
     hire_date DATE NOT NULL,
     base_salary NUMBER CHECK (base_salary > 0),
-    performance_rating NUMBER CHECK (performance_rating BETWEEN 1 AND 5),
+    performance_rating NUMBER NOT NULL,
     years_of_experience NUMBER CHECK (years_of_experience >= 0),
     department VARCHAR2(50) NOT NULL CHECK (LENGTH(department) > 0),
     employementStatus VARCHAR2(50) NOT NULL CHECK (LENGTH(employementStatus) > 0),
@@ -83,7 +83,7 @@ CREATE TABLE KZFF_Employee (
 );
 
 -- 3. Second-Level Dependencies (Rely on Employee & Contact)
-CREATE TABLE KZFF_Client (
+CREATE TABLE Client (
     client_id VARCHAR2(10) PRIMARY KEY,
     company_name VARCHAR2(50) NOT NULL CHECK (LENGTH(company_name) > 0),
     industry_sector_code VARCHAR2(10) NOT NULL CHECK (LENGTH(industry_sector_code) > 0),
@@ -101,7 +101,7 @@ CREATE TABLE KZFF_Client (
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
-CREATE TABLE KZFF_Management (
+CREATE TABLE Management (
     management_id VARCHAR2(10) PRIMARY KEY,
     board_member_id NUMBER UNIQUE NOT NULL,
     management_level VARCHAR2(50) NOT NULL CHECK (LENGTH(management_level) > 0),
@@ -116,16 +116,16 @@ CREATE TABLE KZFF_Management (
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
-CREATE TABLE KZFF_Tech (
+CREATE TABLE Tech (
     tech_id VARCHAR2(10) PRIMARY KEY,
     tech_specialization_code VARCHAR2(10) UNIQUE NOT NULL,
     tech_role VARCHAR2(50) NOT NULL CHECK (LENGTH(tech_role) > 0),
     legacy_system_access_flag NUMBER(1) DEFAULT 0 NOT NULL CHECK (legacy_system_access_flag IN (0,1)),
     github_username VARCHAR2(100) NOT NULL CHECK (LENGTH(github_username) > 0),
     primary_programming_language VARCHAR2(30) NOT NULL CHECK (LENGTH(primary_programming_language) > 0),
-    jira_ticket_quota VARCHAR2(50) NOT NULL CHECK (TO_NUMBER(jira_ticket_quota) >= 0),
+    jira_ticket_quota VARCHAR2(50) NOT NULL,
     hardware_asset_tag VARCHAR2(50) UNIQUE NOT NULL CHECK (LENGTH(hardware_asset_tag) > 0),
-    security_clearance_level VARCHAR2(10) DEFAULT 'Low' NOT NULL CHECK (security_clearance_level IN ('High','Low')),
+    security_clearance_level VARCHAR2(10) DEFAULT 'Low' NOT NULL CHECK (security_clearance_level IN ('High','Medium','Low')),
     vcs_branch_access VARCHAR2(50) NOT NULL CHECK (LENGTH(vcs_branch_access) > 0),
     api_access_key_level VARCHAR2(20) NOT NULL CHECK (LENGTH(api_access_key_level) > 0),
     last_skill_assessment_date DATE NOT NULL,
@@ -133,7 +133,7 @@ CREATE TABLE KZFF_Tech (
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
-CREATE TABLE KZFF_Finance (
+CREATE TABLE Finance (
     finance_id VARCHAR2(10) PRIMARY KEY,
     fiscal_role_code VARCHAR2(10) UNIQUE NOT NULL,
     accounting_designation VARCHAR2(50) NOT NULL CHECK (LENGTH(accounting_designation) > 0),
@@ -142,14 +142,14 @@ CREATE TABLE KZFF_Finance (
     payroll_authorization_level VARCHAR2(10) NOT NULL CHECK (payroll_authorization_level IN ('Level 1', 'Level 2', 'Level 3')),
     expense_approval_scope VARCHAR2(100) NOT NULL CHECK (LENGTH(expense_approval_scope) > 0),
     tax_jurisdiction_speciality VARCHAR2(50) NOT NULL CHECK (LENGTH(tax_jurisdiction_speciality) > 0),
-    fiscal_kpi VARCHAR2(50) NOT NULL CHECK (LENGTH(fiscal_kpi) <= 5),
+    fiscal_kpi VARCHAR2(50) NOT NULL,
     ledger_access_type VARCHAR2(20) NOT NULL CHECK (ledger_access_type IN ('Full','Limited')),
     reporting_cycle_deadline DATE NOT NULL,
     employee_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
-CREATE TABLE KZFF_SalesMarketing (
+CREATE TABLE SalesMarketing (
     salesmarketing_id VARCHAR2(10) PRIMARY KEY,
     market_segment_id NUMBER NOT NULL CHECK (market_segment_id > 0),
     sales_tier VARCHAR2(10) NOT NULL CHECK (sales_tier IN ('Gold','Silver','Bronze')),
@@ -164,29 +164,30 @@ CREATE TABLE KZFF_SalesMarketing (
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
-CREATE TABLE KZFF_Meeting (
+CREATE TABLE Meeting (
     meeting_id VARCHAR2(10) PRIMARY KEY,
     meeting_date DATE NOT NULL,
     meeting_subject VARCHAR2(20) NOT NULL CHECK (LENGTH(meeting_subject) <= 20),
     start_time TIMESTAMP(3) NOT NULL,
-    end_time TIMESTAMP(3) NOT NULL CHECK (end_time > start_time),
+    end_time TIMESTAMP(3) NOT NULL,
     meeting_type VARCHAR2(50) NOT NULL,
     agenda_summary VARCHAR2(1000) NOT NULL CHECK (LENGTH(agenda_summary) <= 1000),
     minute_of_meeting_link VARCHAR2(1000) UNIQUE CHECK (LENGTH(minute_of_meeting_link) <= 1000),
     related_entity_type VARCHAR2(20) NOT NULL CHECK (related_entity_type IN ('Project','Task','WorkOrder','Campaign')),
     related_entity_id NUMBER NOT NULL CHECK (related_entity_id > 0),
-    follow_up_action_flag BOOLEAN NOT NULL,
+    follow_up_action_flag NUMBER(1) NOT NULL CHECK (follow_up_action_flag IN (0,1)), -- Fixed BOOLEAN
     security_requirement_level VARCHAR2(50) NOT NULL CHECK (security_requirement_level IN ('Low','Medium','High','Confidential')),
     employee_id VARCHAR2(10) NOT NULL,
     location_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
-    FOREIGN KEY (location_id) REFERENCES WorkLocation(location_id)
+    FOREIGN KEY (location_id) REFERENCES WorkLocation(location_id),
+    CONSTRAINT check_meeting_duration CHECK (end_time > start_time)
 );
 
 -- 4. Third-Level Dependencies
-CREATE TABLE KZFF_Campaign (
+CREATE TABLE Campaign (
     campaign_id VARCHAR2(10) PRIMARY KEY,
-    version_tag VARCHAR2(10) UNIQUE NOT NULL CHECK (version_tag LIKE 'v%'),
+    version_tag VARCHAR2(10) NOT NULL,
     campaign_name VARCHAR2(20) NOT NULL CHECK (LENGTH(campaign_name) >= 3),
     strategic_objective VARCHAR2(100) NOT NULL CHECK (LENGTH(strategic_objective) > 10),
     employee_id VARCHAR2(10) NOT NULL,
@@ -195,7 +196,7 @@ CREATE TABLE KZFF_Campaign (
     FOREIGN KEY (client_id) REFERENCES Client(client_id)
 );
 
-CREATE TABLE KZFF_WorkOrder (
+CREATE TABLE WorkOrder (
     workorder_id VARCHAR2(10) PRIMARY KEY,
     project_phase_order VARCHAR2(50) UNIQUE NOT NULL,
     task_title VARCHAR2(20) NOT NULL CHECK (LENGTH(task_title) <= 20),
@@ -212,7 +213,7 @@ CREATE TABLE KZFF_WorkOrder (
     FOREIGN KEY (tech_id) REFERENCES Tech(tech_id)
 );
 
-CREATE TABLE KZFF_Proposal (
+CREATE TABLE Proposal (
     proposal_id VARCHAR2(10) PRIMARY KEY,
     proposal_reference_no NUMBER UNIQUE NOT NULL,
     proposal_status VARCHAR2(20) NOT NULL CHECK (proposal_status IN ('Draft', 'Sent', 'Accepted', 'Revised', 'Rejected')),
@@ -220,7 +221,7 @@ CREATE TABLE KZFF_Proposal (
     executive_summary VARCHAR2(1000) NOT NULL CHECK (LENGTH(executive_summary) > 50),
     total_investment_value NUMBER NOT NULL CHECK (total_investment_value >= 0),
     payment_terms VARCHAR2(50) NOT NULL CHECK (LENGTH(payment_terms) > 0),
-    validity_period_end DATE NOT NULL CHECK (validity_period_end > SYSDATE),
+    validity_period_end DATE NOT NULL, -- Fixed: Removed SYSDATE check
     estimated_timeline VARCHAR2(20) NOT NULL CHECK (LENGTH(estimated_timeline) > 0),
     approval_status NUMBER(1) NOT NULL CHECK (approval_status IN (0,1)),
     client_id VARCHAR2(10) NOT NULL,
@@ -229,7 +230,7 @@ CREATE TABLE KZFF_Proposal (
     FOREIGN KEY (salesmarketing_id) REFERENCES SalesMarketing(salesmarketing_id)
 );
 
-CREATE TABLE KZFF_Campaignideas (
+CREATE TABLE Campaignideas (
     idea_id VARCHAR2(10) PRIMARY KEY,
     idea_title VARCHAR2(50) UNIQUE NOT NULL,
     campaign_type VARCHAR2(50) NOT NULL CHECK (campaign_type IN ('Digital', 'Physical', 'Hybrid', 'Social')),
@@ -239,7 +240,7 @@ CREATE TABLE KZFF_Campaignideas (
     estimated_budget_requirement NUMBER NOT NULL CHECK (estimated_budget_requirement > 0),
     creative_concept_brief VARCHAR2(100) NOT NULL CHECK (LENGTH(creative_concept_brief) > 20),
     project_roi_metric NUMBER NOT NULL CHECK (project_roi_metric BETWEEN 0 AND 100),
-    creation_timestamp DATE NOT NULL CHECK (creation_timestamp <= SYSDATE),
+    creation_timestamp DATE NOT NULL, -- Fixed: Removed SYSDATE check
     last_modified_date DATE NOT NULL,
     salesmarketing_id VARCHAR2(10) NOT NULL,
     client_id VARCHAR2(10) NOT NULL,
@@ -247,10 +248,10 @@ CREATE TABLE KZFF_Campaignideas (
     FOREIGN KEY (client_id) REFERENCES Client(client_id)
 );
 
-CREATE TABLE KZFF_FinanceRecord (
+CREATE TABLE FinanceRecord (
     transaction_id VARCHAR2(10) PRIMARY KEY,
     fiscal_year NUMBER UNIQUE NOT NULL CHECK (fiscal_year BETWEEN 2020 AND 2100),
-    posting_date DATE NOT NULL CHECK (posting_date <= SYSDATE),
+    posting_date DATE NOT NULL,
     transaction_status VARCHAR2(50) NOT NULL CHECK (transaction_status IN ('Pending', 'Posted', 'Reversed', 'Void')),
     currency_code VARCHAR2(50) NOT NULL CHECK (currency_code IN ('MYR', 'USD', 'EUR', 'SGD')),
     general_ledger_code VARCHAR2(50) NOT NULL CHECK (LENGTH(general_ledger_code) >= 4),
@@ -264,7 +265,7 @@ CREATE TABLE KZFF_FinanceRecord (
 );
 
 -- 5. Fourth-Level Dependencies (Rely on Campaign or FinanceRecord)
-CREATE TABLE KZFF_DigitalCampaign (
+CREATE TABLE DigitalCampaign (
     digital_id VARCHAR2(10) PRIMARY KEY,
     digital_channel_type VARCHAR2(20) UNIQUE NOT NULL CHECK (digital_channel_type IN ('google ads', 'facebook ads', 'instagram ads', 'linkedin ads', 'email marketing')),
     target_url_slug VARCHAR2(50) NOT NULL CHECK (target_url_slug NOT LIKE '% %'),
@@ -279,7 +280,7 @@ CREATE TABLE KZFF_DigitalCampaign (
     FOREIGN KEY (campaign_id) REFERENCES Campaign(campaign_id)
 );
 
-CREATE TABLE KZFF_SocialMediaCampaign (
+CREATE TABLE SocialMediaCampaign (
     socialmedia_id VARCHAR2(10) PRIMARY KEY,
     platform_name VARCHAR2(20) UNIQUE NOT NULL CHECK (platform_name IN ('Facebook', 'Instagram', 'TikTok', 'X', 'LinkedIn')),
     handle_owner_id NUMBER NOT NULL CHECK (handle_owner_id > 0),
@@ -294,7 +295,7 @@ CREATE TABLE KZFF_SocialMediaCampaign (
     FOREIGN KEY (campaign_id) REFERENCES Campaign(campaign_id)
 );
 
-CREATE TABLE KZFF_PhysicalCampaign (
+CREATE TABLE PhysicalCampaign (
     physical_id VARCHAR2(10) PRIMARY KEY,
     event_type_code VARCHAR2(10) UNIQUE NOT NULL,
     booth_square_footage VARCHAR2(20) NOT NULL,
@@ -309,7 +310,7 @@ CREATE TABLE KZFF_PhysicalCampaign (
     FOREIGN KEY (campaign_id) REFERENCES Campaign(campaign_id)
 );
 
-CREATE TABLE KZFF_CampaignExecution (
+CREATE TABLE CampaignExecution (
     execution_id VARCHAR2(10) PRIMARY KEY,
     curr_execution_status VARCHAR2(50) UNIQUE NOT NULL,
     actual_launch_timestamp VARCHAR2(50) NOT NULL CHECK (LENGTH(actual_launch_timestamp) > 0),
@@ -319,13 +320,13 @@ CREATE TABLE KZFF_CampaignExecution (
     leads_generated_count NUMBER NOT NULL CHECK (leads_generated_count BETWEEN 0 AND 100),
     cost_per_lead NUMBER NOT NULL CHECK (cost_per_lead BETWEEN 0 AND 100),
     incident_log_summary VARCHAR2(50) NOT NULL CHECK (LENGTH(incident_log_summary) > 0),
-    last_performance_update TIMESTAMP NOT NULL CHECK (last_performance_update <= SYSDATE),
+    last_performance_update TIMESTAMP NOT NULL, -- Fixed: Removed SYSDATE check
     data_collection_status VARCHAR2(100) NOT NULL CHECK (data_collection_status IN ('Active', 'Partial', 'Synchronizing', 'Archived')),
     campaign_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (campaign_id) REFERENCES Campaign(campaign_id)
 );
 
-CREATE TABLE KZFF_Revenue (
+CREATE TABLE Revenue (
     revenue_id VARCHAR2(10) PRIMARY KEY,
     revenue_stream_id VARCHAR2(20) UNIQUE NOT NULL,
     payment_method VARCHAR2(50) NOT NULL CHECK (payment_method IN ('Credit Card', 'Wire Transfer', 'Cash', 'Cheque')),
@@ -334,7 +335,7 @@ CREATE TABLE KZFF_Revenue (
     recurring_revenue_flag VARCHAR2(20) NOT NULL CHECK (recurring_revenue_flag IN ('Yes', 'No')),
     collection_cycle_days NUMBER NOT NULL CHECK (collection_cycle_days BETWEEN 0 AND 365),
     tax_exempt_status VARCHAR2(20) NOT NULL CHECK (tax_exempt_status IN ('Exempt', 'Taxable', 'Zero-Rated')),
-    recognition_date DATE NOT NULL CHECK (recognition_date <= SYSDATE),
+    recognition_date DATE NOT NULL, -- Fixed: Removed SYSDATE check
     revenue_net_amount NUMBER NOT NULL CHECK (revenue_net_amount >= 0),
     client_id VARCHAR2(10) NOT NULL,
     transaction_id VARCHAR2(10) NOT NULL,
@@ -342,7 +343,7 @@ CREATE TABLE KZFF_Revenue (
     FOREIGN KEY (transaction_id) REFERENCES FinanceRecord(transaction_id)
 );
 
-CREATE TABLE KZFF_Expenditure (
+CREATE TABLE Expenditure (
     expenditure_id VARCHAR2(10) PRIMARY KEY,
     expense_category_id VARCHAR2(10) UNIQUE NOT NULL,
     pay_period_cycle VARCHAR2(50) NOT NULL CHECK (pay_period_cycle IN ('Weekly', 'Bi-Weekly', 'Monthly', 'Quarterly')),
@@ -359,18 +360,18 @@ CREATE TABLE KZFF_Expenditure (
 );
 
 -- 6. Fifth-Level Dependencies (Rely on CampaignExecution)
-CREATE TABLE KZFF_CampaignStatus (
+CREATE TABLE CampaignStatus (
     status_id VARCHAR2(10) PRIMARY KEY,
     status_change_id NUMBER UNIQUE NOT NULL,
     status_state VARCHAR2(20) NOT NULL CHECK (status_state IN ('Pending', 'Approved', 'In Progress', 'On Hold', 'Completed')),
     status_update_timestamp TIMESTAMP(3) NOT NULL,
     change_reason_code VARCHAR2(20) NOT NULL CHECK (LENGTH(change_reason_code) > 0),
     manager_comments VARCHAR2(50) NOT NULL CHECK (LENGTH(manager_comments) > 5),
-    automatics_flag BOOLEAN NOT NULL,
+    automatics_flag NUMBER(1) NOT NULL CHECK (automatics_flag IN (0,1)), -- Fixed BOOLEAN
     priority_level_at_time VARCHAR2(50) NOT NULL CHECK (priority_level_at_time IN ('Low', 'Medium', 'High', 'Critical')),
     previous_state_id NUMBER NOT NULL CHECK (previous_state_id >= 0),
-    notification_sent_date DATE NOT NULL CHECK (notification_sent_date <= SYSDATE),
-    estimated_resume_date DATE NOT NULL CHECK (estimated_resume_date >= SYSDATE),
+    notification_sent_date DATE NOT NULL,
+    estimated_resume_date DATE NOT NULL,
     workflow_step_number NUMBER NOT NULL CHECK (workflow_step_number > 0),
     execution_id VARCHAR2(10) NOT NULL,
     salesmarketing_id VARCHAR2(10) NOT NULL,
@@ -378,7 +379,7 @@ CREATE TABLE KZFF_CampaignStatus (
     FOREIGN KEY (salesmarketing_id) REFERENCES SalesMarketing(salesmarketing_id)
 );
 
-CREATE TABLE KZFF_PostCampaignReport (
+CREATE TABLE PostCampaignReport (
     report_id VARCHAR2(10) PRIMARY KEY,
     audit_version NUMBER UNIQUE NOT NULL,
     final_revenue_generated VARCHAR2(50) NOT NULL CHECK (LENGTH(final_revenue_generated) > 0),
@@ -388,7 +389,7 @@ CREATE TABLE KZFF_PostCampaignReport (
     top_performing_channel VARCHAR2(50) NOT NULL CHECK (LENGTH(top_performing_channel) > 0),
     client_feedback_summary VARCHAR2(50) NOT NULL CHECK (LENGTH(client_feedback_summary) > 0),
     incident_impact_assessment VARCHAR2(50) NOT NULL CHECK (LENGTH(incident_impact_assessment) > 0),
-    report_generation_date DATE NOT NULL CHECK (report_generation_date <= SYSDATE),
+    report_generation_date DATE NOT NULL, -- Fixed: Removed SYSDATE check
     presentation_link VARCHAR2(50) NOT NULL CHECK (presentation_link LIKE 'http%'),
     reviewed_by_manager_id VARCHAR2(50) NOT NULL CHECK (LENGTH(reviewed_by_manager_id) > 0),
     execution_id VARCHAR2(10) NOT NULL,
@@ -398,7 +399,7 @@ CREATE TABLE KZFF_PostCampaignReport (
 );
 
 -- 7. Explosion (Junction) Tables
-CREATE TABLE KZFF_MeetingAttendance (
+CREATE TABLE MeetingAttendance (
     meeting_id VARCHAR2(10) NOT NULL,
     employee_id VARCHAR2(10) NOT NULL,
     PRIMARY KEY (meeting_id, employee_id),
@@ -406,7 +407,7 @@ CREATE TABLE KZFF_MeetingAttendance (
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
-CREATE TABLE KZFF_EmployeeCertification (
+CREATE TABLE EmployeeCertification (
     employee_id VARCHAR2(10) NOT NULL,
     certification_id VARCHAR2(10) NOT NULL,
     PRIMARY KEY (employee_id, certification_id),
@@ -414,7 +415,7 @@ CREATE TABLE KZFF_EmployeeCertification (
     FOREIGN KEY (certification_id) REFERENCES Certification(certification_id)
 );
 
-CREATE TABLE KZFF_PostCampaignRevenue (
+CREATE TABLE PostCampaignRevenue (
     report_id VARCHAR2(10) NOT NULL,
     revenue_id VARCHAR2(10) NOT NULL,
     PRIMARY KEY (report_id, revenue_id),
@@ -422,7 +423,7 @@ CREATE TABLE KZFF_PostCampaignRevenue (
     FOREIGN KEY (revenue_id) REFERENCES Revenue(revenue_id)
 );
 
-CREATE TABLE KZFF_EmployeePerson (
+CREATE TABLE EmployeePerson (
     employee_id VARCHAR2(10) NOT NULL,
     person_id VARCHAR2(10) NOT NULL,
     PRIMARY KEY (employee_id, person_id),
@@ -430,7 +431,7 @@ CREATE TABLE KZFF_EmployeePerson (
     FOREIGN KEY (person_id) REFERENCES Person(person_id)
 );
 
-CREATE TABLE KZFF_EmployeeWorkstation (
+CREATE TABLE EmployeeWorkstation (
     employee_id VARCHAR2(10) NOT NULL,
     location_id VARCHAR2(10) NOT NULL,
     PRIMARY KEY (employee_id, location_id),
@@ -438,7 +439,7 @@ CREATE TABLE KZFF_EmployeeWorkstation (
     FOREIGN KEY (location_id) REFERENCES WorkLocation(location_id)
 );
 
-CREATE TABLE KZFF_EmployeeAssignment (
+CREATE TABLE EmployeeAssignment (
     employee_id VARCHAR2(10) NOT NULL,
     role_id VARCHAR(1) NOT NULL,
     assign_date DATE NOT NULL,

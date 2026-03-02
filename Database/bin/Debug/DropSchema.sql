@@ -4,6 +4,7 @@ DROP TABLE EmployeePerson;
 DROP TABLE PostCampaignRevenue;
 DROP TABLE EmployeeCertification;
 DROP TABLE MeetingAttendance;
+DROP TABLE EmployeeAssignment;
 
 -- Drop the tables with the most dependencies next
 DROP TABLE Expenditure;
@@ -32,7 +33,9 @@ DROP TABLE WorkLocation;
 DROP TABLE Contact;
 DROP TABLE Person;
 
--- Clears the recycle bin so your database stays clean
--- NOTE: 'PURGE RECYCLEBIN;' is Oracle-specific and will cause SQL80001 in SQL Server.
--- If you are executing this script on Oracle, uncomment the following line:
--- PURGE RECYCLEBIN;
+
+COMMIT;
+
+PURGE RECYCLEBIN;
+
+-- PURGE RECYCLEBIN; -- Clears the recycle bin so your database stays clean

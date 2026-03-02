@@ -4,6 +4,7 @@ DROP TABLE EmployeePerson;
 DROP TABLE PostCampaignRevenue;
 DROP TABLE EmployeeCertification;
 DROP TABLE MeetingAttendance;
+DROP TABLE EmployeeAssignment;
 
 -- Drop the tables with the most dependencies next
 DROP TABLE Expenditure;

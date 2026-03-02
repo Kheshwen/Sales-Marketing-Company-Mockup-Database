@@ -300,28 +300,27 @@ INSERT INTO Campaign VALUES ('CA030', 'V2', 'AlphaCore', 'To build strong and sc
 
 
 INSERT INTO DigitalCampaign VALUES ('DI001', 'Google Ads', 'launchtech2026', 'tech solutions', 'LaunchTech 2026 Now', 'Discover the latest tech solutions', 'EA001', 30, 80, 'https://launchtech.com', 'CA001');
-INSERT INTO DigitalCampaign VALUES ('DI002', 'Facebook Ads', 'greenenergypromo', 'sustainable energy', 'Green Energy Promo', 'Go green with our energy solutions', 'EA002', 45, 45, 75, 'https://greenenergy.com', 'CA002');
-INSERT INTO DigitalCampaign VALUES ('DI003', 'Instagram Ads', 'fastlogisticsboost', 'logistics services', 'Fast Logistics Boost', 'Expand your delivery coverage', 'EA003', 60, 60, 70, 'https://fastlogistics.com', 'CA003');
-INSERT INTO DigitalCampaign VALUES ('DI004', 'Google Ads', 'healthpluscare', 'health care', 'HealthPlus Care', 'Improve your wellness today', 'EA004', 30, 30, 78, 'https://healthplus.com', 'CA004');
-INSERT INTO DigitalCampaign VALUES ('DI005', 'LinkedIn Ads', 'builditcampaign', 'construction projects', 'BuildIt Campaign', 'Attract new projects easily', 'EA005', 90, 90, 85, 'https://buildit.com', 'CA005');
-INSERT INTO DigitalCampaign VALUES ('DI006', 'Email Marketing', 'marketmakerspush', 'digital marketing', 'Market Makers Push', 'Boost your sales with marketing', 'EA006', 30, 30, 80, 'https://marketmakers.com', 'CA006');
-INSERT INTO DigitalCampaign VALUES ('DI007', 'Google Ads', 'fintechgrowth', 'fintech products', 'FinTech Growth', 'Adopt fintech products today', 'EA007', 60, 60, 82, 'https://fintechsolutions.com', 'CA007');
-INSERT INTO DigitalCampaign VALUES ('DI008', 'Facebook Ads', 'edusmartdrive', 'e-learning', 'EduSmart Drive', 'Promote online learning', 'EA008', 45, 45, 77, 'https://edusmart.com', 'CA008');
-INSERT INTO DigitalCampaign VALUES ('DI009', 'Instagram Ads', 'agrolifeexpansion', 'agriculture services', 'AgroLife Expansion', 'Expand your farm business', 'EA009', 30, 30, 70, 'https://agrolife.com', 'CA009');
-INSERT INTO DigitalCampaign VALUES ('DI010', 'LinkedIn Ads', 'creativemindspromo', 'creative services', 'Creative Minds Promo', 'Promote your creative agency', 'EA010', 60, 60, 75, 'https://creativeminds.com', 'CA010');
+INSERT INTO DigitalCampaign VALUES ('DI002', 'Facebook Ads', 'greenenergypromo', 'sustainable energy', 'Green Energy Promo', 'Go green with our energy solutions', 'EA002', 45, 75, 'https://greenenergy.com', 'CA002');
+INSERT INTO DigitalCampaign VALUES ('DI003', 'Instagram Ads', 'fastlogisticsboost', 'logistics services', 'Fast Logistics Boost', 'Expand your delivery coverage', 'EA003', 60, 70, 'https://fastlogistics.com', 'CA003');
+INSERT INTO DigitalCampaign VALUES ('DI004', 'Google Ads', 'healthpluscare', 'health care', 'HealthPlus Care', 'Improve your wellness today', 'EA004', 30, 78, 'https://healthplus.com', 'CA004');
+INSERT INTO DigitalCampaign VALUES ('DI005', 'LinkedIn Ads', 'builditcampaign', 'construction projects', 'BuildIt Campaign', 'Attract new projects easily', 'EA005', 90,  85, 'https://buildit.com', 'CA005');
+INSERT INTO DigitalCampaign VALUES ('DI006', 'Email Marketing', 'marketmakerspush', 'digital marketing', 'Market Makers Push', 'Boost your sales with marketing', 'EA006', 30, 80, 'https://marketmakers.com', 'CA006');
+INSERT INTO DigitalCampaign VALUES ('DI007', 'Google Ads', 'fintechgrowth', 'fintech products', 'FinTech Growth', 'Adopt fintech products today', 'EA007', 60, 82, 'https://fintechsolutions.com', 'CA007');
+INSERT INTO DigitalCampaign VALUES ('DI008', 'Facebook Ads', 'edusmartdrive', 'e-learning', 'EduSmart Drive', 'Promote online learning', 'EA008', 45, 77, 'https://edusmart.com', 'CA008');
+INSERT INTO DigitalCampaign VALUES ('DI009', 'Instagram Ads', 'agrolifeexpansion', 'agriculture services', 'AgroLife Expansion', 'Expand your farm business', 'EA009', 30, 70, 'https://agrolife.com', 'CA009');
+INSERT INTO DigitalCampaign VALUES ('DI010', 'LinkedIn Ads', 'creativemindspromo', 'creative services', 'Creative Minds Promo', 'Promote your creative agency', 'EA010', 60, 75, 'https://creativeminds.com', 'CA010');
 
 
-
-INSERT INTO SocialMediaCampaign VALUES ('SOC001', 'Instagram', 105, 'Gold', '#LaunchTech2026', 'Image/Video', 8.5, '3 posts/week', 'Respond within 24h', 501, 'CA011');
+INSERT INTO SocialMediaCampaign VALUES ('SOC001', 'Instagram', 105, 'Gold', '#LaunchTech2026', 'Image', 8.5, '3 posts/week', 'Respond within 24h', 501, 'CA011');
 INSERT INTO SocialMediaCampaign VALUES ('SOC002', 'Facebook', 106, 'Silver', '#GreenEnergyPromo', 'Video', 7.2, '2 posts/week', 'Respond within 48h', 502, 'CA012');
-INSERT INTO SocialMediaCampaign VALUES ('SOC003', 'Twitter', 107, 'Gold', '#FastLogisticsBoost', 'Text/Image', 6.8, '5 posts/week', 'Respond within 12h', 503, 'CA013');
+INSERT INTO SocialMediaCampaign VALUES ('SOC003', 'Twitter', 107, 'Gold', '#FastLogisticsBoost', 'Text', 6.8, '5 posts/week', 'Respond within 12h', 503, 'CA013');
 INSERT INTO SocialMediaCampaign VALUES ('SOC004', 'TikTok', 108, 'Bronze', '#HealthPlusCare', 'Video', 9.0, '2 posts/week', 'Respond within 24h', 504, 'CA014');
-INSERT INTO SocialMediaCampaign VALUES ('SOC005', 'LinkedIn', 109, 'Gold', '#BuildItCampaign', 'Article/Image', 7.5, '1 post/week', 'Respond within 48h', 505, 'CA015');
-INSERT INTO SocialMediaCampaign VALUES ('SOC006', 'Instagram', 110, 'Silver', '#MarketMakersPush', 'Image/Video', 8.0, '3 posts/week', 'Respond within 24h', 506, 'CA016');
+INSERT INTO SocialMediaCampaign VALUES ('SOC005', 'LinkedIn', 109, 'Gold', '#BuildItCampaign', 'Article', 7.5, '1 post/week', 'Respond within 48h', 505, 'CA015');
+INSERT INTO SocialMediaCampaign VALUES ('SOC006', 'Instagram', 110, 'Silver', '#MarketMakersPush', 'Image', 8.0, '3 posts/week', 'Respond within 24h', 506, 'CA016');
 INSERT INTO SocialMediaCampaign VALUES ('SOC007', 'Facebook', 105, 'Gold', '#FinTechGrowth', 'Video', 7.8, '2 posts/week', 'Respond within 12h', 507, 'CA017');
-INSERT INTO SocialMediaCampaign VALUES ('SOC008', 'Twitter', 106, 'Bronze', '#EduSmartDrive', 'Text/Image', 6.5, '4 posts/week', 'Respond within 24h', 508, 'CA018');
+INSERT INTO SocialMediaCampaign VALUES ('SOC008', 'Twitter', 106, 'Bronze', '#EduSmartDrive', 'Text', 6.5, '4 posts/week', 'Respond within 24h', 508, 'CA018');
 INSERT INTO SocialMediaCampaign VALUES ('SOC009', 'TikTok', 107, 'Silver', '#AgroLifeExpansion', 'Video', 8.2, '2 posts/week', 'Respond within 24h', 509, 'CA019');
-INSERT INTO SocialMediaCampaign VALUES ('SOC010', 'LinkedIn', 108, 'Gold', '#CreativeMindsPromo', 'Article/Image', 7.9, '1 post/week', 'Respond within 48h', 510, 'CA020');
+INSERT INTO SocialMediaCampaign VALUES ('SOC010', 'LinkedIn', 108, 'Gold', '#CreativeMindsPromo', 'Article', 7.9, '1 post/week', 'Respond within 48h', 510, 'CA020');
 
 
 INSERT INTO PhysicalCampaign VALUES ('PY001', 'EV001', 500, 'Projector, Sound System', 601, 701, 'iPad', 801, 'Kuala Lumpur Convention Centre', 20, 'CA001');
@@ -359,6 +358,8 @@ INSERT INTO WorkOrder VALUES ('WK008', 'PH008', 'Video Production', 'Produce vid
 INSERT INTO WorkOrder VALUES ('WK009', 'PH009', 'Client Follow-up', 'Contact clients after AgroLifeExpansion', 'High', 'Pending', TO_DATE('2026-03-01','YYYY-MM-DD'), TO_TIMESTAMP('2026-03-05 17:00:00','YYYY-MM-DD HH24:MI:SS'), 12.00, 0.00, 'CL009', 'T309');
 INSERT INTO WorkOrder VALUES ('WK010', 'PH010', 'Graphic Design', 'Design promo materials for CreativeMindsPromo', 'Medium', 'In Progress', TO_DATE('2026-02-23','YYYY-MM-DD'), TO_TIMESTAMP('2026-03-01 18:00:00','YYYY-MM-DD HH24:MI:SS'), 18.00, 7.50, 'CL010', 'T310');
 
+
+-- Done debug until here 
 
 INSERT INTO Meeting VALUES ('ME001', TO_DATE('2026-02-20','YYYY-MM-DD'), 'LaunchTech Strategy', '09:00', '11:00', 'Strategy', 'Discuss campaign objectives', 'https://docs.com/mtg1701', 'Campaign', 1101, TRUE, 'Low', 'E001', 'L001');
 INSERT INTO Meeting VALUES ('ME002', TO_DATE('2026-02-21','YYYY-MM-DD'), 'GreenEnergy Planning', '14:00', '16:00', 'Planning', 'Plan digital campaign', 'https://docs.com/mtg1702', 'Campaign', 1102, TRUE, 'Medium', 'E002', 'L002');

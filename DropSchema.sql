@@ -36,6 +36,6 @@ DROP TABLE Person;
 
 COMMIT;
 
-PURGE RECYCLEBIN; -- PURGE RECYCLEBIN; -- Clears the recycle bin so your database stays clean
+PURGE RECYCLEBIN; -- Clears the recycle bin so your database stays clean
 
 CLEAR SCREEN;

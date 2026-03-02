@@ -199,8 +199,8 @@ CREATE TABLE Campaign (
 CREATE TABLE WorkOrder (
     workorder_id VARCHAR2(10) PRIMARY KEY,
     project_phase_order VARCHAR2(50) UNIQUE NOT NULL,
-    task_title VARCHAR2(20) NOT NULL CHECK (LENGTH(task_title) <= 20),
-    task_detailed_description VARCHAR2(100) NOT NULL CHECK (LENGTH(task_detailed_description) <= 100),
+    task_title VARCHAR2(50) NOT NULL CHECK (LENGTH(task_title) <= 50),
+    task_detailed_description VARCHAR2(200) NOT NULL CHECK (LENGTH(task_detailed_description) <= 200),
     priority_level VARCHAR2(50) NOT NULL CHECK (priority_level IN ('Low','Medium','High','Critical')),
     execution_status VARCHAR(20) NOT NULL CHECK (Execution_status IN ('Pending', 'In Progress', 'Completed')),
     scheduled_start_date DATE NOT NULL,
@@ -215,15 +215,15 @@ CREATE TABLE WorkOrder (
 
 CREATE TABLE Proposal (
     proposal_id VARCHAR2(10) PRIMARY KEY,
-    proposal_reference_no NUMBER UNIQUE NOT NULL,
-    proposal_status VARCHAR2(20) NOT NULL CHECK (proposal_status IN ('Draft', 'Sent', 'Accepted', 'Revised', 'Rejected')),
+    proposal_reference_no VARCHAR2(20) UNIQUE NOT NULL,
+    proposal_status VARCHAR2(20) NOT NULL CHECK (proposal_status IN ('Pending', 'Approved', 'Rejected')),
     proposal_title VARCHAR2(50) NOT NULL CHECK (LENGTH(proposal_title) > 0),
-    executive_summary VARCHAR2(1000) NOT NULL CHECK (LENGTH(executive_summary) > 50),
+    executive_summary VARCHAR2(1000) NOT NULL CHECK (LENGTH(executive_summary) > 10),
     total_investment_value NUMBER NOT NULL CHECK (total_investment_value >= 0),
     payment_terms VARCHAR2(50) NOT NULL CHECK (LENGTH(payment_terms) > 0),
-    validity_period_end DATE NOT NULL, -- Fixed: Removed SYSDATE check
+    validity_period_end DATE NOT NULL, 
     estimated_timeline VARCHAR2(20) NOT NULL CHECK (LENGTH(estimated_timeline) > 0),
-    approval_status NUMBER(1) NOT NULL CHECK (approval_status IN (0,1)),
+    approval_status VARCHAR2(10) NOT NULL CHECK (approval_status IN ('Pending', 'Approved', 'Rejected')),
     client_id VARCHAR2(10) NOT NULL,
     salesmarketing_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (client_id) REFERENCES Client(client_id),
@@ -267,11 +267,11 @@ CREATE TABLE FinanceRecord (
 -- 5. Fourth-Level Dependencies (Rely on Campaign or FinanceRecord)
 CREATE TABLE DigitalCampaign (
     digital_id VARCHAR2(10) PRIMARY KEY,
-    digital_channel_type VARCHAR2(20) UNIQUE NOT NULL CHECK (digital_channel_type IN ('google ads', 'facebook ads', 'instagram ads', 'linkedin ads', 'email marketing')),
+    digital_channel_type VARCHAR2(20) NOT NULL,
     target_url_slug VARCHAR2(50) NOT NULL CHECK (target_url_slug NOT LIKE '% %'),
     seo_keyword_primary VARCHAR2(50) CHECK (LENGTH(seo_keyword_primary) > 0),
     ad_copy_headline VARCHAR2(50) NOT NULL CHECK (LENGTH(ad_copy_headline) <= 50),
-    meta_description_snippet VARCHAR2(1000) NOT NULL CHECK (LENGTH(meta_description_snippet) BETWEEN 50 AND 160),
+    meta_description_snippet VARCHAR2(1000) NOT NULL CHECK (LENGTH(meta_description_snippet) BETWEEN 5 AND 1000),
     email_automation_sequence_id VARCHAR(10) NOT NULL CHECK (LENGTH(Email_automation_sequence_ID) > 0),
     cookie_duration_days NUMBER NOT NULL CHECK (cookie_duration_days BETWEEN 1 AND 90),
     domain_authority_target NUMBER NOT NULL CHECK (domain_authority_target BETWEEN 1 AND 100),
@@ -282,13 +282,13 @@ CREATE TABLE DigitalCampaign (
 
 CREATE TABLE SocialMediaCampaign (
     socialmedia_id VARCHAR2(10) PRIMARY KEY,
-    platform_name VARCHAR2(20) UNIQUE NOT NULL CHECK (platform_name IN ('Facebook', 'Instagram', 'TikTok', 'X', 'LinkedIn')),
+    platform_name VARCHAR2(20) NOT NULL,
     handle_owner_id NUMBER NOT NULL CHECK (handle_owner_id > 0),
     influencer_partnership_level VARCHAR(10) NOT NULL CHECK (influencer_partnership_level IN ('Gold','Silver','Bronze')),
     primary_campaign_hashtag VARCHAR2(20) NOT NULL CHECK (primary_campaign_hashtag LIKE '#%'),
-    content_format VARCHAR2(20) NOT NULL CHECK (content_format IN ('Video', 'Image', 'Story', 'Carousel')),
+    content_format VARCHAR2(20) NOT NULL CHECK (content_format IN ('Video', 'Image', 'Story', 'Carousel', 'Text', 'Article')),
     engagement_rate_benchmark NUMBER NOT NULL CHECK (Engagement_rate_benchmark BETWEEN 0 AND 10),
-    post_frequency_schedule VARCHAR2(10) NOT NULL CHECK (Post_frequency_schedule BETWEEN 5 AND 1),
+    post_frequency_schedule VARCHAR2(20) NOT NULL,
     community_management_protocol VARCHAR2(100) NOT NULL CHECK (LENGTH(community_management_protocol) > 10),
     influencer_contract_id NUMBER UNIQUE CHECK (influencer_contract_id > 0),
     campaign_id VARCHAR2(10) NOT NULL,

@@ -1,5 +1,5 @@
 -- 1. Independent Tables (No Foreign Keys)
-CREATE TABLE Person (
+CREATE TABLE KZFF_Person (
     person_id VARCHAR2(10) PRIMARY KEY,
     ic_number VARCHAR2(20) UNIQUE NOT NULL,
     full_name VARCHAR2(100) NOT NULL CHECK (LENGTH(full_name) > 0),
@@ -13,7 +13,7 @@ CREATE TABLE Person (
     marital_status VARCHAR2(20) CHECK (marital_status IN ('Single', 'Married', 'Divorced', 'Widowed'))
 );
 
-CREATE TABLE Contact (
+CREATE TABLE KZFF_Contact (
     contact_id VARCHAR2(10) PRIMARY KEY,
     contact_type_code VARCHAR2(10) UNIQUE NOT NULL,
     phone_number VARCHAR2(10) NOT NULL CHECK (TO_NUMBER(phone_number) > 0),
@@ -26,7 +26,7 @@ CREATE TABLE Contact (
     job_title VARCHAR2(20) NOT NULL CHECK (LENGTH(job_title) > 0)
 );
 
-CREATE TABLE WorkLocation (
+CREATE TABLE KZFF_WorkLocation (
     location_id VARCHAR2(10) PRIMARY KEY,
     building_section_code VARCHAR2(10) UNIQUE NOT NULL,
     location_name VARCHAR2(50) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE WorkLocation (
     emergency_exit_proximity VARCHAR2(30) NOT NULL
 );
 
-CREATE TABLE Certification (
+CREATE TABLE KZFF_Certification (
     certification_id VARCHAR2(10) PRIMARY KEY,
     certification_name VARCHAR2(100) NOT NULL CHECK (LENGTH(certification_name) > 0),
     issuing_organization VARCHAR2(100) NOT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE Certification (
 );
 
 -- 2. First-Level Dependencies
-CREATE TABLE Address (
+CREATE TABLE KZFF_Address (
     address_id VARCHAR2(10) PRIMARY KEY,
     address_type VARCHAR2(50) UNIQUE NOT NULL,
     unit_no NUMBER CHECK (unit_no > 0),
@@ -68,7 +68,7 @@ CREATE TABLE Address (
     FOREIGN KEY (contact_id) REFERENCES Contact(contact_id)
 );
 
-CREATE TABLE Employee (
+CREATE TABLE KZFF_Employee (
     employee_id VARCHAR2(10) PRIMARY KEY,
     role_id VARCHAR(1) UNIQUE NOT NULL CHECK (LENGTH(role_id) IN ('1','2','3','4')),
     hire_date DATE NOT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE Employee (
 );
 
 -- 3. Second-Level Dependencies (Rely on Employee & Contact)
-CREATE TABLE Client (
+CREATE TABLE KZFF_Client (
     client_id VARCHAR2(10) PRIMARY KEY,
     company_name VARCHAR2(50) NOT NULL CHECK (LENGTH(company_name) > 0),
     industry_sector_code VARCHAR2(10) NOT NULL CHECK (LENGTH(industry_sector_code) > 0),
@@ -101,7 +101,7 @@ CREATE TABLE Client (
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
-CREATE TABLE Management (
+CREATE TABLE KZFF_Management (
     management_id VARCHAR2(10) PRIMARY KEY,
     board_member_id NUMBER UNIQUE NOT NULL,
     management_level VARCHAR2(50) NOT NULL CHECK (LENGTH(management_level) > 0),
@@ -116,7 +116,7 @@ CREATE TABLE Management (
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
-CREATE TABLE Tech (
+CREATE TABLE KZFF_Tech (
     tech_id VARCHAR2(10) PRIMARY KEY,
     tech_specialization_code VARCHAR2(10) UNIQUE NOT NULL,
     tech_role VARCHAR2(50) NOT NULL CHECK (LENGTH(tech_role) > 0),
@@ -133,7 +133,7 @@ CREATE TABLE Tech (
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
-CREATE TABLE Finance (
+CREATE TABLE KZFF_Finance (
     finance_id VARCHAR2(10) PRIMARY KEY,
     fiscal_role_code VARCHAR2(10) UNIQUE NOT NULL,
     accounting_designation VARCHAR2(50) NOT NULL CHECK (LENGTH(accounting_designation) > 0),
@@ -149,7 +149,7 @@ CREATE TABLE Finance (
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
-CREATE TABLE SalesMarketing (
+CREATE TABLE KZFF_SalesMarketing (
     salesmarketing_id VARCHAR2(10) PRIMARY KEY,
     market_segment_id NUMBER NOT NULL CHECK (market_segment_id > 0),
     sales_tier VARCHAR2(10) NOT NULL CHECK (sales_tier IN ('Gold','Silver','Bronze')),
@@ -164,7 +164,7 @@ CREATE TABLE SalesMarketing (
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
-CREATE TABLE Meeting (
+CREATE TABLE KZFF_Meeting (
     meeting_id VARCHAR2(10) PRIMARY KEY,
     meeting_date DATE NOT NULL,
     meeting_subject VARCHAR2(20) NOT NULL CHECK (LENGTH(meeting_subject) <= 20),
@@ -184,7 +184,7 @@ CREATE TABLE Meeting (
 );
 
 -- 4. Third-Level Dependencies
-CREATE TABLE Campaign (
+CREATE TABLE KZFF_Campaign (
     campaign_id VARCHAR2(10) PRIMARY KEY,
     version_tag VARCHAR2(10) UNIQUE NOT NULL CHECK (version_tag LIKE 'v%'),
     campaign_name VARCHAR2(20) NOT NULL CHECK (LENGTH(campaign_name) >= 3),
@@ -195,7 +195,7 @@ CREATE TABLE Campaign (
     FOREIGN KEY (client_id) REFERENCES Client(client_id)
 );
 
-CREATE TABLE WorkOrder (
+CREATE TABLE KZFF_WorkOrder (
     workorder_id VARCHAR2(10) PRIMARY KEY,
     project_phase_order VARCHAR2(50) UNIQUE NOT NULL,
     task_title VARCHAR2(20) NOT NULL CHECK (LENGTH(task_title) <= 20),
@@ -212,7 +212,7 @@ CREATE TABLE WorkOrder (
     FOREIGN KEY (tech_id) REFERENCES Tech(tech_id)
 );
 
-CREATE TABLE Proposal (
+CREATE TABLE KZFF_Proposal (
     proposal_id VARCHAR2(10) PRIMARY KEY,
     proposal_reference_no NUMBER UNIQUE NOT NULL,
     proposal_status VARCHAR2(20) NOT NULL CHECK (proposal_status IN ('Draft', 'Sent', 'Accepted', 'Revised', 'Rejected')),
@@ -229,7 +229,7 @@ CREATE TABLE Proposal (
     FOREIGN KEY (salesmarketing_id) REFERENCES SalesMarketing(salesmarketing_id)
 );
 
-CREATE TABLE Campaignideas (
+CREATE TABLE KZFF_Campaignideas (
     idea_id VARCHAR2(10) PRIMARY KEY,
     idea_title VARCHAR2(50) UNIQUE NOT NULL,
     campaign_type VARCHAR2(50) NOT NULL CHECK (campaign_type IN ('Digital', 'Physical', 'Hybrid', 'Social')),
@@ -247,7 +247,7 @@ CREATE TABLE Campaignideas (
     FOREIGN KEY (client_id) REFERENCES Client(client_id)
 );
 
-CREATE TABLE FinanceRecord (
+CREATE TABLE KZFF_FinanceRecord (
     transaction_id VARCHAR2(10) PRIMARY KEY,
     fiscal_year NUMBER UNIQUE NOT NULL CHECK (fiscal_year BETWEEN 2020 AND 2100),
     posting_date DATE NOT NULL CHECK (posting_date <= SYSDATE),
@@ -264,7 +264,7 @@ CREATE TABLE FinanceRecord (
 );
 
 -- 5. Fourth-Level Dependencies (Rely on Campaign or FinanceRecord)
-CREATE TABLE DigitalCampaign (
+CREATE TABLE KZFF_DigitalCampaign (
     digital_id VARCHAR2(10) PRIMARY KEY,
     digital_channel_type VARCHAR2(20) UNIQUE NOT NULL CHECK (digital_channel_type IN ('google ads', 'facebook ads', 'instagram ads', 'linkedin ads', 'email marketing')),
     target_url_slug VARCHAR2(50) NOT NULL CHECK (target_url_slug NOT LIKE '% %'),
@@ -279,7 +279,7 @@ CREATE TABLE DigitalCampaign (
     FOREIGN KEY (campaign_id) REFERENCES Campaign(campaign_id)
 );
 
-CREATE TABLE SocialMediaCampaign (
+CREATE TABLE KZFF_SocialMediaCampaign (
     socialmedia_id VARCHAR2(10) PRIMARY KEY,
     platform_name VARCHAR2(20) UNIQUE NOT NULL CHECK (platform_name IN ('Facebook', 'Instagram', 'TikTok', 'X', 'LinkedIn')),
     handle_owner_id NUMBER NOT NULL CHECK (handle_owner_id > 0),
@@ -294,7 +294,7 @@ CREATE TABLE SocialMediaCampaign (
     FOREIGN KEY (campaign_id) REFERENCES Campaign(campaign_id)
 );
 
-CREATE TABLE PhysicalCampaign (
+CREATE TABLE KZFF_PhysicalCampaign (
     physical_id VARCHAR2(10) PRIMARY KEY,
     event_type_code VARCHAR2(10) UNIQUE NOT NULL,
     booth_square_footage VARCHAR2(20) NOT NULL,
@@ -309,7 +309,7 @@ CREATE TABLE PhysicalCampaign (
     FOREIGN KEY (campaign_id) REFERENCES Campaign(campaign_id)
 );
 
-CREATE TABLE CampaignExecution (
+CREATE TABLE KZFF_CampaignExecution (
     execution_id VARCHAR2(10) PRIMARY KEY,
     curr_execution_status VARCHAR2(50) UNIQUE NOT NULL,
     actual_launch_timestamp VARCHAR2(50) NOT NULL CHECK (LENGTH(actual_launch_timestamp) > 0),
@@ -325,7 +325,7 @@ CREATE TABLE CampaignExecution (
     FOREIGN KEY (campaign_id) REFERENCES Campaign(campaign_id)
 );
 
-CREATE TABLE Revenue (
+CREATE TABLE KZFF_Revenue (
     revenue_id VARCHAR2(10) PRIMARY KEY,
     revenue_stream_id VARCHAR2(20) UNIQUE NOT NULL,
     payment_method VARCHAR2(50) NOT NULL CHECK (payment_method IN ('Credit Card', 'Wire Transfer', 'Cash', 'Cheque')),
@@ -342,7 +342,7 @@ CREATE TABLE Revenue (
     FOREIGN KEY (transaction_id) REFERENCES FinanceRecord(transaction_id)
 );
 
-CREATE TABLE Expenditure (
+CREATE TABLE KZFF_Expenditure (
     expenditure_id VARCHAR2(10) PRIMARY KEY,
     expense_category_id VARCHAR2(10) UNIQUE NOT NULL,
     pay_period_cycle VARCHAR2(50) NOT NULL CHECK (pay_period_cycle IN ('Weekly', 'Bi-Weekly', 'Monthly', 'Quarterly')),
@@ -359,7 +359,7 @@ CREATE TABLE Expenditure (
 );
 
 -- 6. Fifth-Level Dependencies (Rely on CampaignExecution)
-CREATE TABLE CampaignStatus (
+CREATE TABLE KZFF_CampaignStatus (
     status_id VARCHAR2(10) PRIMARY KEY,
     status_change_id NUMBER UNIQUE NOT NULL,
     status_state VARCHAR2(20) NOT NULL CHECK (status_state IN ('Pending', 'Approved', 'In Progress', 'On Hold', 'Completed')),
@@ -378,7 +378,7 @@ CREATE TABLE CampaignStatus (
     FOREIGN KEY (salesmarketing_id) REFERENCES SalesMarketing(salesmarketing_id)
 );
 
-CREATE TABLE PostCampaignReport (
+CREATE TABLE KZFF_PostCampaignReport (
     report_id VARCHAR2(10) PRIMARY KEY,
     audit_version NUMBER UNIQUE NOT NULL,
     final_revenue_generated VARCHAR2(50) NOT NULL CHECK (LENGTH(final_revenue_generated) > 0),
@@ -398,7 +398,7 @@ CREATE TABLE PostCampaignReport (
 );
 
 -- 7. Explosion (Junction) Tables
-CREATE TABLE MeetingAttendance (
+CREATE TABLE KZFF_MeetingAttendance (
     meeting_id VARCHAR2(10) NOT NULL,
     employee_id VARCHAR2(10) NOT NULL,
     PRIMARY KEY (meeting_id, employee_id),
@@ -406,7 +406,7 @@ CREATE TABLE MeetingAttendance (
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
-CREATE TABLE EmployeeCertification (
+CREATE TABLE KZFF_EmployeeCertification (
     employee_id VARCHAR2(10) NOT NULL,
     certification_id VARCHAR2(10) NOT NULL,
     PRIMARY KEY (employee_id, certification_id),
@@ -414,7 +414,7 @@ CREATE TABLE EmployeeCertification (
     FOREIGN KEY (certification_id) REFERENCES Certification(certification_id)
 );
 
-CREATE TABLE PostCampaignRevenue (
+CREATE TABLE KZFF_PostCampaignRevenue (
     report_id VARCHAR2(10) NOT NULL,
     revenue_id VARCHAR2(10) NOT NULL,
     PRIMARY KEY (report_id, revenue_id),
@@ -422,7 +422,7 @@ CREATE TABLE PostCampaignRevenue (
     FOREIGN KEY (revenue_id) REFERENCES Revenue(revenue_id)
 );
 
-CREATE TABLE EmployeePerson (
+CREATE TABLE KZFF_EmployeePerson (
     employee_id VARCHAR2(10) NOT NULL,
     person_id VARCHAR2(10) NOT NULL,
     PRIMARY KEY (employee_id, person_id),
@@ -430,7 +430,7 @@ CREATE TABLE EmployeePerson (
     FOREIGN KEY (person_id) REFERENCES Person(person_id)
 );
 
-CREATE TABLE EmployeeWorkstation (
+CREATE TABLE KZFF_EmployeeWorkstation (
     employee_id VARCHAR2(10) NOT NULL,
     location_id VARCHAR2(10) NOT NULL,
     PRIMARY KEY (employee_id, location_id),
@@ -438,7 +438,7 @@ CREATE TABLE EmployeeWorkstation (
     FOREIGN KEY (location_id) REFERENCES WorkLocation(location_id)
 );
 
-CREATE TABLE EmployeeAssignment (
+CREATE TABLE KZFF_EmployeeAssignment (
     employee_id VARCHAR2(10) NOT NULL,
     role_id VARCHAR(1) NOT NULL,
     assign_date DATE NOT NULL,

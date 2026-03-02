@@ -16,12 +16,12 @@ CREATE TABLE Person (
 CREATE TABLE Contact (
     contact_id VARCHAR2(10) PRIMARY KEY,
     contact_type_code VARCHAR2(10) UNIQUE NOT NULL,
-    phone_number NUMBER NOT NULL CHECK (phone_number > 0),
+    phone_number VARCHAR2(10) NOT NULL CHECK (TO_NUMBER(phone_number) > 0),
     email_address VARCHAR2(50) NOT NULL CHECK (email_address LIKE '%@%.%'),
     professional_email VARCHAR2(50) NOT NULL CHECK (professional_email LIKE '%@%.%'),
     emergency_contact NUMBER NOT NULL CHECK (emergency_contact > 0),
     linkedin_profile_url VARCHAR2(50) NOT NULL CHECK (linkedin_profile_url LIKE 'https://%'),
-    preferred_communication_channel VARCHAR2(20) NOT NULL CHECK (preferred_communication_channel IN ('Email', 'Phone', 'WhatsApp')),
+    preferred_comm_channel VARCHAR2(20) NOT NULL CHECK (preferred_comm_channel IN ('Email', 'Phone')),
     language_preference VARCHAR2(20) NOT NULL CHECK (language_preference IN ('English', 'Malay', 'Chinese', 'Other')),
     job_title VARCHAR2(20) NOT NULL CHECK (LENGTH(job_title) > 0)
 );
@@ -30,26 +30,26 @@ CREATE TABLE WorkLocation (
     location_id VARCHAR2(10) PRIMARY KEY,
     building_section_code VARCHAR2(10) UNIQUE NOT NULL,
     location_name VARCHAR2(50) NOT NULL,
-    location_type VARCHAR2(50) NOT NULL CHECK (location_type IN ('Office', 'Lab', 'Warehouse', 'Meeting Room')),
+    location_type VARCHAR2(50) NOT NULL,
     maximum_occupancy NUMBER NOT NULL CHECK (maximum_occupancy > 0),
-    it_infrastructure_level NUMBER NOT NULL CHECK (it_infrastructure_level BETWEEN 1 AND 5),
-    access_security_tier NUMBER NOT NULL CHECK (access_security_tier BETWEEN 1 AND 4),
-    current_operational_status VARCHAR2(50) NOT NULL CHECK (current_operational_status IN ('Active', 'Maintenance', 'Closed')),
+    it_infrastructure_level VARCHAR2(20) NOT NULL CHECK (it_infrastructure_level IN ('Very High','High','Medium','Low')),
+    access_security_tier VARCHAR2(10) NOT NULL CHECK (access_security_tier IN ('Tier 1','Tier 2','Tier 3')),
+    current_operational_status VARCHAR2(50) NOT NULL CHECK (current_operational_status IN ('Operational', 'Active', 'Maintenance', 'Closed')),
     last_sanitization_timestamp DATE NOT NULL CHECK (last_sanitization_timestamp <= SYSDATE),
-    emergency_exit_proximity NUMBER NOT NULL CHECK (emergency_exit_proximity >= 0)
+    emergency_exit_proximity VARCHAR2(30) NOT NULL
 );
 
 CREATE TABLE Certification (
     certification_id VARCHAR2(10) PRIMARY KEY,
     certification_name VARCHAR2(100) NOT NULL CHECK (LENGTH(certification_name) > 0),
     issuing_organization VARCHAR2(100) NOT NULL,
-    standard_validity_duration NUMBER(5,2) NOT NULL,
-    passing_score_treshold NUMBER NOT NULL CHECK (passing_score_treshold >= 0),
-    renewal_requirement_description VARCHAR2(100) NOT NULL CHECK (LENGTH(renewal_requirement_description) > 0),
+    standard_validity_duration NUMBER NOT NULL,
+    passing_score_treshold NUMBER(5,2) NOT NULL CHECK (passing_score_treshold >= 0),
+    renewal_req_desc VARCHAR2(100) NOT NULL CHECK (LENGTH(renewal_req_desc) > 0),
     official_verification_url VARCHAR2(100) NOT NULL CHECK (official_verification_url LIKE 'http%'),
-    difficulty_level NUMBER NOT NULL CHECK (difficulty_level BETWEEN 1 AND 5),
-    global_skill_category VARCHAR2(50) NOT NULL CHECK (global_skill_category IN ('Technical', 'Leadership', 'Communication', 'Finance', 'Operations')),
-    certificate_ref_number NUMBER NOT NULL CHECK (certificate_ref_number >= 0)
+    difficulty_level VARCHAR2(10) NOT NULL CHECK (difficulty_level IN ('Hard','Medium','Easy')),
+    global_skill_category VARCHAR2(50) NOT NULL,
+    certificate_ref_number VARCHAR2(10) NOT NULL
 );
 
 -- 2. First-Level Dependencies
@@ -61,16 +61,16 @@ CREATE TABLE Address (
     address_line2 VARCHAR2(100) NOT NULL,
     city VARCHAR2(20) NOT NULL CHECK (LENGTH(city) > 1),
     state VARCHAR2(20) NOT NULL CHECK (LENGTH(state) > 1),
-    postcode VARCHAR2(10) NOT NULL CHECK (LENGTH(postcode) >= 4),
+    postcode NUMBER NOT NULL CHECK (postcode >= 4),
     country VARCHAR2(10) NOT NULL CHECK (LENGTH(country) > 1),
-    district VARCHAR2(10),
+    district VARCHAR2(10) NOT NULL,
     contact_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (contact_id) REFERENCES Contact(contact_id)
 );
 
 CREATE TABLE Employee (
     employee_id VARCHAR2(10) PRIMARY KEY,
-    role_id NUMBER UNIQUE NOT NULL,
+    role_id VARCHAR(1) UNIQUE NOT NULL CHECK (LENGTH(role_id) IN ('1','2','3','4')),
     hire_date DATE NOT NULL,
     base_salary NUMBER CHECK (base_salary > 0),
     performance_rating NUMBER CHECK (performance_rating BETWEEN 1 AND 5),
@@ -87,13 +87,13 @@ CREATE TABLE Client (
     client_id VARCHAR2(10) PRIMARY KEY,
     company_name VARCHAR2(50) NOT NULL CHECK (LENGTH(company_name) > 0),
     industry_sector_code VARCHAR2(10) NOT NULL CHECK (LENGTH(industry_sector_code) > 0),
-    annual_contract_value NUMBER NOT NULL CHECK (annual_contract_value >= 0),
-    client_priority_tier NUMBER NOT NULL CHECK (client_priority_tier BETWEEN 1 AND 5),
-    primary_contact_person NUMBER NOT NULL,
+    annual_contract_value NUMBER(12,2) NOT NULL CHECK (annual_contract_value >= 0),
+    client_priority_tier VARCHAR2(10) NOT NULL CHECK (client_priority_tier IN ('Gold', 'Silver', 'Bronze')),
+    primary_contact_person VARCHAR2(20) NOT NULL,
     client_status VARCHAR2(20) NOT NULL CHECK (client_status IN ('Active', 'Inactive', 'Prospect', 'Suspended')),
-    client_activity VARCHAR2(20) NOT NULL CHECK (client_activity IN ('High', 'Medium', 'Low', 'Dormant')),
-    company_SSM_no NUMBER UNIQUE NOT NULL CHECK (company_SSM_no > 0),
-    preferred_billing_method VARCHAR2(20) NOT NULL CHECK (preferred_billing_method IN ('Credit Card', 'Bank Transfer', 'Invoice', 'PayPal')),
+    client_activity VARCHAR2(20) NOT NULL CHECK (client_activity IN ('Ongoing', 'High', 'Medium', 'Low', 'Dormant')),
+    company_SSM_no VARCHAR2(20) NOT NULL,
+    preferred_billing_method VARCHAR2(20) NOT NULL CHECK (preferred_billing_method IN ('Credit Card', 'Online Payment', 'Invoice')),
     referral_source VARCHAR2(20) NOT NULL CHECK (LENGTH(referral_source) > 0),
     contact_id VARCHAR2(10) NOT NULL,
     employee_id VARCHAR2(10) NOT NULL,
@@ -142,7 +142,7 @@ CREATE TABLE Finance (
     payroll_authorization_level VARCHAR2(10) NOT NULL CHECK (payroll_authorization_level IN ('Level 1', 'Level 2', 'Level 3')),
     expense_approval_scope VARCHAR2(100) NOT NULL CHECK (LENGTH(expense_approval_scope) > 0),
     tax_jurisdiction_speciality VARCHAR2(50) NOT NULL CHECK (LENGTH(tax_jurisdiction_speciality) > 0),
-    fiscal_kpi VARCHAR2(50) NOT NULL CHECK (LENGTH(fiscal_kpi) <= 50),
+    fiscal_kpi VARCHAR2(50) NOT NULL CHECK (LENGTH(fiscal_kpi) <= 5),
     ledger_access_type VARCHAR2(20) NOT NULL CHECK (ledger_access_type IN ('Full','Limited')),
     reporting_cycle_deadline DATE NOT NULL,
     employee_id VARCHAR2(10) NOT NULL,
@@ -157,9 +157,9 @@ CREATE TABLE SalesMarketing (
     crm_access_profile VARCHAR2(50) NOT NULL,
     commission_tier_level VARCHAR2(10) CHECK (commission_tier_level IN ('Tier 1', 'Tier 2', 'Tier 3')),
     potential_client_list VARCHAR2(100) CHECK (LENGTH(potential_client_list) > 0),
-    campaign_budget_authority NUMBER NOT NULL,
-    public_relation_score NUMBER CHECK (public_relation_score BETWEEN 0 AND 100),
-    assigned_geographical_territory VARCHAR2(50) NOT NULL,
+    campaign_budget_authority NUMBER(12,2) NOT NULL,
+    public_relation_score NUMBER(5,2) CHECK (public_relation_score BETWEEN 0 AND 100),
+    assigned_geo_territory VARCHAR2(50) NOT NULL,
     employee_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
@@ -238,8 +238,8 @@ CREATE TABLE Campaignideas (
     draft_status VARCHAR2(50) NOT NULL CHECK (draft_status IN ('Draft', 'Under Review', 'Approved', 'Rejected')),
     estimated_budget_requirement NUMBER NOT NULL CHECK (estimated_budget_requirement > 0),
     creative_concept_brief VARCHAR2(100) NOT NULL CHECK (LENGTH(creative_concept_brief) > 20),
-    project_roi_metric VARCHAR2(100) NOT NULL CHECK (LENGTH(project_roi_metric) > 0),
-    creation_timestamp NUMBER NOT NULL CHECK (creation_timestamp > 0),
+    project_roi_metric NUMBER NOT NULL CHECK (project_roi_metric BETWEEN 0 AND 100),
+    creation_timestamp DATE NOT NULL CHECK (creation_timestamp <= SYSDATE),
     last_modified_date DATE NOT NULL,
     salesmarketing_id VARCHAR2(10) NOT NULL,
     client_id VARCHAR2(10) NOT NULL,
@@ -256,9 +256,9 @@ CREATE TABLE FinanceRecord (
     general_ledger_code VARCHAR2(50) NOT NULL CHECK (LENGTH(general_ledger_code) >= 4),
     base_amount NUMBER NOT NULL CHECK (base_amount >= 0),
     tax_amount NUMBER NOT NULL CHECK (tax_amount >= 0),
-    total_net_value VARCHAR2(50) NOT NULL CHECK (LENGTH(total_net_value) > 0),
+    total_net_value NUMBER NOT NULL CHECK (total_net_value >= 0),
     authorization_code VARCHAR2(50) NOT NULL CHECK (LENGTH(authorization_code) > 0),
-    exchange_rate VARCHAR2(50) NOT NULL CHECK (LENGTH(exchange_rate) > 0),
+    exchange_rate NUMBER NOT NULL CHECK (exchange_rate >= 0),
     finance_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (finance_id) REFERENCES Finance(finance_id)
 );
@@ -327,9 +327,9 @@ CREATE TABLE CampaignExecution (
 
 CREATE TABLE Revenue (
     revenue_id VARCHAR2(10) PRIMARY KEY,
-    revenue_stream_id NUMBER UNIQUE NOT NULL,
+    revenue_stream_id VARCHAR2(20) UNIQUE NOT NULL,
     payment_method VARCHAR2(50) NOT NULL CHECK (payment_method IN ('Credit Card', 'Wire Transfer', 'Cash', 'Cheque')),
-    invoice_reference_number NUMBER UNIQUE NOT NULL CHECK (invoice_reference_number > 0),
+    invoice_reference_number VARCHAR2(50) UNIQUE NOT NULL CHECK (LENGTH(invoice_reference_number) > 0),
     discount_applied NUMBER NOT NULL CHECK (discount_applied >= 0),
     recurring_revenue_flag VARCHAR2(20) NOT NULL CHECK (recurring_revenue_flag IN ('Yes', 'No')),
     collection_cycle_days NUMBER NOT NULL CHECK (collection_cycle_days BETWEEN 0 AND 365),
@@ -344,16 +344,16 @@ CREATE TABLE Revenue (
 
 CREATE TABLE Expenditure (
     expenditure_id VARCHAR2(10) PRIMARY KEY,
-    expense_category_id NUMBER UNIQUE NOT NULL,
+    expense_category_id VARCHAR2(10) UNIQUE NOT NULL,
     pay_period_cycle VARCHAR2(50) NOT NULL CHECK (pay_period_cycle IN ('Weekly', 'Bi-Weekly', 'Monthly', 'Quarterly')),
     gross_salary_amount NUMBER NOT NULL CHECK (gross_salary_amount >= 0),
     insurance_cost NUMBER NOT NULL CHECK (insurance_cost >= 0),
     departmental_budget NUMBER NOT NULL CHECK (departmental_budget > 0),
     spending_type VARCHAR2(50) NOT NULL CHECK (spending_type IN ('Fixed', 'Variable', 'Capital', 'Operational')),
     reimbursement_status VARCHAR2(50) NOT NULL CHECK (reimbursement_status IN ('Pending', 'Approved', 'Paid', 'Rejected')),
-    amortization_period VARCHAR2(50) NOT NULL CHECK (LENGTH(amortization_period) > 0),
+    amortization_period NUMBER NOT NULL CHECK (amortization_period >= 0),
     budget_variance_amount NUMBER NOT NULL,
-    approval_workflow_id NUMBER NOT NULL CHECK (approval_workflow_id > 0),
+    approval_workflow_id VARCHAR2(20) NOT NULL CHECK (LENGTH(approval_workflow_id) > 0),
     transaction_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (transaction_id) REFERENCES FinanceRecord(transaction_id)
 );
@@ -440,12 +440,12 @@ CREATE TABLE EmployeeWorkstation (
 
 CREATE TABLE EmployeeAssignment (
     employee_id VARCHAR2(10) NOT NULL,
-    role_id NUMBER NOT NULL,
+    role_id VARCHAR(1) NOT NULL,
     assign_date DATE NOT NULL,
     assign_status VARCHAR2(10) NOT NULL CHECK (assign_status IN ('Active', 'Former', 'Promoted')),
     PRIMARY KEY (employee_id, role_id),
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
-    FOREIGN KEY (role_id) REFERENCES Employee(employee_id)
+    FOREIGN KEY (role_id) REFERENCES Employee(role_id)
 );
 
 COMMIT;

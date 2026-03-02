@@ -263,37 +263,37 @@ INSERT INTO Client VALUES ('CL010','Creative Minds','CR10',200000.00,'Bronze','N
 COMMIT;
 
 
-INSERT INTO Campaign VALUES ('CA001', 'V1', 'LaunchTech2026', 'Increase brand awareness in IT sector', 'CL001');
-INSERT INTO Campaign VALUES ('CA002', 'V1', 'GreenEnergyPromo', 'Promote sustainable energy solutions', 'CL002');
-INSERT INTO Campaign VALUES ('CA003', 'V2', 'FastLogisticsBoost', 'Expand logistics services to Penang', 'CL003');
-INSERT INTO Campaign VALUES ('CA004', 'V1', 'HealthPlusCare', 'Increase customer engagement for health products', 'CL004');
-INSERT INTO Campaign VALUES ('CA005', 'V3', 'BuildItCampaign', 'Attract new construction projects in Selangor', 'CL005');
-INSERT INTO Campaign VALUES ('CA006', 'V2', 'MarketMakersPush', 'Boost digital marketing services sales', 'CL006');
-INSERT INTO Campaign VALUES ('CA007', 'V1', 'FinTechGrowth', 'Increase fintech product adoption', 'CL007');
-INSERT INTO Campaign VALUES ('CA008', 'V2', 'EduSmartDrive', 'Promote e-learning programs nationwide', 'CL008');
-INSERT INTO Campaign VALUES ('CA009', 'V1', 'AgroLifeExpansion', 'Expand agricultural services to Johor', 'CL009');
-INSERT INTO Campaign VALUES ('CA010', 'V1', 'CreativeMindsPromo', 'Promote creative services to SMEs', 'CL010');
-INSERT INTO Campaign VALUES ('CA011', 'V1', 'MimiTech', 'To enhance tech culture', 'CL001');
-INSERT INTO Campaign VALUES ('CA012', 'V1', 'BrightFutureHub', 'Promote future tech in Kedah', 'CL002');
-INSERT INTO Campaign VALUES ('CA013', 'V2', 'GreenHarvestGlobal', 'Encourage Green Use', 'CL003');
-INSERT INTO Campaign VALUES ('CA014', 'V1', 'NovaSkillWorks', 'Promote skills in KL', 'CL004');
-INSERT INTO Campaign VALUES ('CA015', 'V3', 'InspireEdgeSolutions', 'Encourage students tech solution', 'CL005');
-INSERT INTO Campaign VALUES ('CA016', 'V2', 'EcoSmart', 'Promote green tech around nation', 'CL006');
-INSERT INTO Campaign VALUES ('CA017', 'V1', 'EduProConnect', 'Tech enchance program in Perak', 'CL007');
-INSERT INTO Campaign VALUES ('CA018', 'V1', 'HarvestLink', 'To improve agricultural supply chain efficiency.', 'CL008');
-INSERT INTO Campaign VALUES ('CA019', 'V1', 'BrightMinds', 'To provide innovative education and skill development.', 'CL009');
-INSERT INTO Campaign VALUES ('CA020', 'V2', 'MiraTech', 'To deliver reliable and efficient tech solutions.', 'CL010');
-INSERT INTO Campaign VALUES ('CA021', 'V1', 'SparkWave', 'To enhance brand visibility through digital marketing.', 'CL001');
-INSERT INTO Campaign VALUES ('CA022', 'V3', 'MindShift', 'To promote personal and leadership growth', 'CL002');
-INSERT INTO Campaign VALUES ('CA023', 'V2', 'NextWaveDynamics', 'To drive future-focused business innovation.', 'CL003');
-INSERT INTO Campaign VALUES ('CA024', 'V1', 'AgriNova', 'To modernize farming with smart technology.', 'CL004');
-INSERT INTO Campaign VALUES ('CA025', 'V1', 'SmartBridge', 'To connect businesses with digital solutions.', 'CL005');
-INSERT INTO Campaign VALUES ('CA026', 'V1', 'InnovatePlus', 'To support innovation and business growth.', 'CL006');
-INSERT INTO Campaign VALUES ('CA027', 'V2', 'BrightMinds', 'To connect businesses with digital solutions.', 'CL007');
-INSERT INTO Campaign VALUES ('CA028', 'V1', 'UrbanBloom', 'To promote sustainable urban development.', 'CL008');
-INSERT INTO Campaign VALUES ('CA029', 'V3', 'ZenithEdge', 'To provide strategic and competitive business solutions', 'CL009');
-INSERT INTO Campaign VALUES ('CA030', 'V2', 'AlphaCore', 'To build strong and scalable technology systems', 'CL010');
 
+INSERT INTO Campaign VALUES ('CA001', 'V1', 'LaunchTech2026', 'Increase brand awareness in IT sector', 'E001', 'CL001');
+INSERT INTO Campaign VALUES ('CA002', 'V1', 'GreenEnergyPromo', 'Promote sustainable energy solutions', 'E002', 'CL002');
+INSERT INTO Campaign VALUES ('CA003', 'V2', 'FastLogisticsBoost', 'Expand logistics services to Penang', 'E003', 'CL003');
+INSERT INTO Campaign VALUES ('CA004', 'V1', 'HealthPlusCare', 'Increase customer engagement for health products', 'E004', 'CL004');
+INSERT INTO Campaign VALUES ('CA005', 'V3', 'BuildItCampaign', 'Attract new construction projects in Selangor', 'E005', 'CL005');
+INSERT INTO Campaign VALUES ('CA006', 'V2', 'MarketMakersPush', 'Boost digital marketing services sales', 'E006', 'CL006');
+INSERT INTO Campaign VALUES ('CA007', 'V1', 'FinTechGrowth', 'Increase fintech product adoption', 'E007', 'CL007');
+INSERT INTO Campaign VALUES ('CA008', 'V2', 'EduSmartDrive', 'Promote e-learning programs nationwide', 'E008', 'CL008');
+INSERT INTO Campaign VALUES ('CA009', 'V1', 'AgroLifeExpansion', 'Expand agricultural services to Johor', 'E009', 'CL009');
+INSERT INTO Campaign VALUES ('CA010', 'V1', 'CreativeMindsPromo', 'Promote creative services to SMEs', 'E010', 'CL010');
+INSERT INTO Campaign VALUES ('CA011', 'V1', 'MimiTech', 'To enhance tech culture', 'E011', 'CL001');
+INSERT INTO Campaign VALUES ('CA012', 'V1', 'BrightFutureHub', 'Promote future tech in Kedah', 'E012', 'CL002');
+INSERT INTO Campaign VALUES ('CA013', 'V2', 'GreenHarvestGlobal', 'Encourage Green Use', 'E013', 'CL003');
+INSERT INTO Campaign VALUES ('CA014', 'V1', 'NovaSkillWorks', 'Promote skills in KL', 'E014', 'CL004');
+INSERT INTO Campaign VALUES ('CA015', 'V3', 'InspireEdgeSolutions', 'Encourage students tech solution', 'E015', 'CL005');
+INSERT INTO Campaign VALUES ('CA016', 'V2', 'EcoSmart', 'Promote green tech around nation', 'E016', 'CL006');
+INSERT INTO Campaign VALUES ('CA017', 'V1', 'EduProConnect', 'Tech enchance program in Perak', 'E017', 'CL007');
+INSERT INTO Campaign VALUES ('CA018', 'V1', 'HarvestLink', 'To improve agricultural supply chain efficiency.', 'E018', 'CL008');
+INSERT INTO Campaign VALUES ('CA019', 'V1', 'BrightMinds', 'To provide innovative education and skill development.', 'E019', 'CL009');
+INSERT INTO Campaign VALUES ('CA020', 'V2', 'MiraTech', 'To deliver reliable and efficient tech solutions.', 'E020', 'CL010');
+INSERT INTO Campaign VALUES ('CA021', 'V1', 'SparkWave', 'To enhance brand visibility through digital marketing.', 'E021', 'CL001');
+INSERT INTO Campaign VALUES ('CA022', 'V3', 'MindShift', 'To promote personal and leadership growth', 'E022', 'CL002');
+INSERT INTO Campaign VALUES ('CA023', 'V2', 'NextWaveDynamics', 'To drive future-focused business innovation.', 'E023', 'CL003');
+INSERT INTO Campaign VALUES ('CA024', 'V1', 'AgriNova', 'To modernize farming with smart technology.', 'E024', 'CL004');
+INSERT INTO Campaign VALUES ('CA025', 'V1', 'SmartBridge', 'To connect businesses with digital solutions.', 'E025', 'CL005');
+INSERT INTO Campaign VALUES ('CA026', 'V1', 'InnovatePlus', 'To support innovation and business growth.', 'E026', 'CL006');
+INSERT INTO Campaign VALUES ('CA027', 'V2', 'BrightMinds', 'To connect businesses with digital solutions.', 'E027', 'CL007');
+INSERT INTO Campaign VALUES ('CA028', 'V1', 'UrbanBloom', 'To promote sustainable urban development.', 'E028', 'CL008');
+INSERT INTO Campaign VALUES ('CA029', 'V3', 'ZenithEdge', 'To provide strategic and competitive business solutions', 'E029', 'CL009');
+INSERT INTO Campaign VALUES ('CA030', 'V2', 'AlphaCore', 'To build strong and scalable technology systems', 'E030', 'CL010');
 
 
 INSERT INTO DigitalCampaign VALUES ('DI001', 'Google Ads', 'launchtech2026', 'tech solutions', 'LaunchTech 2026 Now', 'Discover the latest tech solutions', 'EA001', 30, 80, 'https://launchtech.com', 'CA001');

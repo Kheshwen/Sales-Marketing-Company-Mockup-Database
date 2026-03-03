@@ -82,18 +82,6 @@ CREATE TABLE Employee (
     FOREIGN KEY (contact_id) REFERENCES Contact(contact_id)
 );
 
-UPDATE Employee
-SET role_id = CASE 
-    WHEN department = 'Management'     THEN 'MAN-' || role_id
-    WHEN department = 'Tech'           THEN 'TEC-' || role_id
-    WHEN department = 'Finance'        THEN 'FIN-' || role_id
-    WHEN department = 'SalesMarketing' THEN 'SAM-' || role_id
-    ELSE role_id
-END
-WHERE role_id NOT LIKE 'MAN-%' 
-  AND role_id NOT LIKE 'TEC-%'
-  AND role_id NOT LIKE 'FIN-%'
-  AND role_id NOT LIKE 'SAM-%';
 
 -- 3. Second-Level Dependencies (Rely on Employee & Contact)
 CREATE TABLE Client (

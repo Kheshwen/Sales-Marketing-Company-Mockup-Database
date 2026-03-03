@@ -1,4 +1,4 @@
-﻿-- Drop the many-to-many "Mapping" tables first
+﻿-- Drop many-to-many
 DROP TABLE EmployeeWorkstation;
 DROP TABLE EmployeePerson;
 DROP TABLE PostCampaignRevenue;
@@ -6,7 +6,7 @@ DROP TABLE EmployeeCertification;
 DROP TABLE MeetingAttendance;
 DROP TABLE EmployeeAssignment;
 
--- Drop the tables with the most dependencies next
+-- Drop the tables descending order of dependencies
 DROP TABLE Expenditure;
 DROP TABLE Revenue;
 DROP TABLE FinancialRecord;
@@ -36,6 +36,6 @@ DROP TABLE Person;
 
 COMMIT;
 
-PURGE RECYCLEBIN; -- Clears the recycle bin so your database stays clean
+PURGE RECYCLEBIN; -- Clears the recycle bin
 
-CLEAR SCREEN;
+-- CLEAR SCREEN;

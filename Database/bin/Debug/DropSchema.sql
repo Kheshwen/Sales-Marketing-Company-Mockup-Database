@@ -9,7 +9,7 @@ DROP TABLE EmployeeAssignment;
 -- Drop the tables with the most dependencies next
 DROP TABLE Expenditure;
 DROP TABLE Revenue;
-DROP TABLE FinanceRecord;
+DROP TABLE FinancialRecord;
 DROP TABLE Campaignideas;
 DROP TABLE PostCampaignReport;
 DROP TABLE CampaignStatus;
@@ -36,6 +36,6 @@ DROP TABLE Person;
 
 COMMIT;
 
-PURGE RECYCLEBIN;
+PURGE RECYCLEBIN; -- Clears the recycle bin so your database stays clean
 
--- PURGE RECYCLEBIN; -- Clears the recycle bin so your database stays clean
+CLEAR SCREEN;

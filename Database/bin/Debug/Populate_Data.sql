@@ -125,46 +125,46 @@ INSERT INTO Worklocation VALUES ('L009','BLK-E1','Finance Office','Office',25,'M
 INSERT INTO Worklocation VALUES ('L010','BLK-E2','Marketing Office','Office',30,'Medium','Tier 2','Operational',TO_DATE('2026-01-30 15:50','YYYY-MM-DD HH24:MI'),'Front Exit');
 
 
-INSERT INTO Employee VALUES ('E001',1,TO_DATE('2022-01-10','YYYY-MM-DD'),4500.00,8.5,2,'Management','Active','Available','C0001');
-INSERT INTO Employee VALUES ('E002',1,TO_DATE('2021-03-15','YYYY-MM-DD'),5200.00,5.0,4,'Management','Active','On Leave','C0002');
-INSERT INTO Employee VALUES ('E003',1,TO_DATE('2020-06-20','YYYY-MM-DD'),6000.00,7.5,6,'Management','Active','Available','C0003');
-INSERT INTO Employee VALUES ('E004',1,TO_DATE('2023-02-01','YYYY-MM-DD'),4200.00,6.0,1,'Management','Active','Available','C0004');
-INSERT INTO Employee VALUES ('E005',1,TO_DATE('2019-09-10','YYYY-MM-DD'),7000.00,8.5,8,'Management','Active','Available','C0005');
-INSERT INTO Employee VALUES ('E006',1,TO_DATE('2022-11-05','YYYY-MM-DD'),4800.00,9.0,3,'Management','Active','On Leave','C0006');
-INSERT INTO Employee VALUES ('E007',1,TO_DATE('2021-07-19','YYYY-MM-DD'),4600.00,4.5,4,'Management','Resigned','N/A','C0007');
-INSERT INTO Employee VALUES ('E008',1,TO_DATE('2018-04-12','YYYY-MM-DD'),8000.00,5.5,10,'Management','Active','Available','C0008');
-INSERT INTO Employee VALUES ('E009',1,TO_DATE('2020-10-30','YYYY-MM-DD'),6500.00,7.5,6,'Management','Active','Available','C0009');
-INSERT INTO Employee VALUES ('E010',1,TO_DATE('2023-01-08','YYYY-MM-DD'),5000.00,9.5,2,'Management','Active','Available','C0010');
-INSERT INTO Employee VALUES ('E011',2,TO_DATE('2018-01-25','YYYY-MM-DD'),4500.00,5.5,2,'Tech','Active','Available','C0011');
-INSERT INTO Employee VALUES ('E012',2,TO_DATE('2018-06-18','YYYY-MM-DD'),5200.00,9.5,4,'Tech','Active','On Leave','C0012');
-INSERT INTO Employee VALUES ('E013',2,TO_DATE('2019-02-14','YYYY-MM-DD'),6000.00,7.5,6,'Tech','Active','Available','C0013');
-INSERT INTO Employee VALUES ('E014',2,TO_DATE('2021-01-04','YYYY-MM-DD'),4200.00,8.5,1,'Tech','Active','Available','C0014');
-INSERT INTO Employee VALUES ('E015',2,TO_DATE('2022-04-09','YYYY-MM-DD'),7000.00,7.0,8,'Tech','Active','Available','C0015');
-INSERT INTO Employee VALUES ('E016',2,TO_DATE('2022-07-21','YYYY-MM-DD'),4800.00,8.0,3,'Tech','Active','Available','C0016');
-INSERT INTO Employee VALUES ('E017',2,TO_DATE('2019-02-14','YYYY-MM-DD'),4600.00,9.5,4,'Tech','Resigned','Available','C0017');
-INSERT INTO Employee VALUES ('E018',2,TO_DATE('2024-01-15','YYYY-MM-DD'),8000.00,5.5,10,'Tech','Active','Available','C0018');
-INSERT INTO Employee VALUES ('E019',2,TO_DATE('2024-11-30','YYYY-MM-DD'),4500.00,7.5,2,'Tech','Active','On Leave','C0019');
-INSERT INTO Employee VALUES ('E020',2,TO_DATE('2021-09-13','YYYY-MM-DD'),5200.00,9.0,4,'Tech','Active','Available','C0020');
-INSERT INTO Employee VALUES ('E021',3,TO_DATE('2025-12-12','YYYY-MM-DD'),6000.00,9.5,6,'Finance','Active','Available','C0021');
-INSERT INTO Employee VALUES ('E022',3,TO_DATE('2024-11-30','YYYY-MM-DD'),4200.00,5.5,1,'Finance','Active','Available','C0022');
-INSERT INTO Employee VALUES ('E023',3,TO_DATE('2023-10-02','YYYY-MM-DD'),7000.00,6.5,8,'Finance','Active','Available','C0023');
-INSERT INTO Employee VALUES ('E024',3,TO_DATE('2025-07-09','YYYY-MM-DD'),4800.00,6.0,3,'Finance','Active','Available','C0024');
-INSERT INTO Employee VALUES ('E025',3,TO_DATE('2019-02-14','YYYY-MM-DD'),4600.00,7.5,4,'Finance','Resigned','Available','C0025');
-INSERT INTO Employee VALUES ('E026',3,TO_DATE('2023-03-10','YYYY-MM-DD'),8000.00,7.0,10,'Finance','Active','Available','C0026');
-INSERT INTO Employee VALUES ('E027',3,TO_DATE('2024-09-23','YYYY-MM-DD'),4500.00,7.0,2,'Finance','Active','Available','C0027');
-INSERT INTO Employee VALUES ('E028',3,TO_DATE('2025-09-26','YYYY-MM-DD'),5200.00,8.5,4,'Finance','Active','Available','C0028');
-INSERT INTO Employee VALUES ('E029',3,TO_DATE('2022-02-18','YYYY-MM-DD'),6000.00,9.5,6,'Finance','Active','Available','C0029');
-INSERT INTO Employee VALUES ('E030',3,TO_DATE('2024-01-15','YYYY-MM-DD'),4200.00,9.0,1,'Finance','Active','Available','C0030');
-INSERT INTO Employee VALUES ('E031',4,TO_DATE('2025-02-07','YYYY-MM-DD'),7000.00,7.0,8,'SalesMarketing','Active','Available','C0031');
-INSERT INTO Employee VALUES ('E032',4,TO_DATE('2022-04-09','YYYY-MM-DD'),4800.00,8.5,3,'SalesMarketing','Active','Available','C0032');
-INSERT INTO Employee VALUES ('E033',4,TO_DATE('2024-06-11','YYYY-MM-DD'),4600.00,9.0,4,'SalesMarketing','Resigned','Available','C0033');
-INSERT INTO Employee VALUES ('E034',4,TO_DATE('2025-09-26','YYYY-MM-DD'),8000.00,8.5,10,'SalesMarketing','Active','Available','C0034');
-INSERT INTO Employee VALUES ('E035',4,TO_DATE('2022-02-18','YYYY-MM-DD'),4500.00,9.0,2,'SalesMarketing','Active','Available','C0035');
-INSERT INTO Employee VALUES ('E036',4,TO_DATE('2023-03-10','YYYY-MM-DD'),5200.00,5.5,4,'SalesMarketing','Active','Available','C0036');
-INSERT INTO Employee VALUES ('E037',4,TO_DATE('2024-11-30','YYYY-MM-DD'),6000.00,7.5,6,'SalesMarketing','Active','Available','C0037');
-INSERT INTO Employee VALUES ('E038',4,TO_DATE('2021-09-13','YYYY-MM-DD'),4200.00,9.0,1,'SalesMarketing','Active','Available','C0038');
-INSERT INTO Employee VALUES ('E039',4,TO_DATE('2025-09-26','YYYY-MM-DD'),7000.00,8.5,8,'SalesMarketing','Active','Available','C0039');
-INSERT INTO Employee VALUES ('E040',4,TO_DATE('2024-06-11','YYYY-MM-DD'),4800.00,9.0,3,'SalesMarketing','Active','N/A','C0040');
+INSERT INTO Employee VALUES ('E001',1001,TO_DATE('2022-01-10','YYYY-MM-DD'),4500.00,8.5,2,'Management','Active','Available','C0001');
+INSERT INTO Employee VALUES ('E002',1002,TO_DATE('2021-03-15','YYYY-MM-DD'),5200.00,5.0,4,'Management','Active','On Leave','C0002');
+INSERT INTO Employee VALUES ('E003',1003,TO_DATE('2020-06-20','YYYY-MM-DD'),6000.00,7.5,6,'Management','Active','Available','C0003');
+INSERT INTO Employee VALUES ('E004',1004,TO_DATE('2023-02-01','YYYY-MM-DD'),4200.00,6.0,1,'Management','Active','Available','C0004');
+INSERT INTO Employee VALUES ('E005',1005,TO_DATE('2019-09-10','YYYY-MM-DD'),7000.00,8.5,8,'Management','Active','Available','C0005');
+INSERT INTO Employee VALUES ('E006',1006,TO_DATE('2022-11-05','YYYY-MM-DD'),4800.00,9.0,3,'Management','Active','On Leave','C0006');
+INSERT INTO Employee VALUES ('E007',1007,TO_DATE('2021-07-19','YYYY-MM-DD'),4600.00,4.5,4,'Management','Resigned','N/A','C0007');
+INSERT INTO Employee VALUES ('E008',1008,TO_DATE('2018-04-12','YYYY-MM-DD'),8000.00,5.5,10,'Management','Active','Available','C0008');
+INSERT INTO Employee VALUES ('E009',1009,TO_DATE('2020-10-30','YYYY-MM-DD'),6500.00,7.5,6,'Management','Active','Available','C0009');
+INSERT INTO Employee VALUES ('E010',1010,TO_DATE('2023-01-08','YYYY-MM-DD'),5000.00,9.5,2,'Management','Active','Available','C0010');
+INSERT INTO Employee VALUES ('E011',2001,TO_DATE('2018-01-25','YYYY-MM-DD'),4500.00,5.5,2,'Tech','Active','Available','C0011');
+INSERT INTO Employee VALUES ('E012',2002,TO_DATE('2018-06-18','YYYY-MM-DD'),5200.00,9.5,4,'Tech','Active','On Leave','C0012');
+INSERT INTO Employee VALUES ('E013',2003,TO_DATE('2019-02-14','YYYY-MM-DD'),6000.00,7.5,6,'Tech','Active','Available','C0013');
+INSERT INTO Employee VALUES ('E014',2004,TO_DATE('2021-01-04','YYYY-MM-DD'),4200.00,8.5,1,'Tech','Active','Available','C0014');
+INSERT INTO Employee VALUES ('E015',2005,TO_DATE('2022-04-09','YYYY-MM-DD'),7000.00,7.0,8,'Tech','Active','Available','C0015');
+INSERT INTO Employee VALUES ('E016',2006,TO_DATE('2022-07-21','YYYY-MM-DD'),4800.00,8.0,3,'Tech','Active','Available','C0016');
+INSERT INTO Employee VALUES ('E017',2007,TO_DATE('2019-02-14','YYYY-MM-DD'),4600.00,9.5,4,'Tech','Resigned','Available','C0017');
+INSERT INTO Employee VALUES ('E018',2008,TO_DATE('2024-01-15','YYYY-MM-DD'),8000.00,5.5,10,'Tech','Active','Available','C0018');
+INSERT INTO Employee VALUES ('E019',2009,TO_DATE('2024-11-30','YYYY-MM-DD'),4500.00,7.5,2,'Tech','Active','On Leave','C0019');
+INSERT INTO Employee VALUES ('E020',2010,TO_DATE('2021-09-13','YYYY-MM-DD'),5200.00,9.0,4,'Tech','Active','Available','C0020');
+INSERT INTO Employee VALUES ('E021',3001,TO_DATE('2025-12-12','YYYY-MM-DD'),6000.00,9.5,6,'Finance','Active','Available','C0021');
+INSERT INTO Employee VALUES ('E022',3002,TO_DATE('2024-11-30','YYYY-MM-DD'),4200.00,5.5,1,'Finance','Active','Available','C0022');
+INSERT INTO Employee VALUES ('E023',3003,TO_DATE('2023-10-02','YYYY-MM-DD'),7000.00,6.5,8,'Finance','Active','Available','C0023');
+INSERT INTO Employee VALUES ('E024',3004,TO_DATE('2025-07-09','YYYY-MM-DD'),4800.00,6.0,3,'Finance','Active','Available','C0024');
+INSERT INTO Employee VALUES ('E025',3005,TO_DATE('2019-02-14','YYYY-MM-DD'),4600.00,7.5,4,'Finance','Resigned','Available','C0025');
+INSERT INTO Employee VALUES ('E026',3006,TO_DATE('2023-03-10','YYYY-MM-DD'),8000.00,7.0,10,'Finance','Active','Available','C0026');
+INSERT INTO Employee VALUES ('E027',3007,TO_DATE('2024-09-23','YYYY-MM-DD'),4500.00,7.0,2,'Finance','Active','Available','C0027');
+INSERT INTO Employee VALUES ('E028',3008,TO_DATE('2025-09-26','YYYY-MM-DD'),5200.00,8.5,4,'Finance','Active','Available','C0028');
+INSERT INTO Employee VALUES ('E029',3009,TO_DATE('2022-02-18','YYYY-MM-DD'),6000.00,9.5,6,'Finance','Active','Available','C0029');
+INSERT INTO Employee VALUES ('E030',3010,TO_DATE('2024-01-15','YYYY-MM-DD'),4200.00,9.0,1,'Finance','Active','Available','C0030');
+INSERT INTO Employee VALUES ('E031',4001,TO_DATE('2025-02-07','YYYY-MM-DD'),7000.00,7.0,8,'SalesMarketing','Active','Available','C0031');
+INSERT INTO Employee VALUES ('E032',4002,TO_DATE('2022-04-09','YYYY-MM-DD'),4800.00,8.5,3,'SalesMarketing','Active','Available','C0032');
+INSERT INTO Employee VALUES ('E033',4003,TO_DATE('2024-06-11','YYYY-MM-DD'),4600.00,9.0,4,'SalesMarketing','Resigned','Available','C0033');
+INSERT INTO Employee VALUES ('E034',4004,TO_DATE('2025-09-26','YYYY-MM-DD'),8000.00,8.5,10,'SalesMarketing','Active','Available','C0034');
+INSERT INTO Employee VALUES ('E035',4005,TO_DATE('2022-02-18','YYYY-MM-DD'),4500.00,9.0,2,'SalesMarketing','Active','Available','C0035');
+INSERT INTO Employee VALUES ('E036',4006,TO_DATE('2023-03-10','YYYY-MM-DD'),5200.00,5.5,4,'SalesMarketing','Active','Available','C0036');
+INSERT INTO Employee VALUES ('E037',4007,TO_DATE('2024-11-30','YYYY-MM-DD'),6000.00,7.5,6,'SalesMarketing','Active','Available','C0037');
+INSERT INTO Employee VALUES ('E038',4008,TO_DATE('2021-09-13','YYYY-MM-DD'),4200.00,9.0,1,'SalesMarketing','Active','Available','C0038');
+INSERT INTO Employee VALUES ('E039',4009,TO_DATE('2025-09-26','YYYY-MM-DD'),7000.00,8.5,8,'SalesMarketing','Active','Available','C0039');
+INSERT INTO Employee VALUES ('E040',4010,TO_DATE('2024-06-11','YYYY-MM-DD'),4800.00,9.0,3,'SalesMarketing','Active','N/A','C0040');
 
 
 
@@ -177,7 +177,7 @@ INSERT INTO Management VALUES ('M005',1005,'Junior',200000.00,'Sales Manager','A
 INSERT INTO Management VALUES ('M006',1006,'Senior',450000.00,'COO','Active','Process Efficiency 20%','Full','Operational Overhaul','Eligible','E006');
 INSERT INTO Management VALUES ('M007',1007,'Middle',320000.00,'Marketing Director','Active','Brand Awareness 25%','Limited','Social Media Expansion','Eligible','E007');
 INSERT INTO Management VALUES ('M008',1008,'Junior',180000.00,'Project Manager','Active','On-time Delivery 90%','Limited','Project Planning','Eligible','E008');
-INSERT INTO Management VALUES ('M009',1009,'Senior',550000.00,'CTO','Active','Tech Innovation Index','Full','R&D Strategy','Eligible','E009');
+INSERT INTO Management VALUES ('M009',1009,'Senior',550000.00,'CTO','Active','Tech Innovation Index','Full','RnD Strategy','Eligible','E009');
 INSERT INTO Management VALUES ('M010',1010,'Middle',270000.00,'Finance Manager','Active','Budget Accuracy 98%','Limited','Audit Improvements','Eligible','E010');
 
 
@@ -189,7 +189,7 @@ INSERT INTO Tech VALUES ('T301','TS001','Software Engineer',0,'github.com/ali','
 INSERT INTO Tech VALUES ('T302','TS002','Software Engineer',1,'github.com/siti','JavaScript','Q15','HW002','Medium','Limited','Developer',TO_DATE('2024-03-10','YYYY-MM-DD'),'E012');
 INSERT INTO Tech VALUES ('T303','TS003','DevOps Engineer',0,'github.com/john','Python','Q20','HW003','High','Full','Admin',TO_DATE('2024-07-05','YYYY-MM-DD'),'E013');
 INSERT INTO Tech VALUES ('T304','TS004','QA Engineer',0,'github.com/aisyah','Java','Q25','HW004','Medium','Limited','Tester',TO_DATE('2024-05-22','YYYY-MM-DD'),'E014');
-INSERT INTO Tech VALUES ('T305','TS005','Security Engineer',1,'github.com/daniel','Python','Q30','HW005','Very High','Full','Admin',TO_DATE('2024-09-18','YYYY-MM-DD'),'E015');
+INSERT INTO Tech VALUES ('T305','TS005','Security Engineer',1,'github.com/daniel','Python','Q30','HW005','High','Full','Admin',TO_DATE('2024-09-18','YYYY-MM-DD'),'E015');
 INSERT INTO Tech VALUES ('T306','TS006','Full Stack Developer',0,'github.com/murman','Python/JS','Q35','HW006','High','Full','Admin',TO_DATE('2024-11-30','YYYY-MM-DD'),'E016');
 INSERT INTO Tech VALUES ('T307','TS007','Backend Developer',1,'github.com/arjun','SQL','Q40','HW007','Medium','Limited','Developer',TO_DATE('2025-01-12','YYYY-MM-DD'),'E017');
 INSERT INTO Tech VALUES ('T308','TS008','Frontend Developer',0,'github.com/sarah','JavaScript','Q45','HW008','Low','Limited','Developer',TO_DATE('2025-02-25','YYYY-MM-DD'),'E018');
@@ -207,7 +207,7 @@ INSERT INTO Finance VALUES ('F405','FRC005','Payroll Officer',30000.00,80000.00,
 INSERT INTO Finance VALUES ('F406','FRC006','Assistant Accountant',20000.00,50000.00,'Level 1','Dept Budget','GST','Expense Accuracy 95%','Full',TO_DATE('2026-04-30','YYYY-MM-DD'),'E026');
 INSERT INTO Finance VALUES ('F407','FRC007','Finance Analyst',70000.00,120000.00,'Level 2','Division Budget','Corporate Tax','ROI 15%','Full',TO_DATE('2026-09-30','YYYY-MM-DD'),'E027');
 INSERT INTO Finance VALUES ('F408','FRC008','Treasury Officer',80000.00,150000.00,'Level 2','Company Budget','Income Tax','Cashflow Accuracy 99%','Full',TO_DATE('2026-11-30','YYYY-MM-DD'),'E028');
-INSERT INTO Finance VALUES ('F409','FRC009','Senior Auditor',150000.00,300000.00,'Level 3','Company Budget','GST & Corporate Tax','Compliance 100%','Full',TO_DATE('2026-12-31','YYYY-MM-DD'),'E029');
+INSERT INTO Finance VALUES ('F409','FRC009','Senior Auditor',150000.00,300000.00,'Level 3','Company Budget','GST and Corporate Tax','Compliance 100%','Full',TO_DATE('2026-12-31','YYYY-MM-DD'),'E029');
 INSERT INTO Finance VALUES ('F410','FRC010','Chief Accountant',300000.00,600000.00,'Level 3','Entire Company','Corporate Tax','Financial Accuracy 100%','Full',TO_DATE('2026-12-31','YYYY-MM-DD'),'E030');
 
 COMMIT;
@@ -266,62 +266,61 @@ INSERT INTO Client VALUES ('CL010','Creative Minds','CR10',200000.00,'Bronze','N
 COMMIT;
 
 
-INSERT INTO Campaign VALUES ('CA001', 'V1', 'LaunchTech2026', 'Increase brand awareness in IT sector', 'CL001');
-INSERT INTO Campaign VALUES ('CA002', 'V1', 'GreenEnergyPromo', 'Promote sustainable energy solutions', 'CL002');
-INSERT INTO Campaign VALUES ('CA003', 'V2', 'FastLogisticsBoost', 'Expand logistics services to Penang', 'CL003');
-INSERT INTO Campaign VALUES ('CA004', 'V1', 'HealthPlusCare', 'Increase customer engagement for health products', 'CL004');
-INSERT INTO Campaign VALUES ('CA005', 'V3', 'BuildItCampaign', 'Attract new construction projects in Selangor', 'CL005');
-INSERT INTO Campaign VALUES ('CA006', 'V2', 'MarketMakersPush', 'Boost digital marketing services sales', 'CL006');
-INSERT INTO Campaign VALUES ('CA007', 'V1', 'FinTechGrowth', 'Increase fintech product adoption', 'CL007');
-INSERT INTO Campaign VALUES ('CA008', 'V2', 'EduSmartDrive', 'Promote e-learning programs nationwide', 'CL008');
-INSERT INTO Campaign VALUES ('CA009', 'V1', 'AgroLifeExpansion', 'Expand agricultural services to Johor', 'CL009');
-INSERT INTO Campaign VALUES ('CA010', 'V1', 'CreativeMindsPromo', 'Promote creative services to SMEs', 'CL010');
-INSERT INTO Campaign VALUES ('CA011', 'V1', 'MimiTech', 'To enhance tech culture', 'CL001');
-INSERT INTO Campaign VALUES ('CA012', 'V1', 'BrightFutureHub', 'Promote future tech in Kedah', 'CL002');
-INSERT INTO Campaign VALUES ('CA013', 'V2', 'GreenHarvestGlobal', 'Encourage Green Use', 'CL003');
-INSERT INTO Campaign VALUES ('CA014', 'V1', 'NovaSkillWorks', 'Promote skills in KL', 'CL004');
-INSERT INTO Campaign VALUES ('CA015', 'V3', 'InspireEdgeSolutions', 'Encourage students tech solution', 'CL005');
-INSERT INTO Campaign VALUES ('CA016', 'V2', 'EcoSmart', 'Promote green tech around nation', 'CL006');
-INSERT INTO Campaign VALUES ('CA017', 'V1', 'EduProConnect', 'Tech enchance program in Perak', 'CL007');
-INSERT INTO Campaign VALUES ('CA018', 'V1', 'HarvestLink', 'To improve agricultural supply chain efficiency.', 'CL008');
-INSERT INTO Campaign VALUES ('CA019', 'V1', 'BrightMinds', 'To provide innovative education and skill development.', 'CL009');
-INSERT INTO Campaign VALUES ('CA020', 'V2', 'MiraTech', 'To deliver reliable and efficient tech solutions.', 'CL010');
-INSERT INTO Campaign VALUES ('CA021', 'V1', 'SparkWave', 'To enhance brand visibility through digital marketing.', 'CL001');
-INSERT INTO Campaign VALUES ('CA022', 'V3', 'MindShift', 'To promote personal and leadership growth', 'CL002');
-INSERT INTO Campaign VALUES ('CA023', 'V2', 'NextWaveDynamics', 'To drive future-focused business innovation.', 'CL003');
-INSERT INTO Campaign VALUES ('CA024', 'V1', 'AgriNova', 'To modernize farming with smart technology.', 'CL004');
-INSERT INTO Campaign VALUES ('CA025', 'V1', 'SmartBridge', 'To connect businesses with digital solutions.', 'CL005');
-INSERT INTO Campaign VALUES ('CA026', 'V1', 'InnovatePlus', 'To support innovation and business growth.', 'CL006');
-INSERT INTO Campaign VALUES ('CA027', 'V2', 'BrightMinds', 'To connect businesses with digital solutions.', 'CL007');
-INSERT INTO Campaign VALUES ('CA028', 'V1', 'UrbanBloom', 'To promote sustainable urban development.', 'CL008');
-INSERT INTO Campaign VALUES ('CA029', 'V3', 'ZenithEdge', 'To provide strategic and competitive business solutions', 'CL009');
-INSERT INTO Campaign VALUES ('CA030', 'V2', 'AlphaCore', 'To build strong and scalable technology systems', 'CL010');
 
+INSERT INTO Campaign VALUES ('CA001', 'V1', 'LaunchTech2026', 'Increase brand awareness in IT sector', 'E001', 'CL001');
+INSERT INTO Campaign VALUES ('CA002', 'V1', 'GreenEnergyPromo', 'Promote sustainable energy solutions', 'E002', 'CL002');
+INSERT INTO Campaign VALUES ('CA003', 'V2', 'FastLogisticsBoost', 'Expand logistics services to Penang', 'E003', 'CL003');
+INSERT INTO Campaign VALUES ('CA004', 'V1', 'HealthPlusCare', 'Increase customer engagement for health products', 'E004', 'CL004');
+INSERT INTO Campaign VALUES ('CA005', 'V3', 'BuildItCampaign', 'Attract new construction projects in Selangor', 'E005', 'CL005');
+INSERT INTO Campaign VALUES ('CA006', 'V2', 'MarketMakersPush', 'Boost digital marketing services sales', 'E006', 'CL006');
+INSERT INTO Campaign VALUES ('CA007', 'V1', 'FinTechGrowth', 'Increase fintech product adoption', 'E007', 'CL007');
+INSERT INTO Campaign VALUES ('CA008', 'V2', 'EduSmartDrive', 'Promote e-learning programs nationwide', 'E008', 'CL008');
+INSERT INTO Campaign VALUES ('CA009', 'V1', 'AgroLifeExpansion', 'Expand agricultural services to Johor', 'E009', 'CL009');
+INSERT INTO Campaign VALUES ('CA010', 'V1', 'CreativeMindsPromo', 'Promote creative services to SMEs', 'E010', 'CL010');
+INSERT INTO Campaign VALUES ('CA011', 'V1', 'MimiTech', 'To enhance tech culture', 'E011', 'CL001');
+INSERT INTO Campaign VALUES ('CA012', 'V1', 'BrightFutureHub', 'Promote future tech in Kedah', 'E012', 'CL002');
+INSERT INTO Campaign VALUES ('CA013', 'V2', 'GreenHarvestGlobal', 'Encourage Green Use', 'E013', 'CL003');
+INSERT INTO Campaign VALUES ('CA014', 'V1', 'NovaSkillWorks', 'Promote skills in KL', 'E014', 'CL004');
+INSERT INTO Campaign VALUES ('CA015', 'V3', 'InspireEdgeSolutions', 'Encourage students tech solution', 'E015', 'CL005');
+INSERT INTO Campaign VALUES ('CA016', 'V2', 'EcoSmart', 'Promote green tech around nation', 'E016', 'CL006');
+INSERT INTO Campaign VALUES ('CA017', 'V1', 'EduProConnect', 'Tech enchance program in Perak', 'E017', 'CL007');
+INSERT INTO Campaign VALUES ('CA018', 'V1', 'HarvestLink', 'To improve agricultural supply chain efficiency.', 'E018', 'CL008');
+INSERT INTO Campaign VALUES ('CA019', 'V1', 'BrightMinds', 'To provide innovative education and skill development.', 'E019', 'CL009');
+INSERT INTO Campaign VALUES ('CA020', 'V2', 'MiraTech', 'To deliver reliable and efficient tech solutions.', 'E020', 'CL010');
+INSERT INTO Campaign VALUES ('CA021', 'V1', 'SparkWave', 'To enhance brand visibility through digital marketing.', 'E021', 'CL001');
+INSERT INTO Campaign VALUES ('CA022', 'V3', 'MindShift', 'To promote personal and leadership growth', 'E022', 'CL002');
+INSERT INTO Campaign VALUES ('CA023', 'V2', 'NextWaveDynamics', 'To drive future-focused business innovation.', 'E023', 'CL003');
+INSERT INTO Campaign VALUES ('CA024', 'V1', 'AgriNova', 'To modernize farming with smart technology.', 'E024', 'CL004');
+INSERT INTO Campaign VALUES ('CA025', 'V1', 'SmartBridge', 'To connect businesses with digital solutions.', 'E025', 'CL005');
+INSERT INTO Campaign VALUES ('CA026', 'V1', 'InnovatePlus', 'To support innovation and business growth.', 'E026', 'CL006');
+INSERT INTO Campaign VALUES ('CA027', 'V2', 'BrightMinds', 'To connect businesses with digital solutions.', 'E027', 'CL007');
+INSERT INTO Campaign VALUES ('CA028', 'V1', 'UrbanBloom', 'To promote sustainable urban development.', 'E028', 'CL008');
+INSERT INTO Campaign VALUES ('CA029', 'V3', 'ZenithEdge', 'To provide strategic and competitive business solutions', 'E029', 'CL009');
+INSERT INTO Campaign VALUES ('CA030', 'V2', 'AlphaCore', 'To build strong and scalable technology systems', 'E030', 'CL010');
 
 
 INSERT INTO DigitalCampaign VALUES ('DI001', 'Google Ads', 'launchtech2026', 'tech solutions', 'LaunchTech 2026 Now', 'Discover the latest tech solutions', 'EA001', 30, 80, 'https://launchtech.com', 'CA001');
-INSERT INTO DigitalCampaign VALUES ('DI002', 'Facebook Ads', 'greenenergypromo', 'sustainable energy', 'Green Energy Promo', 'Go green with our energy solutions', 'EA002', 45, 45, 75, 'https://greenenergy.com', 'CA002');
-INSERT INTO DigitalCampaign VALUES ('DI003', 'Instagram Ads', 'fastlogisticsboost', 'logistics services', 'Fast Logistics Boost', 'Expand your delivery coverage', 'EA003', 60, 60, 70, 'https://fastlogistics.com', 'CA003');
-INSERT INTO DigitalCampaign VALUES ('DI004', 'Google Ads', 'healthpluscare', 'health care', 'HealthPlus Care', 'Improve your wellness today', 'EA004', 30, 30, 78, 'https://healthplus.com', 'CA004');
-INSERT INTO DigitalCampaign VALUES ('DI005', 'LinkedIn Ads', 'builditcampaign', 'construction projects', 'BuildIt Campaign', 'Attract new projects easily', 'EA005', 90, 90, 85, 'https://buildit.com', 'CA005');
-INSERT INTO DigitalCampaign VALUES ('DI006', 'Email Marketing', 'marketmakerspush', 'digital marketing', 'Market Makers Push', 'Boost your sales with marketing', 'EA006', 30, 30, 80, 'https://marketmakers.com', 'CA006');
-INSERT INTO DigitalCampaign VALUES ('DI007', 'Google Ads', 'fintechgrowth', 'fintech products', 'FinTech Growth', 'Adopt fintech products today', 'EA007', 60, 60, 82, 'https://fintechsolutions.com', 'CA007');
-INSERT INTO DigitalCampaign VALUES ('DI008', 'Facebook Ads', 'edusmartdrive', 'e-learning', 'EduSmart Drive', 'Promote online learning', 'EA008', 45, 45, 77, 'https://edusmart.com', 'CA008');
-INSERT INTO DigitalCampaign VALUES ('DI009', 'Instagram Ads', 'agrolifeexpansion', 'agriculture services', 'AgroLife Expansion', 'Expand your farm business', 'EA009', 30, 30, 70, 'https://agrolife.com', 'CA009');
-INSERT INTO DigitalCampaign VALUES ('DI010', 'LinkedIn Ads', 'creativemindspromo', 'creative services', 'Creative Minds Promo', 'Promote your creative agency', 'EA010', 60, 60, 75, 'https://creativeminds.com', 'CA010');
+INSERT INTO DigitalCampaign VALUES ('DI002', 'Facebook Ads', 'greenenergypromo', 'sustainable energy', 'Green Energy Promo', 'Go green with our energy solutions', 'EA002', 45, 75, 'https://greenenergy.com', 'CA002');
+INSERT INTO DigitalCampaign VALUES ('DI003', 'Instagram Ads', 'fastlogisticsboost', 'logistics services', 'Fast Logistics Boost', 'Expand your delivery coverage', 'EA003', 60, 70, 'https://fastlogistics.com', 'CA003');
+INSERT INTO DigitalCampaign VALUES ('DI004', 'Google Ads', 'healthpluscare', 'health care', 'HealthPlus Care', 'Improve your wellness today', 'EA004', 30, 78, 'https://healthplus.com', 'CA004');
+INSERT INTO DigitalCampaign VALUES ('DI005', 'LinkedIn Ads', 'builditcampaign', 'construction projects', 'BuildIt Campaign', 'Attract new projects easily', 'EA005', 90,  85, 'https://buildit.com', 'CA005');
+INSERT INTO DigitalCampaign VALUES ('DI006', 'Email Marketing', 'marketmakerspush', 'digital marketing', 'Market Makers Push', 'Boost your sales with marketing', 'EA006', 30, 80, 'https://marketmakers.com', 'CA006');
+INSERT INTO DigitalCampaign VALUES ('DI007', 'Google Ads', 'fintechgrowth', 'fintech products', 'FinTech Growth', 'Adopt fintech products today', 'EA007', 60, 82, 'https://fintechsolutions.com', 'CA007');
+INSERT INTO DigitalCampaign VALUES ('DI008', 'Facebook Ads', 'edusmartdrive', 'e-learning', 'EduSmart Drive', 'Promote online learning', 'EA008', 45, 77, 'https://edusmart.com', 'CA008');
+INSERT INTO DigitalCampaign VALUES ('DI009', 'Instagram Ads', 'agrolifeexpansion', 'agriculture services', 'AgroLife Expansion', 'Expand your farm business', 'EA009', 30, 70, 'https://agrolife.com', 'CA009');
+INSERT INTO DigitalCampaign VALUES ('DI010', 'LinkedIn Ads', 'creativemindspromo', 'creative services', 'Creative Minds Promo', 'Promote your creative agency', 'EA010', 60, 75, 'https://creativeminds.com', 'CA010');
 
 
-
-INSERT INTO SocialMediaCampaign VALUES ('SOC001', 'Instagram', 105, 'Gold', '#LaunchTech2026', 'Image/Video', 8.5, '3 posts/week', 'Respond within 24h', 501, 'CA011');
+INSERT INTO SocialMediaCampaign VALUES ('SOC001', 'Instagram', 105, 'Gold', '#LaunchTech2026', 'Image', 8.5, '3 posts/week', 'Respond within 24h', 501, 'CA011');
 INSERT INTO SocialMediaCampaign VALUES ('SOC002', 'Facebook', 106, 'Silver', '#GreenEnergyPromo', 'Video', 7.2, '2 posts/week', 'Respond within 48h', 502, 'CA012');
-INSERT INTO SocialMediaCampaign VALUES ('SOC003', 'Twitter', 107, 'Gold', '#FastLogisticsBoost', 'Text/Image', 6.8, '5 posts/week', 'Respond within 12h', 503, 'CA013');
+INSERT INTO SocialMediaCampaign VALUES ('SOC003', 'Twitter', 107, 'Gold', '#FastLogisticsBoost', 'Text', 6.8, '5 posts/week', 'Respond within 12h', 503, 'CA013');
 INSERT INTO SocialMediaCampaign VALUES ('SOC004', 'TikTok', 108, 'Bronze', '#HealthPlusCare', 'Video', 9.0, '2 posts/week', 'Respond within 24h', 504, 'CA014');
-INSERT INTO SocialMediaCampaign VALUES ('SOC005', 'LinkedIn', 109, 'Gold', '#BuildItCampaign', 'Article/Image', 7.5, '1 post/week', 'Respond within 48h', 505, 'CA015');
-INSERT INTO SocialMediaCampaign VALUES ('SOC006', 'Instagram', 110, 'Silver', '#MarketMakersPush', 'Image/Video', 8.0, '3 posts/week', 'Respond within 24h', 506, 'CA016');
+INSERT INTO SocialMediaCampaign VALUES ('SOC005', 'LinkedIn', 109, 'Gold', '#BuildItCampaign', 'Article', 7.5, '1 post/week', 'Respond within 48h', 505, 'CA015');
+INSERT INTO SocialMediaCampaign VALUES ('SOC006', 'Instagram', 110, 'Silver', '#MarketMakersPush', 'Image', 8.0, '3 posts/week', 'Respond within 24h', 506, 'CA016');
 INSERT INTO SocialMediaCampaign VALUES ('SOC007', 'Facebook', 105, 'Gold', '#FinTechGrowth', 'Video', 7.8, '2 posts/week', 'Respond within 12h', 507, 'CA017');
-INSERT INTO SocialMediaCampaign VALUES ('SOC008', 'Twitter', 106, 'Bronze', '#EduSmartDrive', 'Text/Image', 6.5, '4 posts/week', 'Respond within 24h', 508, 'CA018');
+INSERT INTO SocialMediaCampaign VALUES ('SOC008', 'Twitter', 106, 'Bronze', '#EduSmartDrive', 'Text', 6.5, '4 posts/week', 'Respond within 24h', 508, 'CA018');
 INSERT INTO SocialMediaCampaign VALUES ('SOC009', 'TikTok', 107, 'Silver', '#AgroLifeExpansion', 'Video', 8.2, '2 posts/week', 'Respond within 24h', 509, 'CA019');
-INSERT INTO SocialMediaCampaign VALUES ('SOC010', 'LinkedIn', 108, 'Gold', '#CreativeMindsPromo', 'Article/Image', 7.9, '1 post/week', 'Respond within 48h', 510, 'CA020');
+INSERT INTO SocialMediaCampaign VALUES ('SOC010', 'LinkedIn', 108, 'Gold', '#CreativeMindsPromo', 'Article', 7.9, '1 post/week', 'Respond within 48h', 510, 'CA020');
 
 
 INSERT INTO PhysicalCampaign VALUES ('PY001', 'EV001', 500, 'Projector, Sound System', 601, 701, 'iPad', 801, 'Kuala Lumpur Convention Centre', 20, 'CA001');
@@ -360,32 +359,18 @@ INSERT INTO WorkOrder VALUES ('WK009', 'PH009', 'Client Follow-up', 'Contact cli
 INSERT INTO WorkOrder VALUES ('WK010', 'PH010', 'Graphic Design', 'Design promo materials for CreativeMindsPromo', 'Medium', 'In Progress', TO_DATE('2026-02-23','YYYY-MM-DD'), TO_TIMESTAMP('2026-03-01 18:00:00','YYYY-MM-DD HH24:MI:SS'), 18.00, 7.50, 'CL010', 'T310');
 
 
-INSERT INTO Meeting VALUES ('ME001', TO_DATE('2026-02-20','YYYY-MM-DD'), 'LaunchTech Strategy', '09:00', '11:00', 'Strategy', 'Discuss campaign objectives', 'https://docs.com/mtg1701', 'Campaign', 1101, TRUE, 'Low', 'E001', 'L001');
-INSERT INTO Meeting VALUES ('ME002', TO_DATE('2026-02-21','YYYY-MM-DD'), 'GreenEnergy Planning', '14:00', '16:00', 'Planning', 'Plan digital campaign', 'https://docs.com/mtg1702', 'Campaign', 1102, TRUE, 'Medium', 'E002', 'L002');
-INSERT INTO Meeting VALUES ('ME003', TO_DATE('2026-02-22','YYYY-MM-DD'), 'Logistics Coordination', '10:00', '12:00', 'Coordination', 'Align event tasks', 'https://docs.com/mtg1703', 'WorkOrder', 1603, TRUE, 'High', 'E003', 'L003');
-INSERT INTO Meeting VALUES ('ME004', TO_DATE('2026-02-23','YYYY-MM-DD'), 'HealthPlus Creative Review', '13:00', '15:00', 'Review', 'Review content and creatives', 'https://docs.com/mtg1704', 'Campaign', 1104, FALSE, 'Confidential 1', 'E004', 'L004');
-INSERT INTO Meeting VALUES ('ME005', TO_DATE('2026-02-24','YYYY-MM-DD'), 'BuildIt Budget Meeting', '11:00', '12:30', 'Budget', 'Discuss budget allocation', 'https://docs.com/mtg1705', 'Proposal', 1505, TRUE, 'Medium', 'E005', 'L005');
-INSERT INTO Meeting VALUES ('ME006', TO_DATE('2026-02-25','YYYY-MM-DD'), 'MarketMakers Progress', '15:00', '16:30', 'Progress', 'Track campaign KPIs', 'https://docs.com/mtg1706', 'Campaign', 1106, TRUE, 'Low', 'E006', 'L006');
-INSERT INTO Meeting VALUES ('ME007', TO_DATE('2026-02-26','YYYY-MM-DD'), 'FinTech Growth Overview', '13:00', '15:00', 'Review', 'Analyze previous campaign results', 'https://docs.com/mtg1707', 'Campaign', 1107, TRUE, 'Low', 'E007', 'L007');
-INSERT INTO Meeting VALUES ('ME008', TO_DATE('2026-02-27','YYYY-MM-DD'), 'EduSmart Email Setup', '14:00', '15:30', 'Setup', 'Configure email sequences', 'https://docs.com/mtg1708', 'WorkOrder', 1608, FALSE, 'Confidential 1', 'E008', 'L008');
-INSERT INTO Meeting VALUES ('ME009', TO_DATE('2026-02-28','YYYY-MM-DD'), 'AgroLife Expansion Check', '10:00', '11:30', 'Progress', 'Review lead generation progress', 'https://docs.com/mtg1709', 'Campaign', 1109, TRUE, 'Medium', 'E009', 'L009');
-INSERT INTO Meeting VALUES ('ME010', TO_DATE('2026-03-01','YYYY-MM-DD'), 'CreativeMinds Promo', '13:00', '14:30', 'Planning', 'Plan creative campaign rollout', 'https://docs.com/mtg1710', 'Campaign', 1110, TRUE, 'High', 'E010', 'L010');
+-- Done debug until here 
 
-
-
-
-INSERT INTO CampaignStatus VALUES ('STA001', 1, 'Pending', TO_TIMESTAMP('2026-02-20 09:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR001', 'Initial approval pending', FALSE, 'High', NULL, TO_DATE('2026-02-20','YYYY-MM-DD'), TO_DATE('2026-02-25','YYYY-MM-DD'), 1, 'EX001', 'SM001');
-INSERT INTO CampaignStatus VALUES ('STA002', 2, 'Approved', TO_TIMESTAMP('2026-02-21 10:30:00','YYYY-MM-DD HH24:MI:SS'), 'CR002', 'Manager approved campaign', FALSE, 'High', 1801, TO_DATE('2026-02-21','YYYY-MM-DD'), TO_DATE('2026-02-26','YYYY-MM-DD'), 2, 'EX002', 'SM002');
-INSERT INTO CampaignStatus VALUES ('STA003', 3, 'In Progress', TO_TIMESTAMP('2026-02-22 14:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR003', 'Campaign started', TRUE, 'Medium', 1802, TO_DATE('2026-02-22','YYYY-MM-DD'), TO_DATE('2026-03-01','YYYY-MM-DD'), 3, 'EX003', 'SM003');
-INSERT INTO CampaignStatus VALUES ('STA004', 4, 'On Hold', TO_TIMESTAMP('2026-02-23 11:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR004', 'Pending client feedback', FALSE, 'Medium', 1803, TO_DATE('2026-02-23','YYYY-MM-DD'), TO_DATE('2026-03-05','YYYY-MM-DD'), 4, 'EX004', 'SM004');
-INSERT INTO CampaignStatus VALUES ('STA005', 5, 'Completed', TO_TIMESTAMP('2026-02-24 14:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR005', 'Campaign finished successfully', FALSE, 'High', 1803, TO_DATE('2026-02-24','YYYY-MM-DD'), NULL, 5, 'EX005', 'SM005');
-INSERT INTO CampaignStatus VALUES ('STA006', 6, 'Cancelled', TO_TIMESTAMP('2026-02-25 09:30:00','YYYY-MM-DD HH24:MI:SS'), 'CR006', 'Campaign cancelled by client', FALSE, 'High', 1802, TO_DATE('2026-02-25','YYYY-MM-DD'), NULL, 6, 'EX006', 'SM006');
-INSERT INTO CampaignStatus VALUES ('STA007', 7, 'Pending', TO_TIMESTAMP('2026-02-26 10:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR007', 'Resuming campaign', TRUE, 'Medium', 1804, TO_DATE('2026-02-26','YYYY-MM-DD'), TO_DATE('2026-03-02','YYYY-MM-DD'), 7, 'EX007', 'SM007');
-INSERT INTO CampaignStatus VALUES ('STA008', 8, 'Approved', TO_TIMESTAMP('2026-02-27 15:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR008', 'Manager re-approval', FALSE, 'High', 1807, TO_DATE('2026-02-27','YYYY-MM-DD'), TO_DATE('2026-03-05','YYYY-MM-DD'), 8, 'EX008', 'SM008');
-INSERT INTO CampaignStatus VALUES ('STA009', 9, 'In Progress', TO_TIMESTAMP('2026-02-28 13:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR009', 'Active campaign execution', TRUE, 'Medium', 1808, TO_DATE('2026-02-28','YYYY-MM-DD'), TO_DATE('2026-03-10','YYYY-MM-DD'), 9, 'EX009', 'SM009');
-INSERT INTO CampaignStatus VALUES ('STA010', 10, 'Completed', TO_TIMESTAMP('2026-03-01 12:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR010', 'Final completion', FALSE, 'High', 1809, TO_DATE('2026-03-01','YYYY-MM-DD'), NULL, 10, 'EX010', 'SM010');
-
-
+INSERT INTO Meeting VALUES ('ME001', TO_DATE('2026-02-20','YYYY-MM-DD'), 'LaunchTech Strategy', TO_TIMESTAMP('09:00', 'HH24:MI'), TO_TIMESTAMP('11:00', 'HH24:MI'), 'Strategy', 'Discuss campaign objectives', 'https://docs.com/mtg1701', 'Campaign', 1101, 'TRUE', 'Low', 'E001', 'L001');
+INSERT INTO Meeting VALUES ('ME002', TO_DATE('2026-02-21','YYYY-MM-DD'), 'GreenEnergy Planning', TO_TIMESTAMP('14:00', 'HH24:MI'), TO_TIMESTAMP('16:00', 'HH24:MI'), 'Planning', 'Plan digital campaign', 'https://docs.com/mtg1702', 'Campaign', 1102, 'TRUE', 'Medium', 'E002', 'L002');
+INSERT INTO Meeting VALUES ('ME003', TO_DATE('2026-02-22','YYYY-MM-DD'), 'Logistics Coordination', TO_TIMESTAMP('10:00', 'HH24:MI'), TO_TIMESTAMP('12:00', 'HH24:MI'), 'Coordination', 'Align event tasks', 'https://docs.com/mtg1703', 'WorkOrder', 1603, 'TRUE', 'High', 'E003', 'L003');
+INSERT INTO Meeting VALUES ('ME004', TO_DATE('2026-02-23','YYYY-MM-DD'), 'HealthPlus Creative Review', TO_TIMESTAMP('13:00', 'HH24:MI'), TO_TIMESTAMP('15:00', 'HH24:MI'), 'Review', 'Review content and creatives', 'https://docs.com/mtg1704', 'Campaign', 1104, 'FALSE', 'Confidential 1', 'E004', 'L004');
+INSERT INTO Meeting VALUES ('ME005', TO_DATE('2026-02-24','YYYY-MM-DD'), 'BuildIt Budget Meeting', TO_TIMESTAMP('11:00', 'HH24:MI'), TO_TIMESTAMP('12:30', 'HH24:MI'), 'Budget', 'Discuss budget allocation', 'https://docs.com/mtg1705', 'Proposal', 1505, 'TRUE', 'Medium', 'E005', 'L005');
+INSERT INTO Meeting VALUES ('ME006', TO_DATE('2026-02-25','YYYY-MM-DD'), 'MarketMakers Progress', TO_TIMESTAMP('15:00', 'HH24:MI'), TO_TIMESTAMP('16:30', 'HH24:MI'), 'Progress', 'Track campaign KPIs', 'https://docs.com/mtg1706', 'Campaign', 1106, 'TRUE', 'Low', 'E006', 'L006');
+INSERT INTO Meeting VALUES ('ME007', TO_DATE('2026-02-26','YYYY-MM-DD'), 'FinTech Growth Overview', TO_TIMESTAMP('13:00', 'HH24:MI'), TO_TIMESTAMP('15:00', 'HH24:MI'), 'Review', 'Analyze previous campaign results', 'https://docs.com/mtg1707', 'Campaign', 1107, 'TRUE', 'Low', 'E007', 'L007');
+INSERT INTO Meeting VALUES ('ME008', TO_DATE('2026-02-27','YYYY-MM-DD'), 'EduSmart Email Setup', TO_TIMESTAMP('14:00', 'HH24:MI'), TO_TIMESTAMP('15:30', 'HH24:MI'), 'Setup', 'Configure email sequences', 'https://docs.com/mtg1708', 'WorkOrder', 1608, 'FALSE', 'Confidential 1', 'E008', 'L008');
+INSERT INTO Meeting VALUES ('ME009', TO_DATE('2026-02-28','YYYY-MM-DD'), 'AgroLife Expansion Check', TO_TIMESTAMP('10:00', 'HH24:MI'), TO_TIMESTAMP('11:30', 'HH24:MI'), 'Progress', 'Review lead generation progress', 'https://docs.com/mtg1709', 'Campaign', 1109, 'TRUE', 'Medium', 'E009', 'L009');
+INSERT INTO Meeting VALUES ('ME010', TO_DATE('2026-03-01','YYYY-MM-DD'), 'CreativeMinds Promo', TO_TIMESTAMP('13:00', 'HH24:MI'), TO_TIMESTAMP('14:30', 'HH24:MI'), 'Planning', 'Plan creative campaign rollout', 'https://docs.com/mtg1710', 'Campaign', 1110, 'TRUE', 'High', 'E010', 'L010');
 
 
 INSERT INTO CampaignExecution VALUES ('EX001', 'Live', TO_TIMESTAMP('2026-02-20 09:00:00','YYYY-MM-DD HH24:MI:SS'), 15000.00, 500000, 2.50, 1250, 12.00, 'None', TO_TIMESTAMP('2026-02-20 12:00:00','YYYY-MM-DD HH24:MI:SS'), 'Complete', 'CA001');
@@ -398,6 +383,7 @@ INSERT INTO CampaignExecution VALUES ('EX007', 'Live', TO_TIMESTAMP('2026-02-26 
 INSERT INTO CampaignExecution VALUES ('EX008', 'Live', TO_TIMESTAMP('2026-02-27 15:00:00','YYYY-MM-DD HH24:MI:SS'), 16000.00, 520000, 2.95, 1534, 10.44, 'None', TO_TIMESTAMP('2026-02-27 18:00:00','YYYY-MM-DD HH24:MI:SS'), 'Complete', 'CA008');
 INSERT INTO CampaignExecution VALUES ('EX009', 'Completed', TO_TIMESTAMP('2026-02-28 13:00:00','YYYY-MM-DD HH24:MI:SS'), 11000.00, 310000, 2.70, 837, 13.14, 'None', TO_TIMESTAMP('2026-02-28 16:00:00','YYYY-MM-DD HH24:MI:SS'), 'Complete', 'CA009');
 INSERT INTO CampaignExecution VALUES ('EX010', 'Live', TO_TIMESTAMP('2026-03-01 12:00:00','YYYY-MM-DD HH24:MI:SS'), 13000.00, 400000, 3.00, 1200, 10.83, 'None', TO_TIMESTAMP('2026-03-01 15:00:00','YYYY-MM-DD HH24:MI:SS'), 'Complete', 'CA010');
+
 
 
 
@@ -427,6 +413,8 @@ INSERT INTO CampaignIdeas VALUES ('IDE009','AgroLife Expansion','Physical','Expa
 INSERT INTO CampaignIdeas VALUES ('IDE010','Creative Minds Promo','Digital','Promote creative services','SMEs','Draft',35000.00,'Video + social posts',20.00,TO_TIMESTAMP('2026-02-10 09:30:00','YYYY-MM-DD HH24:MI:SS'),TO_TIMESTAMP('2026-02-14 11:15:00','YYYY-MM-DD HH24:MI:SS'),'CL010','SM010');
 
 COMMIT;
+
+
 
 INSERT INTO FinancialRecord VALUES ('TR001', 2026, TO_DATE('2026-02-20','YYYY-MM-DD'), 'Posted', 'MYR', 'GL001', 10000.00, 600.00, 10600.00, 'AUTH01', 1.0000, 'F401');
 INSERT INTO FinancialRecord VALUES ('TR002', 2026, TO_DATE('2026-02-21','YYYY-MM-DD'), 'Posted', 'MYR', 'GL002', 5000.00, 300.00, 5300.00, 'AUTH02', 1.0000, 'F402');
@@ -476,9 +464,6 @@ INSERT INTO Expenditure VALUES ('EXP007', 'EC007', 'Quarterly', 12000.00, 450.00
 INSERT INTO Expenditure VALUES ('EXP008', 'EC008', 'Monthly', 5500.00, 250.00, 11000.00, 'Salary', 'Approved', 12, 550.00, 'WF008', 'TR018');
 INSERT INTO Expenditure VALUES ('EXP009', 'EC009', 'Monthly', 6000.00, 270.00, 12000.00, 'Salary', 'Approved', 12, 600.00, 'WF009', 'TR019');
 INSERT INTO Expenditure VALUES ('EXP010', 'EC010', 'Monthly', 6500.00, 300.00, 13000.00, 'Salary', 'Approved', 12, 650.00, 'WF010', 'TR020');
-
-
-
 
 
 COMMIT;
@@ -561,15 +546,15 @@ COMMIT;
 
 
 
-INSERT INTO EmployeeAssignment VALUES ('E001', 1, TO_DATE('2024-08-23','YYYY-MM-DD'), 'Active');
-INSERT INTO EmployeeAssignment VALUES ('E002', 1, TO_DATE('2025-09-08','YYYY-MM-DD'), 'Active');
-INSERT INTO EmployeeAssignment VALUES ('E003', 1, TO_DATE('2022-03-20','YYYY-MM-DD'), 'Promoted');
-INSERT INTO EmployeeAssignment VALUES ('E004', 1, TO_DATE('2025-05-16','YYYY-MM-DD'), 'Active');
-INSERT INTO EmployeeAssignment VALUES ('E005', 1, TO_DATE('2025-09-07','YYYY-MM-DD'), 'Active');
-INSERT INTO EmployeeAssignment VALUES ('E006', 1, TO_DATE('2021-02-01','YYYY-MM-DD'), 'Former');
-INSERT INTO EmployeeAssignment VALUES ('E007', 1, TO_DATE('2024-12-31','YYYY-MM-DD'), 'Active');
-INSERT INTO EmployeeAssignment VALUES ('E008', 1, TO_DATE('2022-03-06','YYYY-MM-DD'), 'Promoted');
-INSERT INTO EmployeeAssignment VALUES ('E009', 1, TO_DATE('2022-12-20','YYYY-MM-DD'), 'Promoted');
-INSERT INTO EmployeeAssignment VALUES ('E010', 1, TO_DATE('2021-02-01','YYYY-MM-DD'), 'Former');
+INSERT INTO EmployeeAssignment VALUES ('E001', 'MAN-1001', TO_DATE('2024-08-23','YYYY-MM-DD'), 'Active');
+INSERT INTO EmployeeAssignment VALUES ('E002', 'MAN-1002', TO_DATE('2025-09-08','YYYY-MM-DD'), 'Active');
+INSERT INTO EmployeeAssignment VALUES ('E003', 'MAN-1003', TO_DATE('2022-03-20','YYYY-MM-DD'), 'Promoted');
+INSERT INTO EmployeeAssignment VALUES ('E004', 'MAN-1004', TO_DATE('2025-05-16','YYYY-MM-DD'), 'Active');
+INSERT INTO EmployeeAssignment VALUES ('E005', 'MAN-1005', TO_DATE('2025-09-07','YYYY-MM-DD'), 'Active');
+INSERT INTO EmployeeAssignment VALUES ('E006', 'MAN-1006', TO_DATE('2021-02-01','YYYY-MM-DD'), 'Former');
+INSERT INTO EmployeeAssignment VALUES ('E007', 'MAN-1007', TO_DATE('2024-12-31','YYYY-MM-DD'), 'Active');
+INSERT INTO EmployeeAssignment VALUES ('E008', 'MAN-1008', TO_DATE('2022-03-06','YYYY-MM-DD'), 'Promoted');
+INSERT INTO EmployeeAssignment VALUES ('E009', 'MAN-1009', TO_DATE('2022-12-20','YYYY-MM-DD'), 'Promoted');
+INSERT INTO EmployeeAssignment VALUES ('E010', 'MAN-1010', TO_DATE('2021-02-01','YYYY-MM-DD'), 'Former');
 
 COMMIT;

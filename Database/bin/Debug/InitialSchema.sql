@@ -55,8 +55,8 @@ CREATE TABLE Certification (
 -- 2. First-Level Dependencies
 CREATE TABLE Address (
     address_id VARCHAR2(10) PRIMARY KEY,
-    address_type VARCHAR2(50) UNIQUE NOT NULL,
-    unit_no NUMBER CHECK (unit_no > 0),
+    address_type VARCHAR2(50) NOT NULL,
+    unit_no VARCHAR2(20) NOT NULL,
     address_line1 VARCHAR2(100) NOT NULL,
     address_line2 VARCHAR2(100) NOT NULL,
     city VARCHAR2(20) NOT NULL CHECK (LENGTH(city) > 1),
@@ -70,7 +70,7 @@ CREATE TABLE Address (
 
 CREATE TABLE Employee (
     employee_id VARCHAR2(10) PRIMARY KEY,
-    role_id VARCHAR(1) UNIQUE NOT NULL CHECK (LENGTH(role_id) IN ('1','2','3','4')),
+    role_id VARCHAR2(20) UNIQUE NOT NULL,
     hire_date DATE NOT NULL,
     base_salary NUMBER CHECK (base_salary > 0),
     performance_rating NUMBER NOT NULL,
@@ -81,6 +81,19 @@ CREATE TABLE Employee (
     contact_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (contact_id) REFERENCES Contact(contact_id)
 );
+
+UPDATE Employee
+SET role_id = CASE 
+    WHEN department = 'Management'     THEN 'MAN-' || role_id
+    WHEN department = 'Tech'           THEN 'TEC-' || role_id
+    WHEN department = 'Finance'        THEN 'FIN-' || role_id
+    WHEN department = 'SalesMarketing' THEN 'SAM-' || role_id
+    ELSE role_id
+END
+WHERE role_id NOT LIKE 'MAN-%' 
+  AND role_id NOT LIKE 'TEC-%'
+  AND role_id NOT LIKE 'FIN-%'
+  AND role_id NOT LIKE 'SAM-%';
 
 -- 3. Second-Level Dependencies (Rely on Employee & Contact)
 CREATE TABLE Client (
@@ -125,7 +138,7 @@ CREATE TABLE Tech (
     primary_programming_language VARCHAR2(30) NOT NULL CHECK (LENGTH(primary_programming_language) > 0),
     jira_ticket_quota VARCHAR2(50) NOT NULL,
     hardware_asset_tag VARCHAR2(50) UNIQUE NOT NULL CHECK (LENGTH(hardware_asset_tag) > 0),
-    security_clearance_level VARCHAR2(10) DEFAULT 'Low' NOT NULL CHECK (security_clearance_level IN ('High','Low')),
+    security_clearance_level VARCHAR2(10) DEFAULT 'Low' NOT NULL CHECK (security_clearance_level IN ('High','Medium','Low')),
     vcs_branch_access VARCHAR2(50) NOT NULL CHECK (LENGTH(vcs_branch_access) > 0),
     api_access_key_level VARCHAR2(20) NOT NULL CHECK (LENGTH(api_access_key_level) > 0),
     last_skill_assessment_date DATE NOT NULL,
@@ -142,7 +155,7 @@ CREATE TABLE Finance (
     payroll_authorization_level VARCHAR2(10) NOT NULL CHECK (payroll_authorization_level IN ('Level 1', 'Level 2', 'Level 3')),
     expense_approval_scope VARCHAR2(100) NOT NULL CHECK (LENGTH(expense_approval_scope) > 0),
     tax_jurisdiction_speciality VARCHAR2(50) NOT NULL CHECK (LENGTH(tax_jurisdiction_speciality) > 0),
-    fiscal_kpi VARCHAR2(50) NOT NULL CHECK (LENGTH(fiscal_kpi) <= 5),
+    fiscal_kpi VARCHAR2(50) NOT NULL,
     ledger_access_type VARCHAR2(20) NOT NULL CHECK (ledger_access_type IN ('Full','Limited')),
     reporting_cycle_deadline DATE NOT NULL,
     employee_id VARCHAR2(10) NOT NULL,
@@ -167,16 +180,16 @@ CREATE TABLE SalesMarketing (
 CREATE TABLE Meeting (
     meeting_id VARCHAR2(10) PRIMARY KEY,
     meeting_date DATE NOT NULL,
-    meeting_subject VARCHAR2(20) NOT NULL CHECK (LENGTH(meeting_subject) <= 20),
+    meeting_subject VARCHAR2(50) NOT NULL CHECK (LENGTH(meeting_subject) <= 50),
     start_time TIMESTAMP(3) NOT NULL,
     end_time TIMESTAMP(3) NOT NULL,
     meeting_type VARCHAR2(50) NOT NULL,
     agenda_summary VARCHAR2(1000) NOT NULL CHECK (LENGTH(agenda_summary) <= 1000),
-    minute_of_meeting_link VARCHAR2(1000) UNIQUE CHECK (LENGTH(minute_of_meeting_link) <= 1000),
-    related_entity_type VARCHAR2(20) NOT NULL CHECK (related_entity_type IN ('Project','Task','WorkOrder','Campaign')),
+    minute_of_meeting_link VARCHAR2(1000) CHECK (LENGTH(minute_of_meeting_link) <= 1000),
+    related_entity_type VARCHAR2(20) NOT NULL CHECK (related_entity_type IN ('Project','Task','WorkOrder','Campaign','Proposal')),
     related_entity_id NUMBER NOT NULL CHECK (related_entity_id > 0),
-    follow_up_action_flag NUMBER(1) NOT NULL CHECK (follow_up_action_flag IN (0,1)), -- Fixed BOOLEAN
-    security_requirement_level VARCHAR2(50) NOT NULL CHECK (security_requirement_level IN ('Low','Medium','High','Confidential')),
+    follow_up_action_flag VARCHAR2(10) NOT NULL CHECK (follow_up_action_flag IN ('TRUE','FALSE')), 
+    security_requirement_level VARCHAR2(50) NOT NULL,
     employee_id VARCHAR2(10) NOT NULL,
     location_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
@@ -187,7 +200,7 @@ CREATE TABLE Meeting (
 -- 4. Third-Level Dependencies
 CREATE TABLE Campaign (
     campaign_id VARCHAR2(10) PRIMARY KEY,
-    version_tag VARCHAR2(10) UNIQUE NOT NULL CHECK (version_tag LIKE 'v%'),
+    version_tag VARCHAR2(10) NOT NULL,
     campaign_name VARCHAR2(20) NOT NULL CHECK (LENGTH(campaign_name) >= 3),
     strategic_objective VARCHAR2(100) NOT NULL CHECK (LENGTH(strategic_objective) > 10),
     employee_id VARCHAR2(10) NOT NULL,
@@ -199,8 +212,8 @@ CREATE TABLE Campaign (
 CREATE TABLE WorkOrder (
     workorder_id VARCHAR2(10) PRIMARY KEY,
     project_phase_order VARCHAR2(50) UNIQUE NOT NULL,
-    task_title VARCHAR2(20) NOT NULL CHECK (LENGTH(task_title) <= 20),
-    task_detailed_description VARCHAR2(100) NOT NULL CHECK (LENGTH(task_detailed_description) <= 100),
+    task_title VARCHAR2(50) NOT NULL CHECK (LENGTH(task_title) <= 50),
+    task_detailed_description VARCHAR2(200) NOT NULL CHECK (LENGTH(task_detailed_description) <= 200),
     priority_level VARCHAR2(50) NOT NULL CHECK (priority_level IN ('Low','Medium','High','Critical')),
     execution_status VARCHAR(20) NOT NULL CHECK (Execution_status IN ('Pending', 'In Progress', 'Completed')),
     scheduled_start_date DATE NOT NULL,
@@ -215,15 +228,15 @@ CREATE TABLE WorkOrder (
 
 CREATE TABLE Proposal (
     proposal_id VARCHAR2(10) PRIMARY KEY,
-    proposal_reference_no NUMBER UNIQUE NOT NULL,
-    proposal_status VARCHAR2(20) NOT NULL CHECK (proposal_status IN ('Draft', 'Sent', 'Accepted', 'Revised', 'Rejected')),
+    proposal_reference_no VARCHAR2(20) UNIQUE NOT NULL,
+    proposal_status VARCHAR2(20) NOT NULL CHECK (proposal_status IN ('Pending', 'Approved', 'Rejected')),
     proposal_title VARCHAR2(50) NOT NULL CHECK (LENGTH(proposal_title) > 0),
-    executive_summary VARCHAR2(1000) NOT NULL CHECK (LENGTH(executive_summary) > 50),
+    executive_summary VARCHAR2(1000) NOT NULL CHECK (LENGTH(executive_summary) > 10),
     total_investment_value NUMBER NOT NULL CHECK (total_investment_value >= 0),
     payment_terms VARCHAR2(50) NOT NULL CHECK (LENGTH(payment_terms) > 0),
-    validity_period_end DATE NOT NULL, -- Fixed: Removed SYSDATE check
+    validity_period_end DATE NOT NULL, 
     estimated_timeline VARCHAR2(20) NOT NULL CHECK (LENGTH(estimated_timeline) > 0),
-    approval_status NUMBER(1) NOT NULL CHECK (approval_status IN (0,1)),
+    approval_status VARCHAR2(10) NOT NULL CHECK (approval_status IN ('Pending', 'Approved', 'Rejected')),
     client_id VARCHAR2(10) NOT NULL,
     salesmarketing_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (client_id) REFERENCES Client(client_id),
@@ -234,23 +247,23 @@ CREATE TABLE Campaignideas (
     idea_id VARCHAR2(10) PRIMARY KEY,
     idea_title VARCHAR2(50) UNIQUE NOT NULL,
     campaign_type VARCHAR2(50) NOT NULL CHECK (campaign_type IN ('Digital', 'Physical', 'Hybrid', 'Social')),
-    strategic_objectives VARCHAR2(50) NOT NULL CHECK (LENGTH(strategic_objectives) > 10),
+    strategic_objectives VARCHAR2(100) NOT NULL CHECK (LENGTH(strategic_objectives) > 10),
     target_audience VARCHAR2(50) NOT NULL CHECK (LENGTH(target_audience) > 0),
     draft_status VARCHAR2(50) NOT NULL CHECK (draft_status IN ('Draft', 'Under Review', 'Approved', 'Rejected')),
     estimated_budget_requirement NUMBER NOT NULL CHECK (estimated_budget_requirement > 0),
-    creative_concept_brief VARCHAR2(100) NOT NULL CHECK (LENGTH(creative_concept_brief) > 20),
+    creative_concept_brief VARCHAR2(100) NOT NULL,
     project_roi_metric NUMBER NOT NULL CHECK (project_roi_metric BETWEEN 0 AND 100),
-    creation_timestamp DATE NOT NULL, -- Fixed: Removed SYSDATE check
-    last_modified_date DATE NOT NULL,
-    salesmarketing_id VARCHAR2(10) NOT NULL,
+    creation_timestamp TIMESTAMP(3) NOT NULL, -- Fixed: Removed SYSDATE check
+    last_modified_date TIMESTAMP(3) NOT NULL,
     client_id VARCHAR2(10) NOT NULL,
+    salesmarketing_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (salesmarketing_id) REFERENCES SalesMarketing(salesmarketing_id),
     FOREIGN KEY (client_id) REFERENCES Client(client_id)
 );
 
-CREATE TABLE FinanceRecord (
+CREATE TABLE FinancialRecord (
     transaction_id VARCHAR2(10) PRIMARY KEY,
-    fiscal_year NUMBER UNIQUE NOT NULL CHECK (fiscal_year BETWEEN 2020 AND 2100),
+    fiscal_year NUMBER NOT NULL CHECK (fiscal_year BETWEEN 2020 AND 2100),
     posting_date DATE NOT NULL,
     transaction_status VARCHAR2(50) NOT NULL CHECK (transaction_status IN ('Pending', 'Posted', 'Reversed', 'Void')),
     currency_code VARCHAR2(50) NOT NULL CHECK (currency_code IN ('MYR', 'USD', 'EUR', 'SGD')),
@@ -267,11 +280,11 @@ CREATE TABLE FinanceRecord (
 -- 5. Fourth-Level Dependencies (Rely on Campaign or FinanceRecord)
 CREATE TABLE DigitalCampaign (
     digital_id VARCHAR2(10) PRIMARY KEY,
-    digital_channel_type VARCHAR2(20) UNIQUE NOT NULL CHECK (digital_channel_type IN ('google ads', 'facebook ads', 'instagram ads', 'linkedin ads', 'email marketing')),
+    digital_channel_type VARCHAR2(20) NOT NULL,
     target_url_slug VARCHAR2(50) NOT NULL CHECK (target_url_slug NOT LIKE '% %'),
     seo_keyword_primary VARCHAR2(50) CHECK (LENGTH(seo_keyword_primary) > 0),
     ad_copy_headline VARCHAR2(50) NOT NULL CHECK (LENGTH(ad_copy_headline) <= 50),
-    meta_description_snippet VARCHAR2(1000) NOT NULL CHECK (LENGTH(meta_description_snippet) BETWEEN 50 AND 160),
+    meta_description_snippet VARCHAR2(1000) NOT NULL CHECK (LENGTH(meta_description_snippet) BETWEEN 5 AND 1000),
     email_automation_sequence_id VARCHAR(10) NOT NULL CHECK (LENGTH(Email_automation_sequence_ID) > 0),
     cookie_duration_days NUMBER NOT NULL CHECK (cookie_duration_days BETWEEN 1 AND 90),
     domain_authority_target NUMBER NOT NULL CHECK (domain_authority_target BETWEEN 1 AND 100),
@@ -282,13 +295,13 @@ CREATE TABLE DigitalCampaign (
 
 CREATE TABLE SocialMediaCampaign (
     socialmedia_id VARCHAR2(10) PRIMARY KEY,
-    platform_name VARCHAR2(20) UNIQUE NOT NULL CHECK (platform_name IN ('Facebook', 'Instagram', 'TikTok', 'X', 'LinkedIn')),
+    platform_name VARCHAR2(20) NOT NULL,
     handle_owner_id NUMBER NOT NULL CHECK (handle_owner_id > 0),
     influencer_partnership_level VARCHAR(10) NOT NULL CHECK (influencer_partnership_level IN ('Gold','Silver','Bronze')),
     primary_campaign_hashtag VARCHAR2(20) NOT NULL CHECK (primary_campaign_hashtag LIKE '#%'),
-    content_format VARCHAR2(20) NOT NULL CHECK (content_format IN ('Video', 'Image', 'Story', 'Carousel')),
+    content_format VARCHAR2(20) NOT NULL CHECK (content_format IN ('Video', 'Image', 'Story', 'Carousel', 'Text', 'Article')),
     engagement_rate_benchmark NUMBER NOT NULL CHECK (Engagement_rate_benchmark BETWEEN 0 AND 10),
-    post_frequency_schedule VARCHAR2(10) NOT NULL CHECK (Post_frequency_schedule BETWEEN 5 AND 1),
+    post_frequency_schedule VARCHAR2(20) NOT NULL,
     community_management_protocol VARCHAR2(100) NOT NULL CHECK (LENGTH(community_management_protocol) > 10),
     influencer_contract_id NUMBER UNIQUE CHECK (influencer_contract_id > 0),
     campaign_id VARCHAR2(10) NOT NULL,
@@ -312,16 +325,16 @@ CREATE TABLE PhysicalCampaign (
 
 CREATE TABLE CampaignExecution (
     execution_id VARCHAR2(10) PRIMARY KEY,
-    curr_execution_status VARCHAR2(50) UNIQUE NOT NULL,
-    actual_launch_timestamp VARCHAR2(50) NOT NULL CHECK (LENGTH(actual_launch_timestamp) > 0),
+    curr_execution_status VARCHAR2(50) NOT NULL,
+    actual_launch_timestamp TIMESTAMP(3) NOT NULL,
     real_time_spend NUMBER NOT NULL CHECK (real_time_spend >= 0),
     impression_count NUMBER NOT NULL CHECK (impression_count >= 0),
     click_through_rate NUMBER NOT NULL CHECK (click_through_rate BETWEEN 0 AND 100),
-    leads_generated_count NUMBER NOT NULL CHECK (leads_generated_count BETWEEN 0 AND 100),
-    cost_per_lead NUMBER NOT NULL CHECK (cost_per_lead BETWEEN 0 AND 100),
-    incident_log_summary VARCHAR2(50) NOT NULL CHECK (LENGTH(incident_log_summary) > 0),
-    last_performance_update TIMESTAMP NOT NULL, -- Fixed: Removed SYSDATE check
-    data_collection_status VARCHAR2(100) NOT NULL CHECK (data_collection_status IN ('Active', 'Partial', 'Synchronizing', 'Archived')),
+    leads_generated_count NUMBER NOT NULL CHECK (leads_generated_count >= 0),
+    cost_per_lead NUMBER NOT NULL CHECK (cost_per_lead >= 0),
+    incident_log_summary VARCHAR2(100) NOT NULL CHECK (LENGTH(incident_log_summary) > 0),
+    last_performance_update TIMESTAMP NOT NULL, 
+    data_collection_status VARCHAR2(100) NOT NULL CHECK (data_collection_status IN ('Active', 'Partial', 'Synchronizing', 'Archived', 'Complete', 'In Progress')),
     campaign_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (campaign_id) REFERENCES Campaign(campaign_id)
 );
@@ -329,18 +342,18 @@ CREATE TABLE CampaignExecution (
 CREATE TABLE Revenue (
     revenue_id VARCHAR2(10) PRIMARY KEY,
     revenue_stream_id VARCHAR2(20) UNIQUE NOT NULL,
-    payment_method VARCHAR2(50) NOT NULL CHECK (payment_method IN ('Credit Card', 'Wire Transfer', 'Cash', 'Cheque')),
+    payment_method VARCHAR2(50) NOT NULL CHECK (payment_method IN ('Credit Card', 'Bank Transfer', 'Online Payment', 'Cash')),
     invoice_reference_number VARCHAR2(50) UNIQUE NOT NULL CHECK (LENGTH(invoice_reference_number) > 0),
     discount_applied NUMBER NOT NULL CHECK (discount_applied >= 0),
-    recurring_revenue_flag VARCHAR2(20) NOT NULL CHECK (recurring_revenue_flag IN ('Yes', 'No')),
+    recurring_revenue_flag VARCHAR2(20) NOT NULL CHECK (recurring_revenue_flag IN ('TRUE', 'FALSE')),
     collection_cycle_days NUMBER NOT NULL CHECK (collection_cycle_days BETWEEN 0 AND 365),
-    tax_exempt_status VARCHAR2(20) NOT NULL CHECK (tax_exempt_status IN ('Exempt', 'Taxable', 'Zero-Rated')),
-    recognition_date DATE NOT NULL, -- Fixed: Removed SYSDATE check
+    recognition_date DATE NOT NULL,
+    tax_exempt_status VARCHAR2(20) NOT NULL CHECK (tax_exempt_status IN ('Yes', 'No')),
     revenue_net_amount NUMBER NOT NULL CHECK (revenue_net_amount >= 0),
-    client_id VARCHAR2(10) NOT NULL,
     transaction_id VARCHAR2(10) NOT NULL,
+    client_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (client_id) REFERENCES Client(client_id),
-    FOREIGN KEY (transaction_id) REFERENCES FinanceRecord(transaction_id)
+    FOREIGN KEY (transaction_id) REFERENCES FinancialRecord(transaction_id)
 );
 
 CREATE TABLE Expenditure (
@@ -350,28 +363,28 @@ CREATE TABLE Expenditure (
     gross_salary_amount NUMBER NOT NULL CHECK (gross_salary_amount >= 0),
     insurance_cost NUMBER NOT NULL CHECK (insurance_cost >= 0),
     departmental_budget NUMBER NOT NULL CHECK (departmental_budget > 0),
-    spending_type VARCHAR2(50) NOT NULL CHECK (spending_type IN ('Fixed', 'Variable', 'Capital', 'Operational')),
+    spending_type VARCHAR2(50) NOT NULL CHECK (spending_type IN ('Fixed', 'Variable', 'Capital', 'Operational', 'Salary', 'Project')),
     reimbursement_status VARCHAR2(50) NOT NULL CHECK (reimbursement_status IN ('Pending', 'Approved', 'Paid', 'Rejected')),
     amortization_period NUMBER NOT NULL CHECK (amortization_period >= 0),
     budget_variance_amount NUMBER NOT NULL,
     approval_workflow_id VARCHAR2(20) NOT NULL CHECK (LENGTH(approval_workflow_id) > 0),
     transaction_id VARCHAR2(10) NOT NULL,
-    FOREIGN KEY (transaction_id) REFERENCES FinanceRecord(transaction_id)
+    FOREIGN KEY (transaction_id) REFERENCES FinancialRecord(transaction_id)
 );
 
 -- 6. Fifth-Level Dependencies (Rely on CampaignExecution)
 CREATE TABLE CampaignStatus (
     status_id VARCHAR2(10) PRIMARY KEY,
     status_change_id NUMBER UNIQUE NOT NULL,
-    status_state VARCHAR2(20) NOT NULL CHECK (status_state IN ('Pending', 'Approved', 'In Progress', 'On Hold', 'Completed')),
+    status_state VARCHAR2(20) NOT NULL CHECK (status_state IN ('Pending', 'Approved', 'In Progress','Cancelled', 'On Hold', 'Completed')),
     status_update_timestamp TIMESTAMP(3) NOT NULL,
     change_reason_code VARCHAR2(20) NOT NULL CHECK (LENGTH(change_reason_code) > 0),
     manager_comments VARCHAR2(50) NOT NULL CHECK (LENGTH(manager_comments) > 5),
-    automatics_flag NUMBER(1) NOT NULL CHECK (automatics_flag IN (0,1)), -- Fixed BOOLEAN
+    automatics_flag VARCHAR2(10) NOT NULL CHECK (automatics_flag IN ('TRUE','FALSE')),
     priority_level_at_time VARCHAR2(50) NOT NULL CHECK (priority_level_at_time IN ('Low', 'Medium', 'High', 'Critical')),
-    previous_state_id NUMBER NOT NULL CHECK (previous_state_id >= 0),
+    previous_state_id NUMBER CHECK (previous_state_id >= 0),
     notification_sent_date DATE NOT NULL,
-    estimated_resume_date DATE NOT NULL,
+    estimated_resume_date DATE,
     workflow_step_number NUMBER NOT NULL CHECK (workflow_step_number > 0),
     execution_id VARCHAR2(10) NOT NULL,
     salesmarketing_id VARCHAR2(10) NOT NULL,
@@ -381,16 +394,16 @@ CREATE TABLE CampaignStatus (
 
 CREATE TABLE PostCampaignReport (
     report_id VARCHAR2(10) PRIMARY KEY,
-    audit_version NUMBER UNIQUE NOT NULL,
-    final_revenue_generated VARCHAR2(50) NOT NULL CHECK (LENGTH(final_revenue_generated) > 0),
+    audit_version VARCHAR2(10) NOT NULL,
+    final_revenue_generated NUMBER NOT NULL CHECK (final_revenue_generated >= 0),
     total_actual_spend VARCHAR2(50) NOT NULL CHECK (LENGTH(total_actual_spend) > 0),
     roi_percentage NUMBER NOT NULL CHECK (roi_percentage >= -100),
-    goal_achievement VARCHAR2(50) NOT NULL CHECK (goal_achievement IN ('Exceeded', 'Met', 'Partial', 'Not Met')),
+    goal_achievement VARCHAR2(50) NOT NULL CHECK (goal_achievement IN ('Exceeded', 'Achieved', 'Partial', 'Not Met')),
     top_performing_channel VARCHAR2(50) NOT NULL CHECK (LENGTH(top_performing_channel) > 0),
     client_feedback_summary VARCHAR2(50) NOT NULL CHECK (LENGTH(client_feedback_summary) > 0),
     incident_impact_assessment VARCHAR2(50) NOT NULL CHECK (LENGTH(incident_impact_assessment) > 0),
     report_generation_date DATE NOT NULL, -- Fixed: Removed SYSDATE check
-    presentation_link VARCHAR2(50) NOT NULL CHECK (presentation_link LIKE 'http%'),
+    presentation_link VARCHAR2(100) NOT NULL CHECK (presentation_link LIKE 'http%'),
     reviewed_by_manager_id VARCHAR2(50) NOT NULL CHECK (LENGTH(reviewed_by_manager_id) > 0),
     execution_id VARCHAR2(10) NOT NULL,
     salesmarketing_id VARCHAR2(10) NOT NULL,
@@ -402,9 +415,11 @@ CREATE TABLE PostCampaignReport (
 CREATE TABLE MeetingAttendance (
     meeting_id VARCHAR2(10) NOT NULL,
     employee_id VARCHAR2(10) NOT NULL,
+    contact_id VARCHAR2(10) NOT NULL,
     PRIMARY KEY (meeting_id, employee_id),
     FOREIGN KEY (meeting_id) REFERENCES Meeting(meeting_id),
-    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
+    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
+    FOREIGN KEY (contact_id) REFERENCES Contact(contact_id)
 );
 
 CREATE TABLE EmployeeCertification (
@@ -441,12 +456,11 @@ CREATE TABLE EmployeeWorkstation (
 
 CREATE TABLE EmployeeAssignment (
     employee_id VARCHAR2(10) NOT NULL,
-    role_id VARCHAR(1) NOT NULL,
+    role_id VARCHAR2(20) NOT NULL,
     assign_date DATE NOT NULL,
     assign_status VARCHAR2(10) NOT NULL CHECK (assign_status IN ('Active', 'Former', 'Promoted')),
-    PRIMARY KEY (employee_id, role_id),
-    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
-    FOREIGN KEY (role_id) REFERENCES Employee(role_id)
+    PRIMARY KEY (employee_id, role_id, assign_date), 
+    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
 COMMIT;

@@ -546,15 +546,15 @@ COMMIT;
 
 
 
-INSERT INTO EmployeeAssignment VALUES ('E001', '1', TO_DATE('2024-08-23','YYYY-MM-DD'), 'Active');
-INSERT INTO EmployeeAssignment VALUES ('E002', '1', TO_DATE('2025-09-08','YYYY-MM-DD'), 'Active');
-INSERT INTO EmployeeAssignment VALUES ('E003', '1', TO_DATE('2022-03-20','YYYY-MM-DD'), 'Promoted');
-INSERT INTO EmployeeAssignment VALUES ('E004', '1', TO_DATE('2025-05-16','YYYY-MM-DD'), 'Active');
-INSERT INTO EmployeeAssignment VALUES ('E005', '1', TO_DATE('2025-09-07','YYYY-MM-DD'), 'Active');
-INSERT INTO EmployeeAssignment VALUES ('E006', '1', TO_DATE('2021-02-01','YYYY-MM-DD'), 'Former');
-INSERT INTO EmployeeAssignment VALUES ('E007', '1', TO_DATE('2024-12-31','YYYY-MM-DD'), 'Active');
-INSERT INTO EmployeeAssignment VALUES ('E008', '1', TO_DATE('2022-03-06','YYYY-MM-DD'), 'Promoted');
-INSERT INTO EmployeeAssignment VALUES ('E009', '1', TO_DATE('2022-12-20','YYYY-MM-DD'), 'Promoted');
-INSERT INTO EmployeeAssignment VALUES ('E010', '1', TO_DATE('2021-02-01','YYYY-MM-DD'), 'Former');
+INSERT INTO EmployeeAssignment VALUES ('E001', 'MAN-1001', TO_DATE('2024-08-23','YYYY-MM-DD'), 'Active');
+INSERT INTO EmployeeAssignment VALUES ('E002', 'MAN-1002', TO_DATE('2025-09-08','YYYY-MM-DD'), 'Active');
+INSERT INTO EmployeeAssignment VALUES ('E003', 'MAN-1003', TO_DATE('2022-03-20','YYYY-MM-DD'), 'Promoted');
+INSERT INTO EmployeeAssignment VALUES ('E004', 'MAN-1004', TO_DATE('2025-05-16','YYYY-MM-DD'), 'Active');
+INSERT INTO EmployeeAssignment VALUES ('E005', 'MAN-1005', TO_DATE('2025-09-07','YYYY-MM-DD'), 'Active');
+INSERT INTO EmployeeAssignment VALUES ('E006', 'MAN-1006', TO_DATE('2021-02-01','YYYY-MM-DD'), 'Former');
+INSERT INTO EmployeeAssignment VALUES ('E007', 'MAN-1007', TO_DATE('2024-12-31','YYYY-MM-DD'), 'Active');
+INSERT INTO EmployeeAssignment VALUES ('E008', 'MAN-1008', TO_DATE('2022-03-06','YYYY-MM-DD'), 'Promoted');
+INSERT INTO EmployeeAssignment VALUES ('E009', 'MAN-1009', TO_DATE('2022-12-20','YYYY-MM-DD'), 'Promoted');
+INSERT INTO EmployeeAssignment VALUES ('E010', 'MAN-1010', TO_DATE('2021-02-01','YYYY-MM-DD'), 'Former');
 
 COMMIT;

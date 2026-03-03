@@ -361,32 +361,16 @@ INSERT INTO WorkOrder VALUES ('WK010', 'PH010', 'Graphic Design', 'Design promo 
 
 -- Done debug until here 
 
-INSERT INTO Meeting VALUES ('ME001', TO_DATE('2026-02-20','YYYY-MM-DD'), 'LaunchTech Strategy', '09:00', '11:00', 'Strategy', 'Discuss campaign objectives', 'https://docs.com/mtg1701', 'Campaign', 1101, TRUE, 'Low', 'E001', 'L001');
-INSERT INTO Meeting VALUES ('ME002', TO_DATE('2026-02-21','YYYY-MM-DD'), 'GreenEnergy Planning', '14:00', '16:00', 'Planning', 'Plan digital campaign', 'https://docs.com/mtg1702', 'Campaign', 1102, TRUE, 'Medium', 'E002', 'L002');
-INSERT INTO Meeting VALUES ('ME003', TO_DATE('2026-02-22','YYYY-MM-DD'), 'Logistics Coordination', '10:00', '12:00', 'Coordination', 'Align event tasks', 'https://docs.com/mtg1703', 'WorkOrder', 1603, TRUE, 'High', 'E003', 'L003');
-INSERT INTO Meeting VALUES ('ME004', TO_DATE('2026-02-23','YYYY-MM-DD'), 'HealthPlus Creative Review', '13:00', '15:00', 'Review', 'Review content and creatives', 'https://docs.com/mtg1704', 'Campaign', 1104, FALSE, 'Confidential 1', 'E004', 'L004');
-INSERT INTO Meeting VALUES ('ME005', TO_DATE('2026-02-24','YYYY-MM-DD'), 'BuildIt Budget Meeting', '11:00', '12:30', 'Budget', 'Discuss budget allocation', 'https://docs.com/mtg1705', 'Proposal', 1505, TRUE, 'Medium', 'E005', 'L005');
-INSERT INTO Meeting VALUES ('ME006', TO_DATE('2026-02-25','YYYY-MM-DD'), 'MarketMakers Progress', '15:00', '16:30', 'Progress', 'Track campaign KPIs', 'https://docs.com/mtg1706', 'Campaign', 1106, TRUE, 'Low', 'E006', 'L006');
-INSERT INTO Meeting VALUES ('ME007', TO_DATE('2026-02-26','YYYY-MM-DD'), 'FinTech Growth Overview', '13:00', '15:00', 'Review', 'Analyze previous campaign results', 'https://docs.com/mtg1707', 'Campaign', 1107, TRUE, 'Low', 'E007', 'L007');
-INSERT INTO Meeting VALUES ('ME008', TO_DATE('2026-02-27','YYYY-MM-DD'), 'EduSmart Email Setup', '14:00', '15:30', 'Setup', 'Configure email sequences', 'https://docs.com/mtg1708', 'WorkOrder', 1608, FALSE, 'Confidential 1', 'E008', 'L008');
-INSERT INTO Meeting VALUES ('ME009', TO_DATE('2026-02-28','YYYY-MM-DD'), 'AgroLife Expansion Check', '10:00', '11:30', 'Progress', 'Review lead generation progress', 'https://docs.com/mtg1709', 'Campaign', 1109, TRUE, 'Medium', 'E009', 'L009');
-INSERT INTO Meeting VALUES ('ME010', TO_DATE('2026-03-01','YYYY-MM-DD'), 'CreativeMinds Promo', '13:00', '14:30', 'Planning', 'Plan creative campaign rollout', 'https://docs.com/mtg1710', 'Campaign', 1110, TRUE, 'High', 'E010', 'L010');
-
-
-
-
-INSERT INTO CampaignStatus VALUES ('STA001', 1, 'Pending', TO_TIMESTAMP('2026-02-20 09:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR001', 'Initial approval pending', FALSE, 'High', NULL, TO_DATE('2026-02-20','YYYY-MM-DD'), TO_DATE('2026-02-25','YYYY-MM-DD'), 1, 'EX001', 'SM001');
-INSERT INTO CampaignStatus VALUES ('STA002', 2, 'Approved', TO_TIMESTAMP('2026-02-21 10:30:00','YYYY-MM-DD HH24:MI:SS'), 'CR002', 'Manager approved campaign', FALSE, 'High', 1801, TO_DATE('2026-02-21','YYYY-MM-DD'), TO_DATE('2026-02-26','YYYY-MM-DD'), 2, 'EX002', 'SM002');
-INSERT INTO CampaignStatus VALUES ('STA003', 3, 'In Progress', TO_TIMESTAMP('2026-02-22 14:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR003', 'Campaign started', TRUE, 'Medium', 1802, TO_DATE('2026-02-22','YYYY-MM-DD'), TO_DATE('2026-03-01','YYYY-MM-DD'), 3, 'EX003', 'SM003');
-INSERT INTO CampaignStatus VALUES ('STA004', 4, 'On Hold', TO_TIMESTAMP('2026-02-23 11:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR004', 'Pending client feedback', FALSE, 'Medium', 1803, TO_DATE('2026-02-23','YYYY-MM-DD'), TO_DATE('2026-03-05','YYYY-MM-DD'), 4, 'EX004', 'SM004');
-INSERT INTO CampaignStatus VALUES ('STA005', 5, 'Completed', TO_TIMESTAMP('2026-02-24 14:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR005', 'Campaign finished successfully', FALSE, 'High', 1803, TO_DATE('2026-02-24','YYYY-MM-DD'), NULL, 5, 'EX005', 'SM005');
-INSERT INTO CampaignStatus VALUES ('STA006', 6, 'Cancelled', TO_TIMESTAMP('2026-02-25 09:30:00','YYYY-MM-DD HH24:MI:SS'), 'CR006', 'Campaign cancelled by client', FALSE, 'High', 1802, TO_DATE('2026-02-25','YYYY-MM-DD'), NULL, 6, 'EX006', 'SM006');
-INSERT INTO CampaignStatus VALUES ('STA007', 7, 'Pending', TO_TIMESTAMP('2026-02-26 10:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR007', 'Resuming campaign', TRUE, 'Medium', 1804, TO_DATE('2026-02-26','YYYY-MM-DD'), TO_DATE('2026-03-02','YYYY-MM-DD'), 7, 'EX007', 'SM007');
-INSERT INTO CampaignStatus VALUES ('STA008', 8, 'Approved', TO_TIMESTAMP('2026-02-27 15:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR008', 'Manager re-approval', FALSE, 'High', 1807, TO_DATE('2026-02-27','YYYY-MM-DD'), TO_DATE('2026-03-05','YYYY-MM-DD'), 8, 'EX008', 'SM008');
-INSERT INTO CampaignStatus VALUES ('STA009', 9, 'In Progress', TO_TIMESTAMP('2026-02-28 13:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR009', 'Active campaign execution', TRUE, 'Medium', 1808, TO_DATE('2026-02-28','YYYY-MM-DD'), TO_DATE('2026-03-10','YYYY-MM-DD'), 9, 'EX009', 'SM009');
-INSERT INTO CampaignStatus VALUES ('STA010', 10, 'Completed', TO_TIMESTAMP('2026-03-01 12:00:00','YYYY-MM-DD HH24:MI:SS'), 'CR010', 'Final completion', FALSE, 'High', 1809, TO_DATE('2026-03-01','YYYY-MM-DD'), NULL, 10, 'EX010', 'SM010');
-
-
+INSERT INTO Meeting VALUES ('ME001', TO_DATE('2026-02-20','YYYY-MM-DD'), 'LaunchTech Strategy', TO_TIMESTAMP('09:00', 'HH24:MI'), TO_TIMESTAMP('11:00', 'HH24:MI'), 'Strategy', 'Discuss campaign objectives', 'https://docs.com/mtg1701', 'Campaign', 1101, 'TRUE', 'Low', 'E001', 'L001');
+INSERT INTO Meeting VALUES ('ME002', TO_DATE('2026-02-21','YYYY-MM-DD'), 'GreenEnergy Planning', TO_TIMESTAMP('14:00', 'HH24:MI'), TO_TIMESTAMP('16:00', 'HH24:MI'), 'Planning', 'Plan digital campaign', 'https://docs.com/mtg1702', 'Campaign', 1102, 'TRUE', 'Medium', 'E002', 'L002');
+INSERT INTO Meeting VALUES ('ME003', TO_DATE('2026-02-22','YYYY-MM-DD'), 'Logistics Coordination', TO_TIMESTAMP('10:00', 'HH24:MI'), TO_TIMESTAMP('12:00', 'HH24:MI'), 'Coordination', 'Align event tasks', 'https://docs.com/mtg1703', 'WorkOrder', 1603, 'TRUE', 'High', 'E003', 'L003');
+INSERT INTO Meeting VALUES ('ME004', TO_DATE('2026-02-23','YYYY-MM-DD'), 'HealthPlus Creative Review', TO_TIMESTAMP('13:00', 'HH24:MI'), TO_TIMESTAMP('15:00', 'HH24:MI'), 'Review', 'Review content and creatives', 'https://docs.com/mtg1704', 'Campaign', 1104, 'FALSE', 'Confidential 1', 'E004', 'L004');
+INSERT INTO Meeting VALUES ('ME005', TO_DATE('2026-02-24','YYYY-MM-DD'), 'BuildIt Budget Meeting', TO_TIMESTAMP('11:00', 'HH24:MI'), TO_TIMESTAMP('12:30', 'HH24:MI'), 'Budget', 'Discuss budget allocation', 'https://docs.com/mtg1705', 'Proposal', 1505, 'TRUE', 'Medium', 'E005', 'L005');
+INSERT INTO Meeting VALUES ('ME006', TO_DATE('2026-02-25','YYYY-MM-DD'), 'MarketMakers Progress', TO_TIMESTAMP('15:00', 'HH24:MI'), TO_TIMESTAMP('16:30', 'HH24:MI'), 'Progress', 'Track campaign KPIs', 'https://docs.com/mtg1706', 'Campaign', 1106, 'TRUE', 'Low', 'E006', 'L006');
+INSERT INTO Meeting VALUES ('ME007', TO_DATE('2026-02-26','YYYY-MM-DD'), 'FinTech Growth Overview', TO_TIMESTAMP('13:00', 'HH24:MI'), TO_TIMESTAMP('15:00', 'HH24:MI'), 'Review', 'Analyze previous campaign results', 'https://docs.com/mtg1707', 'Campaign', 1107, 'TRUE', 'Low', 'E007', 'L007');
+INSERT INTO Meeting VALUES ('ME008', TO_DATE('2026-02-27','YYYY-MM-DD'), 'EduSmart Email Setup', TO_TIMESTAMP('14:00', 'HH24:MI'), TO_TIMESTAMP('15:30', 'HH24:MI'), 'Setup', 'Configure email sequences', 'https://docs.com/mtg1708', 'WorkOrder', 1608, 'FALSE', 'Confidential 1', 'E008', 'L008');
+INSERT INTO Meeting VALUES ('ME009', TO_DATE('2026-02-28','YYYY-MM-DD'), 'AgroLife Expansion Check', TO_TIMESTAMP('10:00', 'HH24:MI'), TO_TIMESTAMP('11:30', 'HH24:MI'), 'Progress', 'Review lead generation progress', 'https://docs.com/mtg1709', 'Campaign', 1109, 'TRUE', 'Medium', 'E009', 'L009');
+INSERT INTO Meeting VALUES ('ME010', TO_DATE('2026-03-01','YYYY-MM-DD'), 'CreativeMinds Promo', TO_TIMESTAMP('13:00', 'HH24:MI'), TO_TIMESTAMP('14:30', 'HH24:MI'), 'Planning', 'Plan creative campaign rollout', 'https://docs.com/mtg1710', 'Campaign', 1110, 'TRUE', 'High', 'E010', 'L010');
 
 
 INSERT INTO CampaignExecution VALUES ('EX001', 'Live', TO_TIMESTAMP('2026-02-20 09:00:00','YYYY-MM-DD HH24:MI:SS'), 15000.00, 500000, 2.50, 1250, 12.00, 'None', TO_TIMESTAMP('2026-02-20 12:00:00','YYYY-MM-DD HH24:MI:SS'), 'Complete', 'CA001');
@@ -399,6 +383,7 @@ INSERT INTO CampaignExecution VALUES ('EX007', 'Live', TO_TIMESTAMP('2026-02-26 
 INSERT INTO CampaignExecution VALUES ('EX008', 'Live', TO_TIMESTAMP('2026-02-27 15:00:00','YYYY-MM-DD HH24:MI:SS'), 16000.00, 520000, 2.95, 1534, 10.44, 'None', TO_TIMESTAMP('2026-02-27 18:00:00','YYYY-MM-DD HH24:MI:SS'), 'Complete', 'CA008');
 INSERT INTO CampaignExecution VALUES ('EX009', 'Completed', TO_TIMESTAMP('2026-02-28 13:00:00','YYYY-MM-DD HH24:MI:SS'), 11000.00, 310000, 2.70, 837, 13.14, 'None', TO_TIMESTAMP('2026-02-28 16:00:00','YYYY-MM-DD HH24:MI:SS'), 'Complete', 'CA009');
 INSERT INTO CampaignExecution VALUES ('EX010', 'Live', TO_TIMESTAMP('2026-03-01 12:00:00','YYYY-MM-DD HH24:MI:SS'), 13000.00, 400000, 3.00, 1200, 10.83, 'None', TO_TIMESTAMP('2026-03-01 15:00:00','YYYY-MM-DD HH24:MI:SS'), 'Complete', 'CA010');
+
 
 
 
@@ -428,6 +413,8 @@ INSERT INTO CampaignIdeas VALUES ('IDE009','AgroLife Expansion','Physical','Expa
 INSERT INTO CampaignIdeas VALUES ('IDE010','Creative Minds Promo','Digital','Promote creative services','SMEs','Draft',35000.00,'Video + social posts',20.00,TO_TIMESTAMP('2026-02-10 09:30:00','YYYY-MM-DD HH24:MI:SS'),TO_TIMESTAMP('2026-02-14 11:15:00','YYYY-MM-DD HH24:MI:SS'),'CL010','SM010');
 
 COMMIT;
+
+
 
 INSERT INTO FinancialRecord VALUES ('TR001', 2026, TO_DATE('2026-02-20','YYYY-MM-DD'), 'Posted', 'MYR', 'GL001', 10000.00, 600.00, 10600.00, 'AUTH01', 1.0000, 'F401');
 INSERT INTO FinancialRecord VALUES ('TR002', 2026, TO_DATE('2026-02-21','YYYY-MM-DD'), 'Posted', 'MYR', 'GL002', 5000.00, 300.00, 5300.00, 'AUTH02', 1.0000, 'F402');
@@ -477,9 +464,6 @@ INSERT INTO Expenditure VALUES ('EXP007', 'EC007', 'Quarterly', 12000.00, 450.00
 INSERT INTO Expenditure VALUES ('EXP008', 'EC008', 'Monthly', 5500.00, 250.00, 11000.00, 'Salary', 'Approved', 12, 550.00, 'WF008', 'TR018');
 INSERT INTO Expenditure VALUES ('EXP009', 'EC009', 'Monthly', 6000.00, 270.00, 12000.00, 'Salary', 'Approved', 12, 600.00, 'WF009', 'TR019');
 INSERT INTO Expenditure VALUES ('EXP010', 'EC010', 'Monthly', 6500.00, 300.00, 13000.00, 'Salary', 'Approved', 12, 650.00, 'WF010', 'TR020');
-
-
-
 
 
 COMMIT;
@@ -562,15 +546,15 @@ COMMIT;
 
 
 
-INSERT INTO EmployeeAssignment VALUES ('E001', 1, TO_DATE('2024-08-23','YYYY-MM-DD'), 'Active');
-INSERT INTO EmployeeAssignment VALUES ('E002', 1, TO_DATE('2025-09-08','YYYY-MM-DD'), 'Active');
-INSERT INTO EmployeeAssignment VALUES ('E003', 1, TO_DATE('2022-03-20','YYYY-MM-DD'), 'Promoted');
-INSERT INTO EmployeeAssignment VALUES ('E004', 1, TO_DATE('2025-05-16','YYYY-MM-DD'), 'Active');
-INSERT INTO EmployeeAssignment VALUES ('E005', 1, TO_DATE('2025-09-07','YYYY-MM-DD'), 'Active');
-INSERT INTO EmployeeAssignment VALUES ('E006', 1, TO_DATE('2021-02-01','YYYY-MM-DD'), 'Former');
-INSERT INTO EmployeeAssignment VALUES ('E007', 1, TO_DATE('2024-12-31','YYYY-MM-DD'), 'Active');
-INSERT INTO EmployeeAssignment VALUES ('E008', 1, TO_DATE('2022-03-06','YYYY-MM-DD'), 'Promoted');
-INSERT INTO EmployeeAssignment VALUES ('E009', 1, TO_DATE('2022-12-20','YYYY-MM-DD'), 'Promoted');
-INSERT INTO EmployeeAssignment VALUES ('E010', 1, TO_DATE('2021-02-01','YYYY-MM-DD'), 'Former');
+INSERT INTO EmployeeAssignment VALUES ('E001', '1', TO_DATE('2024-08-23','YYYY-MM-DD'), 'Active');
+INSERT INTO EmployeeAssignment VALUES ('E002', '1', TO_DATE('2025-09-08','YYYY-MM-DD'), 'Active');
+INSERT INTO EmployeeAssignment VALUES ('E003', '1', TO_DATE('2022-03-20','YYYY-MM-DD'), 'Promoted');
+INSERT INTO EmployeeAssignment VALUES ('E004', '1', TO_DATE('2025-05-16','YYYY-MM-DD'), 'Active');
+INSERT INTO EmployeeAssignment VALUES ('E005', '1', TO_DATE('2025-09-07','YYYY-MM-DD'), 'Active');
+INSERT INTO EmployeeAssignment VALUES ('E006', '1', TO_DATE('2021-02-01','YYYY-MM-DD'), 'Former');
+INSERT INTO EmployeeAssignment VALUES ('E007', '1', TO_DATE('2024-12-31','YYYY-MM-DD'), 'Active');
+INSERT INTO EmployeeAssignment VALUES ('E008', '1', TO_DATE('2022-03-06','YYYY-MM-DD'), 'Promoted');
+INSERT INTO EmployeeAssignment VALUES ('E009', '1', TO_DATE('2022-12-20','YYYY-MM-DD'), 'Promoted');
+INSERT INTO EmployeeAssignment VALUES ('E010', '1', TO_DATE('2021-02-01','YYYY-MM-DD'), 'Former');
 
 COMMIT;

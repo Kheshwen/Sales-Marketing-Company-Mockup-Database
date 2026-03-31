@@ -1,4 +1,4 @@
--- FILE 2: 7-Table Join — Employee, Contact, Client, Campaign, Execution, Report, & Management
+-- FILE 3: 7-Table Join — Employee, Contact, Client, Campaign, Execution, Report, & Management
 -- Displays attributes from seven interconnected tables to analyze campaign success
 -- 4 constraints across multiple tables using AND
 -- Expected: 4 rows

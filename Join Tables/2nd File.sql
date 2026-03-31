@@ -1,4 +1,4 @@
--- FILE 3: 4-Table Join — Active Employees, Priority Clients & Campaign Performance
+-- FILE 2: 4-Table Join — Active Employees, Priority Clients & Campaign Performance
 -- Displays ONE aggregated metric and ONE descriptive attribute
 -- Multiple constraints from different tables using AND
 -- Expected: One row per active employee department

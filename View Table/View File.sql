@@ -1,26 +1,28 @@
 -- FILE 5: CREATE VIEW — 3-Table Join
+-- Tables: CampaignStatus, CampaignExecution, Campaign
 -- 3 PRIMARY KEY attributes from 3 tables
 -- 2 concatenated non-PK attributes from 2 tables
 -- 1 constraint with single value
 -- Expected: 7 rows
 
--- Scenario: This view is created to display the primary keys of the employee, client, 
--- and post-campaign report alongside a concatenated full name of the employee 
--- and a concatenated client contact summary, filtered for reports 
--- where the goal status is 'Achieved'.
--- It allows quick lookup of who handled which client's campaign and what the outcome was.
+-- Scenario: This view is created to display the primary keys of the campaign status, 
+-- campaign execution and campaign, alongside a concatenated status summary of state 
+-- and priority level at time, and a concatenated execution summary of current execution 
+-- status and data collection status, filtered where the campaign status automatics flag 
+-- is 'FALSE'. It allows quick lookup of manually updated campaign statuses and their 
+-- linked execution and campaign details.
 
-CREATE VIEW vw_CampaignSummary AS
-SELECT 
-    e.employee_id,
-    c.client_id,
-    pcr.report_id,
-    e.first_name || ' ' || e.last_name AS employee_fullname,
-    c.client_name || ' (' || c.client_tier || ')' AS client_summary
-FROM Employee e
-JOIN Client c ON e.employee_id = c.employee_id
-JOIN PostCampaignReport pcr ON e.employee_id = pcr.employee_id
-WHERE pcr.goal_status = 'Achieved';
+CREATE VIEW vw_StatusExecutionCampaign AS
+SELECT
+    cs.status_id,
+    ce.execution_id,
+    ca.campaign_id,
+    cs.status_state || ' - ' || cs.priority_level_at_time AS status_summary,
+    ce.curr_execution_status || ' - ' || ce.data_collection_status AS execution_summary
+FROM CampaignStatus cs
+JOIN CampaignExecution ce ON cs.execution_id = ce.execution_id
+JOIN Campaign ca ON ce.campaign_id = ca.campaign_id
+WHERE cs.automatics_flag = 'FALSE';
 
 -- To display the view:
-SELECT * FROM vw_CampaignSummary;
+SELECT * FROM vw_StatusExecutionCampaign;

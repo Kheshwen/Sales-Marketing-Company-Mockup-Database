@@ -3,14 +3,16 @@
 -- 2 constraints from different tables using AND
 -- Expected: 6 rows
 
--- Scenario: This query is to find the salary of each active employee and 
--- the budget allocated to their assigned client, where the employee status is 'Active' and the client tier is 'Gold'. 
--- It helps management identify high-value client relationships handled by currently active staff.
+-- This query is to find the base salary of each active employee and the annual contract value of their assigned client, 
+-- where the employee employment status is 'Active' and the employee years of experience is more than 2 years. 
+-- It helps the management team identify which experienced and currently active employees are handling client accounts, 
+-- and evaluate whether higher-salaried employees are managing higher-value contracts for better resource planning 
+-- and performance review purposes.
 
 SELECT 
-    e.base_salary, 
-    cl.annual_contract_value
+    e.base_salary,
+    c.annual_contract_value
 FROM Employee e
-JOIN Client cl ON e.employee_id = cl.employee_id
-WHERE e.employementStatus = 'Active'         
-  AND cl.client_status = 'Active';           
+JOIN Client c ON e.employee_id = c.employee_id
+WHERE e.employementStatus = 'Active'
+AND e.years_of_experience > 2;         

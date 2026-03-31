@@ -14,5 +14,5 @@ SELECT
     c.annual_contract_value
 FROM Employee e
 JOIN Client c ON e.employee_id = c.employee_id
-WHERE e.employementStatus = 'Active'
+WHERE e.employement_status = 'Active'
 AND e.years_of_experience > 2;         

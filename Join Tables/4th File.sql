@@ -6,13 +6,13 @@
 -- Results in descending order
 -- Expected: 4 rows
 
--- This query is to find the management position, goal achievement, 
--- data collection status, campaign state, sales tier, proposal status, 
--- company name and task title, where the management level is 'Senior', 
--- goal achievement is 'Achieved', execution data collection status is 'Complete', 
--- proposal status is 'Approved', and client status is 'Active', 
--- ordered by management position in descending order.
--- It is to review the full campaign delivery chain from management down to client work orders.
+-- This query is to find the management position, goal achievement, data collection status, 
+-- campaign state, sales tier, proposal status, company name and task title, 
+-- where the management level is 'Senior', data collection status is 'Complete', 
+-- proposal approval status is 'Approved', client status is 'Active', and campaign priority level is 'High', 
+-- ordered by management position in descending order. 
+-- It is to review the full campaign delivery chain from senior management 
+-- through to active client work orders.
 
 SELECT
     m.management_position,
@@ -23,14 +23,14 @@ SELECT
     p.proposal_status,
     c.company_name,
     wo.task_title
-FROM Management m
-JOIN PostCampaignReport pcr ON m.management_id = pcr.reviewed_by_manager_id
+FROM PostCampaignReport pcr
+JOIN Management m ON pcr.reviewed_by_manager_id = m.management_id
 JOIN CampaignExecution ce ON pcr.execution_id = ce.execution_id
-JOIN CampaignStatus cs ON cs.execution_id = ce.execution_id
+JOIN CampaignStatus cs ON ce.execution_id = cs.execution_id
 JOIN SalesMarketing sm ON pcr.salesmarketing_id = sm.salesmarketing_id
-JOIN Proposal p ON sm.salesmarketing_id = p.salesmarketing_id
-JOIN Client c ON p.client_id = c.client_id
-JOIN WorkOrder wo ON c.client_id = wo.client_id
+JOIN Client c ON c.employee_id = sm.employee_id
+JOIN Proposal p ON p.client_id = c.client_id
+JOIN WorkOrder wo ON wo.client_id = c.client_id
 WHERE m.management_level = 'Senior'
 AND pcr.goal_achievement = 'Achieved'
 AND ce.data_collection_status = 'Complete'

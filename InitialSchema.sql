@@ -425,13 +425,6 @@ CREATE TABLE PostCampaignRevenue (
     FOREIGN KEY (revenue_id) REFERENCES Revenue(revenue_id)
 );
 
-CREATE TABLE EmployeePerson (
-    employee_id VARCHAR2(10) NOT NULL,
-    person_id VARCHAR2(10) NOT NULL,
-    PRIMARY KEY (employee_id, person_id),
-    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
-    FOREIGN KEY (person_id) REFERENCES Person(person_id)
-);
 
 CREATE TABLE EmployeeWorkstation (
     employee_id VARCHAR2(10) NOT NULL,
@@ -448,6 +441,30 @@ CREATE TABLE EmployeeAssignment (
     assign_status VARCHAR2(10) NOT NULL CHECK (assign_status IN ('Active', 'Former', 'Promoted')),
     PRIMARY KEY (employee_id, role_id, assign_date), 
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
+);
+
+CREATE TABLE PostCampaignReportEmployee (
+    employee_id VARCHAR2(10) NOT NULL,
+    report_id VARCHAR2(10) NOT NULL,
+    PRIMARY KEY (employee_id, report_id),
+    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
+    FOREIGN KEY (report_id) REFERENCES PostCampaignReport(report_id)
+);
+
+CREATE TABLE EmployeeFinancialRecord (
+    employee_id VARCHAR2(10) NOT NULL,
+    transaction_id VARCHAR2(10) NOT NULL,
+    PRIMARY KEY (employee_id, transaction_id),
+    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
+    FOREIGN KEY (transaction_id) REFERENCES FinancialRecord(transaction_id)
+);
+
+CREATE TABLE EmployeeClient (
+    employee_id VARCHAR2(10) NOT NULL,
+    client_id VARCHAR2(10) NOT NULL,
+    PRIMARY KEY (employee_id, report_id),
+    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
+    FOREIGN KEY (client_id) REFERENCES Client(client_id)
 );
 
 COMMIT;

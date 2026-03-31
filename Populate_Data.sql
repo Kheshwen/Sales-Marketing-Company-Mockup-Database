@@ -476,16 +476,16 @@ INSERT INTO CampaignStatus VALUES ('STA009', 9, 'In Progress', TO_TIMESTAMP('202
 INSERT INTO CampaignStatus VALUES ('STA010', 10, 'Completed', TO_TIMESTAMP('2026-03-01 12:00:00.000', 'YYYY-MM-DD HH24:MI:SS.FF3'), 'CR010', 'Final completion', 'FALSE', 'High', 1809, TO_DATE('2026-03-01', 'YYYY-MM-DD'), NULL, 10, 'EX010', 'SM010');
 
 -- PostCampaignReport Table
-INSERT INTO PostCampaignReport VALUES ('REP001','AV1',200000.00,150000.00,233.33,'Achieved','Instagram','Positive','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2001','M001','EX001','SM001');
-INSERT INTO PostCampaignReport VALUES ('REP002','AV1',300000.00,80000.00,275.00,'Exceeded','Facebook','Positive','Minor delays',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2002','M002','EX002','SM002');
-INSERT INTO PostCampaignReport VALUES ('REP003','AV1',400000.00,120000.00,233.33,'Achieved','Google Ads','Neutral','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2003','M003','EX003','SM003');
-INSERT INTO PostCampaignReport VALUES ('REP004','AV1',500000.00,90000.00,300.00,'Exceeded','LinkedIn','Positive','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2004','M004','EX004','SM004');
-INSERT INTO PostCampaignReport VALUES ('REP005','AV1',250000.00,100000.00,250.00,'Achieved','Instagram','Neutral','Minor technical issues',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2005','M005','EX005','SM005');
-INSERT INTO PostCampaignReport VALUES ('REP006','AV1',200000.00,70000.00,257.14,'Achieved','Facebook','Positive','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2006','M006','EX006','SM006');
-INSERT INTO PostCampaignReport VALUES ('REP007','AV1',600000.00,150000.00,300.00,'Exceeded','LinkedIn','Positive','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2007','M007','EX007','SM007');
-INSERT INTO PostCampaignReport VALUES ('REP008','AV1',350000.00,50000.00,233.33,'Achieved','Google Ads','Neutral','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2008','M008','EX008','SM008');
-INSERT INTO PostCampaignReport VALUES ('REP009','AV1',300000.00,90000.00,233.33,'Achieved','Instagram','Positive','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2009','M009','EX009','SM009');
-INSERT INTO PostCampaignReport VALUES ('REP010','AV1',200000.00,70000.00,185.71,'Achieved','Facebook','Neutral','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2010','M010','EX010','SM010');
+INSERT INTO PostCampaignReport VALUES ('REP001','AV1',200000.00,150000.00,233.33,'Achieved','Instagram','Positive','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2001','M001','EX001','SM001','E001');
+INSERT INTO PostCampaignReport VALUES ('REP002','AV1',300000.00,80000.00,275.00,'Exceeded','Facebook','Positive','Minor delays',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2002','M002','EX002','SM002','E002');
+INSERT INTO PostCampaignReport VALUES ('REP003','AV1',400000.00,120000.00,233.33,'Achieved','Google Ads','Neutral','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2003','M003','EX003','SM003','E003');
+INSERT INTO PostCampaignReport VALUES ('REP004','AV1',500000.00,90000.00,300.00,'Exceeded','LinkedIn','Positive','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2004','M004','EX004','SM004','E004');
+INSERT INTO PostCampaignReport VALUES ('REP005','AV1',250000.00,100000.00,250.00,'Achieved','Instagram','Neutral','Minor technical issues',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2005','M005','EX005','SM005','E005');
+INSERT INTO PostCampaignReport VALUES ('REP006','AV1',200000.00,70000.00,257.14,'Achieved','Facebook','Positive','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2006','M006','EX006','SM006','E006');
+INSERT INTO PostCampaignReport VALUES ('REP007','AV1',600000.00,150000.00,300.00,'Exceeded','LinkedIn','Positive','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2007','M007','EX007','SM007','E007');
+INSERT INTO PostCampaignReport VALUES ('REP008','AV1',350000.00,50000.00,233.33,'Achieved','Google Ads','Neutral','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2008','M008','EX008','SM008','E008');
+INSERT INTO PostCampaignReport VALUES ('REP009','AV1',300000.00,90000.00,233.33,'Achieved','Instagram','Positive','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2009','M009','EX009','SM009','E009');
+INSERT INTO PostCampaignReport VALUES ('REP010','AV1',200000.00,70000.00,185.71,'Achieved','Facebook','Neutral','None',TO_DATE('2026-02-28','YYYY-MM-DD'),'https://docs.com/report2010','M010','EX010','SM010','E010');
 
 COMMIT;
 

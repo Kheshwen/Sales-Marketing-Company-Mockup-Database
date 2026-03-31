@@ -1,10 +1,12 @@
 ﻿
 DROP TABLE EmployeeWorkstation;
-DROP TABLE EmployeePerson;
+DROP TABLE EmployeeClient;
 DROP TABLE PostCampaignRevenue;
 DROP TABLE EmployeeCertification;
 DROP TABLE MeetingAttendance;
 DROP TABLE EmployeeAssignment;
+DROP TABLE EmployeeFinancialRecord;
+DROP TABLE PostCampaignReportEmployee;
 
 
 DROP TABLE CampaignStatus;

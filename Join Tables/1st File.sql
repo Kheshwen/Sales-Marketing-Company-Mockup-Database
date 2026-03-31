@@ -8,11 +8,12 @@
 -- It helps the management team identify which experienced and currently active employees are handling client accounts, 
 -- and evaluate whether higher-salaried employees are managing higher-value contracts for better resource planning 
 -- and performance review purposes.
-
 SELECT 
-    e.base_salary,
+    -- ONE non-primary attribute from Employee
+    e.base_salary, 
+    -- ONE non-primary attribute from Client
     c.annual_contract_value
 FROM Employee e
 JOIN Client c ON e.employee_id = c.employee_id
-WHERE e.employement_status = 'Active'
-AND e.years_of_experience > 2;         
+WHERE e.employementStatus = 'Active'     -- Constraint 1
+  AND e.years_of_experience > 2;         -- Constraint 2 (Naturally excludes E001 and E010)

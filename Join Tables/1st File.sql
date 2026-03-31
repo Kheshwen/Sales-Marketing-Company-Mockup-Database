@@ -1,19 +1,16 @@
--- FILE 1: 2-Table Join — Employee & Client
+-- FILE 1: 2-Table Join — Meeting & WorkLocation
 -- Displays ONE non-primary attribute from each table
 -- 2 constraints from different tables using AND
 -- Expected: 6 rows
 
--- This query is to find the base salary of each active employee and the annual contract value of their assigned client, 
--- where the employee employment status is 'Active' and the employee years of experience is more than 2 years. 
--- It helps the management team identify which experienced and currently active employees are handling client accounts, 
--- and evaluate whether higher-salaried employees are managing higher-value contracts for better resource planning 
--- and performance review purposes.
+-- This query is to find the meeting subject and the location name of each meeting, 
+-- where the follow up action flag is 'TRUE' and the location access security tier is either 'Tier 1' or 'Tier 2'. 
+-- It is to identify actionable meetings held in secured locations for follow up and facility management purposes.
+
 SELECT 
-    -- ONE non-primary attribute from Employee
-    e.base_salary, 
-    -- ONE non-primary attribute from Client
-    c.annual_contract_value
-FROM Employee e
-JOIN Client c ON e.employee_id = c.employee_id
-WHERE e.employementStatus = 'Active'     -- Constraint 1
-  AND e.years_of_experience > 2;         -- Constraint 2 (Naturally excludes E001 and E010)
+    m.meeting_subject,
+    w.location_name
+FROM Meeting m
+JOIN WorkLocation w ON m.location_id = w.location_id
+WHERE w.access_security_tier IN ('Tier 1', 'Tier 2')
+AND m.follow_up_action_flag = 'TRUE';

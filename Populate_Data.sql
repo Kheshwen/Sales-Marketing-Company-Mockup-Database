@@ -573,17 +573,17 @@ INSERT INTO PostCampaignReportEmployee VALUES ('E010', 'REP010');
 
 COMMIT;
 
--- EmployeeTransaction Table
-INSERT INTO EmployeeTransaction VALUES ('E001', 'TR001');
-INSERT INTO EmployeeTransaction VALUES ('E002', 'TR002');
-INSERT INTO EmployeeTransaction VALUES ('E003', 'TR003');
-INSERT INTO EmployeeTransaction VALUES ('E004', 'TR004');
-INSERT INTO EmployeeTransaction VALUES ('E005', 'TR005');
-INSERT INTO EmployeeTransaction VALUES ('E006', 'TR006');
-INSERT INTO EmployeeTransaction VALUES ('E007', 'TR007');
-INSERT INTO EmployeeTransaction VALUES ('E008', 'TR008');
-INSERT INTO EmployeeTransaction VALUES ('E009', 'TR009');
-INSERT INTO EmployeeTransaction VALUES ('E010', 'TR010');
+-- EmployeeFinancialRecord Table
+INSERT INTO EmployeeFinancialRecord VALUES ('E001', 'TR001');
+INSERT INTO EmployeeFinancialRecord VALUES ('E002', 'TR002');
+INSERT INTO EmployeeFinancialRecord VALUES ('E003', 'TR003');
+INSERT INTO EmployeeFinancialRecord VALUES ('E004', 'TR004');
+INSERT INTO EmployeeFinancialRecord VALUES ('E005', 'TR005');
+INSERT INTO EmployeeFinancialRecord VALUES ('E006', 'TR006');
+INSERT INTO EmployeeFinancialRecord VALUES ('E007', 'TR007');
+INSERT INTO EmployeeFinancialRecord VALUES ('E008', 'TR008');
+INSERT INTO EmployeeFinancialRecord VALUES ('E009', 'TR009');
+INSERT INTO EmployeeFinancialRecord VALUES ('E010', 'TR010');
 
 COMMIT;
 

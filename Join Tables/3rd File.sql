@@ -12,6 +12,6 @@ JOIN Campaign ca ON cl.client_id = ca.client_id
 JOIN CampaignExecution ce ON ca.campaign_id = ce.campaign_id
 JOIN PostCampaignReport pr ON ce.execution_id = pr.execution_id
 WHERE e.department = 'Management'                     
-  AND co.preferred_comm_channel = 'Email'           
-  AND cl.client_status = 'Active'                     
-  AND pr.roi_percentage BETWEEN 230 AND 310;         
+  AND co.preferred_comm_channel = 'Email'             
+  AND cl.client_priority_tier = 'Gold'                
+  AND pr.roi_percentage >= 233.33;

@@ -8,9 +8,9 @@
 -- It helps management identify high-value client relationships handled by currently active staff.
 
 SELECT 
-    e.salary,
-    c.allocated_budget
+    e.base_salary, 
+    cl.annual_contract_value
 FROM Employee e
-JOIN Client c ON e.employee_id = c.employee_id
-WHERE e.emp_status = 'Active'
-AND c.client_tier = 'Gold';
+JOIN Client cl ON e.employee_id = cl.employee_id
+WHERE e.employementStatus = 'Active'         
+  AND cl.client_status = 'Active';           

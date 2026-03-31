@@ -1,37 +1,39 @@
--- FILE 4: 8-Table Join — 1 attribute from each of 8 tables
+-- FILE 4: 8-Table Join
+-- Tables: Management, PostCampaignReport, CampaignExecution, CampaignStatus,
+--         SalesMarketing, Proposal, Client, WorkOrder
+-- 1 attribute from each of 8 tables
 -- 5 constraints from different tables using AND
 -- Results in descending order
 -- Expected: 4 rows
 
--- This query is to find the base salary, client name, management position, 
--- sales region, goal achievement, impression count, meeting subject, 
--- and transaction status of employees in the 'Management' department, 
--- where the client priority tier is 'Gold', execution status is 'Complete', 
--- top performing channel is 'Instagram', and meeting type is 'Strategy', ordered by salary in descending order. 
--- It is to audit the full campaign trail across all key system entities
+-- This query is to find the management position, goal achievement, 
+-- data collection status, campaign state, sales tier, proposal status, 
+-- company name and task title, where the management level is 'Senior', 
+-- goal achievement is 'Achieved', execution data collection status is 'Complete', 
+-- proposal status is 'Approved', and client status is 'Active', 
+-- ordered by management position in descending order.
+-- It is to review the full campaign delivery chain from management down to client work orders.
 
-SELECT 
-    e.salary,
-    c.client_name,
-    m.management_role,
-    sm.region,
-    pcr.goal_status,
-    ce.total_reach,
-    mt.meeting_title,
-    fr.posting_status
-FROM Employee e
-JOIN Client c ON e.employee_id = c.employee_id
-JOIN Management m ON e.employee_id = m.employee_id
-JOIN SalesMarketing sm ON e.employee_id = sm.employee_id
-JOIN PostCampaignReport pcr ON m.management_id = pcr.management_id
+SELECT
+    m.management_position,
+    pcr.goal_achievement,
+    ce.data_collection_status,
+    cs.status_state,
+    sm.sales_tier,
+    p.proposal_status,
+    c.company_name,
+    wo.task_title
+FROM Management m
+JOIN PostCampaignReport pcr ON m.management_id = pcr.reviewed_by_manager_id
 JOIN CampaignExecution ce ON pcr.execution_id = ce.execution_id
-JOIN Meeting mt ON e.employee_id = mt.employee_id
-JOIN FinancialRecord fr ON fr.finance_id = (
-    SELECT f.finance_id FROM Finance f WHERE f.employee_id = e.employee_id
-)
-WHERE e.department = 'Management'
-AND c.client_tier = 'Gold'
-AND ce.execution_status = 'Complete'
-AND pcr.platform_used = 'Instagram'
-AND mt.meeting_type = 'Strategy'
-ORDER BY e.salary DESC;
+JOIN CampaignStatus cs ON cs.execution_id = ce.execution_id
+JOIN SalesMarketing sm ON pcr.salesmarketing_id = sm.salesmarketing_id
+JOIN Proposal p ON sm.salesmarketing_id = p.salesmarketing_id
+JOIN Client c ON p.client_id = c.client_id
+JOIN WorkOrder wo ON c.client_id = wo.client_id
+WHERE m.management_level = 'Senior'
+AND pcr.goal_achievement = 'Achieved'
+AND ce.data_collection_status = 'Complete'
+AND p.proposal_status = 'Approved'
+AND c.client_status = 'Active'
+ORDER BY m.management_position DESC;

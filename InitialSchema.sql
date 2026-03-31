@@ -396,8 +396,10 @@ CREATE TABLE PostCampaignReport (
     reviewed_by_manager_id VARCHAR2(50) NOT NULL CHECK (LENGTH(reviewed_by_manager_id) > 0),
     execution_id VARCHAR2(10) NOT NULL,
     salesmarketing_id VARCHAR2(10) NOT NULL,
+    employee_id VARCHAR2(10) NOT NULL,
     FOREIGN KEY (execution_id) REFERENCES CampaignExecution(execution_id),
-    FOREIGN KEY (salesmarketing_id) REFERENCES SalesMarketing(salesmarketing_id)
+    FOREIGN KEY (salesmarketing_id) REFERENCES SalesMarketing(salesmarketing_id),
+    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
 -- 7. Explosion Tables
@@ -462,7 +464,7 @@ CREATE TABLE EmployeeFinancialRecord (
 CREATE TABLE EmployeeClient (
     employee_id VARCHAR2(10) NOT NULL,
     client_id VARCHAR2(10) NOT NULL,
-    PRIMARY KEY (employee_id, report_id),
+    PRIMARY KEY (employee_id, client_id),
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
     FOREIGN KEY (client_id) REFERENCES Client(client_id)
 );

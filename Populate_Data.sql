@@ -557,6 +557,8 @@ INSERT INTO EmployeeAssignment VALUES ('E008', 'MAN-1008', TO_DATE('2022-03-06',
 INSERT INTO EmployeeAssignment VALUES ('E009', 'MAN-1009', TO_DATE('2022-12-20','YYYY-MM-DD'), 'Promoted');
 INSERT INTO EmployeeAssignment VALUES ('E010', 'MAN-1010', TO_DATE('2021-02-01','YYYY-MM-DD'), 'Former');
 
+COMMIT;
+
 -- PostCampaignReportEmployee Table
 INSERT INTO PostCampaignReportEmployee VALUES ('E001', 'REP001');
 INSERT INTO PostCampaignReportEmployee VALUES ('E002', 'REP002');
@@ -569,6 +571,8 @@ INSERT INTO PostCampaignReportEmployee VALUES ('E008', 'REP008');
 INSERT INTO PostCampaignReportEmployee VALUES ('E009', 'REP009');
 INSERT INTO PostCampaignReportEmployee VALUES ('E010', 'REP010');
 
+COMMIT;
+
 -- EmployeeTransaction Table
 INSERT INTO EmployeeTransaction VALUES ('E001', 'TR001');
 INSERT INTO EmployeeTransaction VALUES ('E002', 'TR002');
@@ -580,6 +584,8 @@ INSERT INTO EmployeeTransaction VALUES ('E007', 'TR007');
 INSERT INTO EmployeeTransaction VALUES ('E008', 'TR008');
 INSERT INTO EmployeeTransaction VALUES ('E009', 'TR009');
 INSERT INTO EmployeeTransaction VALUES ('E010', 'TR010');
+
+COMMIT;
 
 -- EmployeeClient Table
 INSERT INTO EmployeeClient VALUES ('E001', 'CL001');

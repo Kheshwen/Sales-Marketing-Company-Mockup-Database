@@ -102,6 +102,7 @@ CREATE TABLE Client (
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
+
 CREATE TABLE Management (
     management_id VARCHAR2(10) PRIMARY KEY,
     board_member_id NUMBER UNIQUE NOT NULL,
@@ -265,7 +266,7 @@ CREATE TABLE FinancialRecord (
     FOREIGN KEY (finance_id) REFERENCES Finance(finance_id)
 );
 
--- 5. Fourth-Level Dependencies (Rely on Campaign or FinanceRecord)
+-- 5. Fourth-Level Dependencies (Rely on Campaign, FinanceRecord)
 CREATE TABLE DigitalCampaign (
     digital_id VARCHAR2(10) PRIMARY KEY,
     digital_channel_type VARCHAR2(20) NOT NULL,
@@ -399,15 +400,13 @@ CREATE TABLE PostCampaignReport (
     FOREIGN KEY (salesmarketing_id) REFERENCES SalesMarketing(salesmarketing_id)
 );
 
--- 7. Explosion (Junction) Tables
+-- 7. Explosion Tables
 CREATE TABLE MeetingAttendance (
     meeting_id VARCHAR2(10) NOT NULL,
     employee_id VARCHAR2(10) NOT NULL,
-    contact_id VARCHAR2(10) NOT NULL,
     PRIMARY KEY (meeting_id, employee_id),
     FOREIGN KEY (meeting_id) REFERENCES Meeting(meeting_id),
-    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id),
-    FOREIGN KEY (contact_id) REFERENCES Contact(contact_id)
+    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
 );
 
 CREATE TABLE EmployeeCertification (
@@ -452,3 +451,5 @@ CREATE TABLE EmployeeAssignment (
 );
 
 COMMIT;
+
+

@@ -1,4 +1,4 @@
-﻿-- Drop many-to-many
+﻿
 DROP TABLE EmployeeWorkstation;
 DROP TABLE EmployeePerson;
 DROP TABLE PostCampaignRevenue;
@@ -6,36 +6,41 @@ DROP TABLE EmployeeCertification;
 DROP TABLE MeetingAttendance;
 DROP TABLE EmployeeAssignment;
 
--- Drop the tables descending order of dependencies
+
+DROP TABLE CampaignStatus;
+DROP TABLE PostCampaignReport;
 DROP TABLE Expenditure;
 DROP TABLE Revenue;
-DROP TABLE FinancialRecord;
-DROP TABLE Campaignideas;
-DROP TABLE PostCampaignReport;
-DROP TABLE CampaignStatus;
+DROP TABLE DigitalCampaign;
+DROP TABLE SocialMediaCampaign;
+DROP TABLE PhysicalCampaign;
 DROP TABLE CampaignExecution;
-DROP TABLE Meeting;
+
+
+DROP TABLE Campaignideas;
 DROP TABLE WorkOrder;
 DROP TABLE Proposal;
-DROP TABLE PhysicalCampaign;
-DROP TABLE SocialMediaCampaign;
-DROP TABLE DigitalCampaign;
 DROP TABLE Campaign;
-DROP TABLE Certification;
-DROP TABLE SalesMarketing;
-DROP TABLE Finance;
-DROP TABLE Tech;
-DROP TABLE Management;
+DROP TABLE FinancialRecord;
+
+
 DROP TABLE Client;
-DROP TABLE Employee;
+DROP TABLE Management;
+DROP TABLE Tech;
+DROP TABLE Finance;
+DROP TABLE SalesMarketing;
+DROP TABLE Meeting;
+
+
 DROP TABLE Address;
-DROP TABLE WorkLocation;
+DROP TABLE Employee;
+
+
 DROP TABLE Contact;
 DROP TABLE Person;
-
+DROP TABLE WorkLocation;
+DROP TABLE Certification;
 
 COMMIT;
-
-PURGE RECYCLEBIN; -- Clears the recycle bin
 
 -- CLEAR SCREEN;

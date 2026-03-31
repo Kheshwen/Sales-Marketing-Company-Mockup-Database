@@ -490,16 +490,17 @@ INSERT INTO PostCampaignReport VALUES ('REP010','AV1',200000.00,70000.00,185.71,
 COMMIT;
 
 -- MeetingAttendance Table
-INSERT INTO MeetingAttendance VALUES ('ME001', 'E001', 'C0001');
-INSERT INTO MeetingAttendance VALUES ('ME002', 'E002', 'C0002');
-INSERT INTO MeetingAttendance VALUES ('ME003', 'E003', 'C0003');
-INSERT INTO MeetingAttendance VALUES ('ME004', 'E004', 'C0004');
-INSERT INTO MeetingAttendance VALUES ('ME005', 'E005', 'C0005');
-INSERT INTO MeetingAttendance VALUES ('ME006', 'E006', 'C0006');
-INSERT INTO MeetingAttendance VALUES ('ME007', 'E007', 'C0007');
-INSERT INTO MeetingAttendance VALUES ('ME008', 'E008', 'C0008');
-INSERT INTO MeetingAttendance VALUES ('ME009', 'E009', 'C0009');
-INSERT INTO MeetingAttendance VALUES ('ME010', 'E010', 'C0010');
+INSERT INTO MeetingAttendance VALUES ('ME001', 'E001');
+INSERT INTO MeetingAttendance VALUES ('ME002', 'E002');
+INSERT INTO MeetingAttendance VALUES ('ME003', 'E003');
+INSERT INTO MeetingAttendance VALUES ('ME004', 'E004');
+INSERT INTO MeetingAttendance VALUES ('ME005', 'E005');
+INSERT INTO MeetingAttendance VALUES ('ME006', 'E006');
+INSERT INTO MeetingAttendance VALUES ('ME007', 'E007');
+INSERT INTO MeetingAttendance VALUES ('ME008', 'E008');
+INSERT INTO MeetingAttendance VALUES ('ME009', 'E009');
+INSERT INTO MeetingAttendance VALUES ('ME010', 'E010');
+-- Check done
 
 COMMIT;
 
@@ -528,20 +529,6 @@ INSERT INTO PostCampaignRevenue VALUES ('REP007', 'REV007');
 INSERT INTO PostCampaignRevenue VALUES ('REP008', 'REV008');
 INSERT INTO PostCampaignRevenue VALUES ('REP009', 'REV009');
 INSERT INTO PostCampaignRevenue VALUES ('REP010', 'REV010');
-
-COMMIT;
-
--- EmployeePerson Table
-INSERT INTO EmployeePerson VALUES ('E001', 'P001');
-INSERT INTO EmployeePerson VALUES ('E002', 'P002');
-INSERT INTO EmployeePerson VALUES ('E003', 'P003');
-INSERT INTO EmployeePerson VALUES ('E004', 'P004');
-INSERT INTO EmployeePerson VALUES ('E005', 'P005');
-INSERT INTO EmployeePerson VALUES ('E006', 'P006');
-INSERT INTO EmployeePerson VALUES ('E007', 'P007');
-INSERT INTO EmployeePerson VALUES ('E008', 'P008');
-INSERT INTO EmployeePerson VALUES ('E009', 'P009');
-INSERT INTO EmployeePerson VALUES ('E010', 'P010');
 
 COMMIT;
 

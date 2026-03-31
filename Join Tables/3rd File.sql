@@ -1,18 +1,20 @@
-SELECT 
-    E.employee_id, E.department,
-    C.email_address, C.job_title,
-    CL.client_id, CL.company_name,
-    CA.campaign_id, CA.campaign_name,
-    EX.execution_id, EX.curr_execution_status,
-    R.report_id, R.roi_percentage
-FROM Employee E
-JOIN Contact C ON E.contact_id = C.contact_id
-JOIN Client CL ON E.employee_id = CL.employee_id
-JOIN Campaign CA ON CL.client_id = CA.client_id
-JOIN CampaignExecution EX ON CA.campaign_id = EX.campaign_id
-JOIN PostCampaignReport R ON EX.execution_id = R.execution_id
-WHERE 
-    E.department = 'Management'
-    AND CL.client_priority_tier = 'Gold'
-    AND CA.version_tag = 'V1'
-    AND R.goal_achievement = 'Achieved';
+SELECT * FROM (
+    SELECT 
+        e.employee_id, e.department,
+        co.email_address, co.job_title,
+        cl.client_id, cl.company_name,
+        ca.campaign_id, ca.campaign_name,
+        ce.execution_id, ce.curr_execution_status,
+        pr.report_id, pr.roi_percentage
+FROM Employee e
+    JOIN Contact co ON e.contact_id = co.contact_id
+    JOIN Client cl ON e.employee_id = cl.employee_id
+    JOIN Campaign ca ON cl.client_id = ca.client_id
+    JOIN CampaignExecution ce ON ca.campaign_id = ce.campaign_id
+    JOIN PostCampaignReport pr ON ce.execution_id = pr.execution_id
+    WHERE e.department = 'Management'                    
+      AND co.preferred_comm_channel = 'Email'             
+      AND cl.client_status = 'Active'                     
+      AND pr.goal_achievement IN ('Exceeded', 'Achieved') 
+) 
+WHERE ROWNUM <= 3;

@@ -11,7 +11,8 @@ JOIN Client cl ON e.employee_id = cl.employee_id
 JOIN Campaign ca ON cl.client_id = ca.client_id
 JOIN CampaignExecution ce ON ca.campaign_id = ce.campaign_id
 JOIN PostCampaignReport pr ON ce.execution_id = pr.execution_id
-WHERE e.department = 'Management'                     
-  AND co.preferred_comm_channel = 'Email'             
-  AND cl.client_priority_tier = 'Gold'                
-  AND pr.roi_percentage >= 233.33;
+JOIN Management m ON e.employee_id = m.employee_id
+WHERE e.department = 'Management'            
+  AND m.management_level = 'Senior'          
+  AND cl.client_priority_tier IN ('Gold', 'Silver') 
+  AND pr.roi_percentage > 230;              

@@ -21,7 +21,7 @@ JOIN Campaign ca ON cl.clientid = ca.clientid
 JOIN CampaignExecution ce ON ca.campaignid = ce.campaignid
 JOIN PostCampaignReport pr ON ce.executionid = pr.executionid
 JOIN Management m ON e.employeeid = m.employeeid
-WHERE e.department = 'Management'
-  AND m.managementlevel = 'Senior'
-  AND cl.clientprioritytier IN ('Gold', 'Silver')
-  AND pr.roipercentage > 230;
+WHERE e.department = 'IT'
+  AND cl.client_priority_tier = 'Gold'
+  AND ca.campaign_name = 'Campaign_A'
+  AND pr.roi_percentage = 100

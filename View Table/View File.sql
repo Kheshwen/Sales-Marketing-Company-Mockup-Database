@@ -12,7 +12,7 @@
 -- is 'FALSE'. It allows quick lookup of manually updated campaign statuses and their 
 -- linked execution and campaign details.
 
-CREATE VIEW vw_StatusExecutionCampaign AS
+CREATE OR REPLACE VIEW vw_StatusExecutionCampaign AS
 SELECT
     cs.status_id,
     ce.execution_id,
@@ -24,5 +24,4 @@ JOIN CampaignExecution ce ON cs.execution_id = ce.execution_id
 JOIN Campaign ca ON ce.campaign_id = ca.campaign_id
 WHERE cs.automatics_flag = 'FALSE';
 
--- To display the view:
 SELECT * FROM vw_StatusExecutionCampaign;

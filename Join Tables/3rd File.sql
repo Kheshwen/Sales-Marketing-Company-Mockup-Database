@@ -15,12 +15,11 @@ SELECT
     ce.executionid, ce.currexecutionstatus,
     pr.reportid, pr.roipercentage
 FROM Employee e
-JOIN Contact co ON e.contactid = co.contactid
-JOIN Client cl ON e.employeeid = cl.employeeid
-JOIN Campaign ca ON cl.clientid = ca.clientid
-JOIN CampaignExecution ce ON ca.campaignid = ce.campaignid
-JOIN PostCampaignReport pr ON ce.executionid = pr.executionid
-JOIN Management m ON e.employeeid = m.employeeid
+JOIN Contact co ON e.contact_id = co.contact_id
+JOIN Client cl ON e.employee_id = cl.employee_id
+JOIN Campaign ca ON cl.client_id = ca.client_id
+JOIN CampaignExecution ce ON ca.campaign_id = ce.campaign_id
+JOIN PostCampaignReport pr ON ce.execution_id = pr.execution_id
 WHERE e.department = 'IT'
   AND cl.client_priority_tier = 'Gold'
   AND ca.campaign_name = 'Campaign_A'
